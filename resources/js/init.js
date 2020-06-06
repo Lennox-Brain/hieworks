@@ -1,0 +1,12 @@
+(function(){
+    tinymce.init({
+        selector: '#job_description',
+        plugins: "lists, advlist",
+        toolbar:  `undo redo | formatselect | 
+                  'bold italic backcolor | alignleft aligncenter ' 
+                  'alignright alignjustify | bullist numlist outdent indent | ' 
+                  'removeformat | underline`,               
+        menubar: false,
+    })
+   
+})()

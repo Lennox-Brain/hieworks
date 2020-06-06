@@ -1,0 +1,98 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+[x-cloak] { display: none; }
+.btn{
+  @apply text-white font-bold py-2 px-4 rounded;
+}
+.banner{
+  min-height: 35vmin;
+  background: url('/page/images/test.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.dashboard-menu{
+  @apply bg-white shadow px-0  hidden ;
+}
+
+.active-tab{
+  @apply text-blue-800 font-bold border-b-4 border-purple-800;
+}
+.label{
+   @apply text-gray-700 text-sm block;
+}
+.opacity-low{
+  opacity: .9;
+}
+
+
+.btn{
+  @apply  px-3 py-2 shadow text-white rounded 
+}
+.btn-primary{
+  @apply bg-purple-800
+}
+.btn:hover{
+   @apply bg-purple-700
+}
+
+@screen md{
+  .dashboard-menu{
+    @apply px-4 block
+  }
+}
+
+
+
+.job-card{
+   @apply border w-full mx-auto p-1 flex items-center h-32;
+   margin-top:-.2px;
+}
+
+.pagination{
+  @apply flex justify-center
+  
+}
+
+.page-item{
+  @apply mx-4 px-2 py-1 text-gray-500 border rounded-lg
+
+}
+.footer{
+  background: #0f0f53;
+}
+
+
+.input{
+  @apply bg-white p-2 w-full text-gray-600 rounded-md border-gray-400 border
+}
+.select{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: #fff;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNSIgdmlld0JveD0iNyAxMCAxMCA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiMwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9Ii43NCIgZD0iTTcgMTBsNSA1IDUtNXoiLz48L3N2Zz4=);
+  background-position: calc(100% - 10px) 18px;
+  background-repeat: no-repeat;
+
+}
+
+form-group{
+  @apply my-6 mx-2
+}
+
+.input:focus{
+  @apply outline-none bg-gray-100
+}
+
+// extras
+
+.block-title{
+  @apply text-blue-700 font-bold
+}
+
+
+@import "tailwindcss/utilities";
+

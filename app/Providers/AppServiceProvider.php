@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Providers;
+
+use App\Hieworks\Data;
+use App\View\Components\Alert;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        View::share(['job_categories'=>Data::CATEGORIES,'home_categories'=>Data::jobCategories(),'job_locations' => Data::LOCATIONS]);
+        Blade::component('alert', Alert::class);
+    }
+}
