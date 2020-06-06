@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
  
 class Data{
 
+    // status codes 
     public const OK =  200;
     public const REDIRECT = 302;
     public const BAD_REQUEST = 400;
@@ -15,6 +16,12 @@ class Data{
     public const METHOD_NOT_ALLOWED =  405;
     public const NOT_ACCEPTABLE =  406;
     public const UNPROCESSED_ENTITY =  422;
+
+    // paths 
+    public const UPLOADS_PATH = '/storage/uploads/';
+    public const  CV_PATH = '/storage/docs/cv';
+    public const  COVER_PATH = '/storage/docs/cover';
+
 
     const CATEGORIES = [
         'Accounting, Banking, Finance',

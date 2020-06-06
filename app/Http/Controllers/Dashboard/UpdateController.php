@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Hieworks\Data;
 use App\Job;
 use App\User;
 use App\Hieworks\Helpers;
@@ -53,12 +54,13 @@ class UpdateController extends Controller
 
             $fileName = null;
             if($request->has('company_logo')){
+                $path = Data::UPLOADS_PATH;
                 $file_value = Helpers::getModel('App\Job', $job_id)->first('company_logo')->company_logo;
                   if($file_value){
                     
                       Helpers::deleteFile($file_value);
                   }
-               $fileName =  Helpers::uploadFile($data['company_logo']);
+               $fileName =  Helpers::uploadFile($data['company_logo'], $path);
                $data['company_logo'] = $fileName;
             }
            

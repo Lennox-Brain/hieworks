@@ -18,7 +18,9 @@ class LoaderController extends Controller
     public function loadJobs()
     {
         $userjobs = Job::where('user_id', Auth::id())
-                        ->where('status', true)->simplePaginate();
+                        ->where('status', true)
+                        ->orderBy('created_at', 'desc')
+                        ->simplePaginate();
             return view('layouts.dashboard.jobs', ['userjobs' => $userjobs]);
     }
 

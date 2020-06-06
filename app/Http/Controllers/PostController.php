@@ -33,8 +33,6 @@ class PostController extends Controller
     
     public function postJob(Request $request)
     {
-        $path = '/storage/uploads/';
-       
        $payload =  $request->except(['_token', '_method']);
        $validate =  Validators::validatePost($payload);
        if($validate->fails()) return redirect()->back()->withErrors($validate->errors()->all())->withInput();
@@ -42,7 +40,7 @@ class PostController extends Controller
        $fileName = null;
        $onsite = false;
        if($request->has('company_logo')){
-          $fileName =  Helpers::uploadFile($data['company_logo'], $path);
+          $fileName =  Helpers::uploadFile($data['company_logo'], Data::UPLOADS_PATH);
        }
        if($request->has('onsite')){
             $onsite =  $data['onsite'] = true;
@@ -77,15 +75,14 @@ class PostController extends Controller
 
 
     public function confirmApplication(Request $request){
-        $cvPath = '/storage/docs/cv';
-        $coverPath = '/storage/docs/cover';
+       
         $job_id = base64_decode($request->job_token);
        
         $data = Validators::validateApplication($request->except('_token'))->validate();
-        $employee_cv = Helpers::uploadFile($data['employee_cv'], $cvPath);
+        $employee_cv = Helpers::uploadFile($data['employee_cv'], DATA::CV_PATH);
         $cover_letter = null;
         if($request->has('cover_letter')){
-            $cover_letter = Helpers::uploadFile($data['cover_letter'], $coverPath);;
+            $cover_letter = Helpers::uploadFile($data['cover_letter'], DATA::COVER_PATH);;
         }
 
         $exist =  Application::where('application_id', $job_id)
