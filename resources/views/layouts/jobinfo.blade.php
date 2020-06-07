@@ -194,7 +194,7 @@
                     
             </div>
 
-            <div class="w-full md:w-3/5 my-2">
+            <div class="w-full md:w-3/5 my-2 bg-white p-2">
                 <div class="my-3 font-bold md:text-2xl text-lg text-gray-700">
                     <h3>Browse Related Jobs</h3>
                 </div>
@@ -202,12 +202,12 @@
                     <a href="{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'),'id'=> base64_encode($job->id)])}}" class="outline-none">
                                     <div class="job-card sm:p-2">
                                       <div class="mr-2">
-                                        @if($job->company_logo)
-                                            <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
-                                         @else 
-                                            <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
-                                        @endif
-                                    </div>
+                                            @if($job->company_logo)
+                                                <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
+                                            @else 
+                                                <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
+                                            @endif
+                                      </div>
 
                                       <div class="w-full">
                                         <div class="text-right text-sm text-gray-500">
