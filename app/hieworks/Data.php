@@ -76,7 +76,7 @@ class Data{
                         "Brong Ahafo",
                         "Central",
                         "Eastern",
-                        "Greather Accra",
+                        "Greater Accra",
                         "Nothern",
                         "Upper East",
                         "Upper West",

@@ -22,7 +22,7 @@
 
           {{-- content  --}}
             <div class="my-8">
-                <div class="job_ bg-white  sm:w-5/5 mx-auto p-1 sm:p-2 block md:flex ">
+                <div class="job_ bg-white mx-auto p-1 sm:p-2 block md:flex ">
                    <div class="w-full md:w-4/5 border p-4 my-2">
                        <div>
                            <h3 class="font-bold md:font-normal md:text-lg text-purple-800">{{$job->job_title}}</h3>
@@ -115,14 +115,20 @@
                                         <div x-show.transition="visible">
                                             @if($job->onsite)
                                                 <div class="flex justify-center my-2">
-                                                     <a href="{{route('apply:job', ['id'=> base64_encode($job->id)])}}" class="py-1 px-3 bg-purple-800 text-white rounded-full">click to apply</a>
+                                                     <a href="{{route('apply:job', ['id'=> base64_encode($job->id)])}}" class="py-1 px-3 bg-purple-800 text-white rounded-full">apply on hieworks</a>
                                                 </div>
                                             @endif
                                             <span class="text-base mx-3 my-2 flex items-center"> 
                                                 <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                                 </svg>
-                                                <span>{{($job->job_email) ? $job->job_email : 'Not Specified' }}</span>
+                                                <span>
+                                                        @if ($job->job_email)
+                                                            <a href="mailto:{{$job->job_email}}?subject={{Str::slug($job->job_title, " ", "%20")}}" target="_blank">{{$job->job_email}}</a>
+                                                        @else
+                                                            Not Specified
+                                                        @endif
+                                                </span>
                                             </span>
 
                                             <span class="text-base mx-3 my-2 flex items-center"> 
@@ -136,7 +142,13 @@
                                                 <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                                                 </svg>
-                                                <span>{{($job->application_url) ? $job->application_url : 'Not Specified' }}</span>
+                                                <span>
+                                                    @if ($job->application_url)
+                                                        <a href="{{$job->application_url}}" target="_blank" class="text-blue-400">click link to apply</a>
+                                                    @else
+                                                        Not Specified
+                                                    @endif
+                                                </span>
                                             </span>
                                           </div>
                                     </div>
@@ -180,6 +192,73 @@
                    </div>
                 </div>
                     
+            </div>
+
+            <div class="w-full md:w-3/5 my-2">
+                <div class="my-3 font-bold md:text-2xl text-lg text-gray-700">
+                    <h3>Browse Related Jobs</h3>
+                </div>
+               @forelse ($relatedJobs as $job)
+                    <a href="{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'),'id'=> base64_encode($job->id)])}}" class="outline-none">
+                                    <div class="job-card sm:p-2">
+                                      <div class="mr-2">
+                                        @if($job->company_logo)
+                                            <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
+                                         @else 
+                                            <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
+                                        @endif
+                                    </div>
+
+                                      <div class="w-full">
+                                        <div class="text-right text-sm text-gray-500">
+                                             <span>{{$job->created_at->diffForHumans()}}</span>
+                                        </div>
+                                         
+                                          <div class="text-blue-700 font-bold job-title text-sm">
+                                              {{$job->job_title}}
+                                          </div>
+
+                                          <div class="block flex mt-2">
+                                            {{-- job type  --}}
+                                             <div class="bg-purple-800 rounded-full px-2 py-1 text-white flex items-center mx-2">
+                                                <span>
+                                                    <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                      <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                                    </svg>
+                                                </span>
+                                                <span class=" text-sm ">{{$job->job_type}}</span>
+                                             </div>
+
+                                              {{-- job location  --}}
+                                             <div class="flex items-center text-gray-600 mx-2">
+                                              <span>
+                                                <svg fill="none" stroke-linecap="round" class="h-5 w-5"  stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                </svg>
+                                              </span>
+                                              <span class="text-sm">{{$job->job_location}}</span>
+                                           </div>
+                                        
+
+
+                                           {{-- details ends  --}}
+                                          </div>
+
+                                      </div>
+                                    </div>
+                                </a>
+
+               @empty
+                                <div class="text-center p-6 text-gray-500">
+                                    <div class="w-1/2 mx-auto flex items-center justify-center">
+                                      <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs">
+                                    </div>
+                                    <div>
+                                        <h4>No Jobs Found</h4>
+                                    </div>
+                                </div>
+               @endforelse
             </div>
            
 

@@ -20,6 +20,7 @@ class GetController extends Controller
         return view('layouts.alljobs', ['jobs'=>$jobs]);
     }
 
+    // job details info 
     public function jobInfo(Request $request)
     {
         $id = base64_decode($request->id);
@@ -32,8 +33,17 @@ class GetController extends Controller
         $jobInfo = Job::where(['id'=>$id])
                       ->where(['status'=>true])
                       ->first();
+         
+        
+         $relatedjobs = Job::orderBy('created_at', 'desc')
+                      ->where('status', true)
+                      ->where(['job_category'=>$jobInfo->job_category])
+                      ->where('id','!=', $jobInfo->id)
+                      ->limit(6)
+                      ->get();
+
         if(!$jobInfo) return redirect('/404');
-        return view('layouts.jobinfo', ['job'=>$jobInfo]);
+        return view('layouts.jobinfo', ['job'=>$jobInfo, 'relatedJobs'=>$relatedjobs ]);
 
     }
 
