@@ -26,8 +26,10 @@ class Data{
     const CATEGORIES = [
         'Accounting, Banking, Finance',
         'Administration & Office Service',
-        'Agriculture, Farming ',
+        'Agriculture, Farming',
+        'Animation, Audio & Multimedia',
         'Artisan',
+        'Arts, Culture & Drama',
         'Beauty & Therapy',
         'Building & Construction',
         'Branding & Advertisment',
@@ -55,6 +57,7 @@ class Data{
         'Sales & Marketing',
         'Sanitation & Wast Management',
         'Security',
+        'Sports & Fitness',
         'Transport, Travel',
         'Trade, Shiping, Courier',
         'Tourism, Hospitality'

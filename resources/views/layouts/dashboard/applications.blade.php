@@ -99,7 +99,7 @@
                                 </svg>
                             </span>
                             <span class="font-bold">
-                                {{$job->job_deadline->format('D M, Y')}}
+                                {{ ($job->deadline) ?  $job->job_deadline->format('D M, Y') : 'unknown'}}
                             </span>
                         </div>
 
