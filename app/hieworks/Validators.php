@@ -20,10 +20,10 @@ class Validators{
            'job_phone'=>'sometimes|max:14',
            'job_company'=>'sometimes|max:100',
            'application_url'=>'sometimes|url|nullable|max:255',
-           'job_deadline'=>'required',
+           'job_deadline'=>'sometimes|date|nullable',
            'job_description'=> 'required',
            'expected_salary'=>'sometimes|max:100',
-           'company_logo'=>'bail|image|mimes:jpeg,png,jpg|max:5048|dimensions:min_height=100,min_width=100'
+           'company_logo'=>'bail|image|mimes:jpeg,png,jpg|max:5048|dimensions:min_height=120,min_width=120'
             ]);
     }
 

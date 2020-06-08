@@ -251,7 +251,7 @@
                                     </div>
                                    
                                     <div class="my-4 mx-2 text-right">
-                                            <button class="btn btn-primary">Submit</button>
+                                            <button class="btn btn-primary">Publish</button>
                                     </div>
 
                                    
@@ -268,7 +268,7 @@
                             <h3>Summary</h3>
                             <div>
                                 <strong class="text-gray-600"> Your Total is</strong> GHS 0.00 (Free)
-                                <button class="px-3 py-2 bg-purple-800 w-full mt-2 text-white text-bold block rounded-md">Publish for free</button>
+                                <span class="px-3 py-2 bg-purple-800 w-full mt-2 text-white text-bold block"></span>
                             </div>
                         </div>
                 </div>

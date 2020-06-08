@@ -106,8 +106,8 @@ class PostController extends Controller
         $job = Job::find($job_id);
           $getEmployer = User::find($job->user_id);
         
-            if($getEmployer->application_notice){
-                $link =  URL::signedRoute('user:applications',['job_title'=> Str::slug($job->job_title, '-'), 'id'=>\base64_encode($job->id)])."/?utm_source=email&utm_medium=email&utm_content=new job application";
+            if($getEmployer->application_notice){                $link =  URL::signedRoute('user:applications',['job_title'=> Str::slug($job->job_title, '-'), 'id'=>\base64_encode($job->id)])."/?utm_source=email&utm_medium=email&utm_content=new job application";
+
                     Mail::to($getEmployer->email)->send(new ApplicationMail($link, $job->job_title ));
             }
 

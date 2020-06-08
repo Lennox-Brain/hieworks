@@ -53,7 +53,7 @@
                 <img src="{{asset('assets/images/hieworks-logo.png')}}" alt="hieworks logo" width="120">
             </div>
             <div style="text-align: center">
-                <a href="https://hieworks.com?utm_source=email" style="text-decoration: none;color:royalblue;font-weight:bold">hieworks.com&copy;{{date('Y')}}</a>
+                <a href="https://hieworks.com?utm_source=email&utm_medium=email&utm_campaign=application" style="text-decoration: none;color:royalblue;font-weight:bold">hieworks.com&copy;{{date('Y')}}</a>
             </div>
 
     </div>

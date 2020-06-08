@@ -54,24 +54,25 @@ class UpdateController extends Controller
 
             $fileName = null;
             if($request->has('company_logo')){
-                $path = Data::UPLOADS_PATH;
+              
                 $file_value = Helpers::getModel('App\Job', $job_id)->first('company_logo')->company_logo;
                   if($file_value){
                     
                       Helpers::deleteFile($file_value);
                   }
-               $fileName =  Helpers::uploadFile($data['company_logo'], $path);
+               $fileName =  Helpers::uploadFile($data['company_logo'], Data::UPLOADS_PATH);
                $data['company_logo'] = $fileName;
             }
            
          
         
-        $changes = array_filter($data, function($val){
-            return $val != null;
-        }); 
+        // $changes = array_filter($data, function($val){
+        //     return $val;
+        //     // return $val != null;
+        // }); 
         
 
-         $status = Job::findorFail($job_id)->update($changes);
+         $status = Job::findorFail($job_id)->update($data);
              if(!$status) return redirect()->back()->withErrors(['system failure, try again later'])->withInput();
 
      return redirect()->back()->with('postStatus', 'changes saved successfully');

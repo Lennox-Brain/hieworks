@@ -79,9 +79,15 @@
                                                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-sm leading-4 uppercase tracking-wider">
                                                         Job Id
                                                 </th>
+
+                                                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-sm leading-4 uppercase tracking-wider">
+                                                        Views
+                                                </th>
+                                                
                                                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-sm leading-4 uppercase tracking-wider">
                                                         Title
                                                 </th>
+
                                                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-sm leading-4 uppercase tracking-wider">
                                                         Category
                                                 </th>
@@ -101,9 +107,20 @@
                                                             <div class="text-sm leading-5">{{$job->job_id}}</div>
                                                        </td>
 
+                                                       <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                          <div class="text-sm leading-5">
+                                                            @if ($job->views >= 1000)
+                                                               {{ round(($job->views * (1/1000) ), PHP_ROUND_HALF_UP ) .'k' }}
+                                                            @else
+                                                               {{ $job->views }}
+                                                            @endif
+                                                          </div>
+                                                       </td>
+
                                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                             <div class="text-sm leading-5">{{$job->job_title}}</div>
                                                         </td>
+
 
                                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                             <div class="text-sm leading-5">{{$job->job_category}}</div>

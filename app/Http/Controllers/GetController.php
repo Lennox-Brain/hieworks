@@ -55,6 +55,7 @@ class GetController extends Controller
         ->orWhere('job_category', 'like', "%$keyword%")
         ->orWhere('job_location', 'like', "%$keyword%")
         ->orWhere('job_type', 'like', "%$keyword%")
+        ->orderBy('created_at', 'desc')
         ->simplePaginate();
         $searchJobs->appends([
             'keyword'=>$keyword

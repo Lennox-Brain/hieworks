@@ -94,7 +94,7 @@ class Data{
     public static function data_adapter($category){
           return Job::where(['job_category'=>$category])
                     ->orderBy('created_at', 'desc')
-                ->paginate(4);
+                ->get();
     }
     
 

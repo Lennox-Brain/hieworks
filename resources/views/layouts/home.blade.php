@@ -24,20 +24,21 @@
             @include('partials.search')
 
           {{-- content  --}}
-            <div class="my-8">
+            <div class="my-12">
                 <div class="job_ bg-white  sm:w-4/5 mx-auto p-1 sm:p-2">
                   @forelse ($home_categories as $category)
                       
+                  <div class="my-8">
                   {{-- category title  --}}
                       @if(count(App\hieworks\Data::data_adapter($category)) > 0)
-                          <div class="text-gray-600 text-xl flex items-center">
+                          <div class="text-blue-700 font-bold text-xl flex items-center">
                             <h4 class="align-middle">{{$category}}</h4>
                            
                           </div>
                       @endif
                   
                      {{-- job_wrapper --}}
-                      <div class="my-3 sm:m-4">
+                      <div class="sm:m-4 mt-3">
                           @forelse(App\hieworks\Data::data_adapter($category) as $job)
                                 <a href="{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}" class="outline-none">
                                     <div class="job-card sm:p-2">
@@ -87,17 +88,27 @@
 
                                       </div>
                                     </div>
+                                    
                                 </a>
+                               
+                                  @if ($loop->iteration == 3)
+                                      @break
+                                  @endif
+                               
                               
                             @empty
                                 {{-- <h3>yes</h3> --}}
                             @endforelse
                       </div>
                       @if (count(App\hieworks\Data::data_adapter($category) ) > 0 )
-                          <div class="text-center text-purple-700 text-sm sm:font-bold">
+                          <div class="text-center text-purple-700 text-sm sm:font-bold my-4">
                             <a href="{{route('category', ['category' =>$category])}}">Browse all ({{count(App\hieworks\Data::data_adapter($category) ) }}) {{$category}} jobs </a>
                           </div>
                       @endif
+
+                    </div> 
+                    {{-- category block ends  --}}
+                      
 
                      @empty
                        <div class="text-center p-6 text-gray-500">
@@ -110,7 +121,7 @@
                       </div>
                   @endforelse
 
-
+                        
 
                 </div>
                     

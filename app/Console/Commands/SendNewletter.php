@@ -47,7 +47,7 @@ class SendNewletter extends Command
         $jobs = Job::where('status', true)
                     ->orderBy('created_at', 'DESC')
                     ->take(4)
-                    ->get(['id', 'job_title', 'job_location', 'job_type'])
+                    ->get(['id', 'job_title', 'job_location','job_category', 'job_type'])
                     ->toArray();
 
         

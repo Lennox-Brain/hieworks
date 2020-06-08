@@ -110,9 +110,9 @@
                                         <span class=" text-base text-lg font-bold">{{$job->job_company}}</span>
                                     </div>
 
-                                    <div class="block flex flex-wrap items-center text-gray-500" x-data="{visible:false}">
-                                        <span class="bg-teal-700 px-3 py-1 rounded-full text-white m-1" role="button" @click="visible = !visible">more info</span>
-                                        <div x-show.transition="visible">
+                                    <div class="block flex flex-wrap items-center text-gray-500">
+                                        <span class="bg-teal-700 px-3 py-1 rounded-full text-white m-1">more info</span>
+                                        <div>
                                             @if($job->onsite)
                                                 <div class="flex justify-center my-2">
                                                      <a href="{{route('apply:job', ['id'=> base64_encode($job->id)])}}" class="py-1 px-3 bg-purple-800 text-white rounded-full">apply on hieworks</a>
@@ -154,10 +154,13 @@
                                     </div>
 
                                     <div class="block flex flex-wrap items-center text-gray-500">
-                                        <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                        </svg>
-                                        <span class="text-base">Dealine  {{$job->job_deadline->format('d M Y')}}</span>
+                                        
+                                       @if ($job->job_deadline)
+                                            <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                           <span class="text-base">Dealine  {{$job->job_deadline->format('d M Y')}}</span>
+                                       @endif
                                     </div>
 
                                     <div class="my-3 flex justify-evenly items-center">
@@ -183,7 +186,7 @@
                                             Fraud Alert
                                         </h3>
                                         <p>
-                                            Deceise from paying money to any person for job or employment opportunities.    
+                                            Deceit from paying money to any person for job or employment opportunities.    
                                         </p>
                                     </div>
                                 </div>

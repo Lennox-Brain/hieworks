@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,7 +46,7 @@ Route::view('/','layouts.home')->name('home');
 // post routes 
 Route::post('/job/apply/confirm', 'PostController@confirmApplication')->name('confirm:application');
 
-Route::view('application/info', 'layouts.applicationcallback')->name('application:callback');
+Route::view('application/status', 'layouts.applicationcallback')->name('application:callback');
 Route::get('/job/apply/{id}', 'GetController@applyJob')->name('apply:job');
 Route::get('/jobs', 'GetController@jobs')->name('jobs');
 Route::get('/job/{title}/{id}', 'GetController@jobInfo')->name('jobinfo');
@@ -85,8 +86,6 @@ Route::view('/about', 'extras.about')->name('about');
 Route::view('/faq', 'extras.faq')->name('faq');
 
 
-Route::view('/forget', 'mails.newsletter2');
-
-// Route::fallback(function(){
-//     return view('layouts.404');
-// });
+Route::fallback(function(){
+    return view('layouts.404');
+});

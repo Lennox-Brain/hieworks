@@ -177,19 +177,19 @@
 
                                     <div class="my-4 mx-2">
                                         <label class="text-gray-700 text-sm bold block" for="job_email">Job Email</label>
-                                        <input type="email" placeholder="Enter job application email" name="job_email" value="{{old('job_email', auth()->user()->email)}}" id="job_email" class="input">
+                                        <input type="email" placeholder="Enter job application email" name="job_email" value="{{old('job_email', $job->job_email)}}" id="job_email" class="input">
                                     </div>
 
 
                                     <div class="my-4 mx-2">
                                         <label class="text-gray-700 text-sm bold block" for="job_phone">Job Phone</label>
-                                        <input type="text" placeholder="Enter job application contact" name="job_phone" value="{{old('job_phone', auth()->user()->contact)}}"  id="job_phone" class="input">
+                                        <input type="text" placeholder="Enter job application contact" name="job_phone" value="{{old('job_phone', $job->job_phone)}}"  id="job_phone" class="input">
                                     </div>
 
                                     <div class="block sm:flex  flex-wrap justify-between">
                                         <div class="my-4 mx-2  sm:w-2/5">
                                             <label class="text-gray-700 text-sm bold block" for="job_company">Company Name</label>
-                                            <input type="text" placeholder="Microsoft Inc." name="job_company" value="{{old('job_company', auth()->user()->company)}}"  id="job_company" class="input">
+                                            <input type="text" placeholder="Microsoft Inc." name="job_company" value="{{old('job_company', $job->job_company)}}"  id="job_company" class="input">
                                         </div>
         
                                         <div class="my-4 mx-2  sm:w-1/2">
@@ -200,7 +200,7 @@
 
                                     <div class="my-4 mx-2">
                                         <label class="text-gray-700 text-sm bold block" for="job_deadline">Deadline*</label>
-                                    <input type="date" placeholder="Enter Job application email" name="job_deadline" id="job_deadline" value="{{old('job_deadline', $job->job_deadline->format('Y-m-d'))}}" min="{{date('Y-m-d')}}" class="input">
+                                    <input type="date" placeholder="Enter Job application email" name="job_deadline" id="job_deadline" value="{{old('job_deadline', ($job->job_deadline) ? $job->job_deadline->format('Y-m-d') : '' ) }}" min="{{date('Y-m-d')}}" class="input">
                                     </div>
 
                                     <div class="my-4 mx-2">
@@ -269,7 +269,7 @@
                             <h3>Summary</h3>
                             <div>
                                 <strong class="text-gray-600"> Your Total is</strong> GHS 0.00 (Free)
-                                <button class="px-3 py-2 bg-purple-800 w-full mt-2 text-white text-bold block rounded-md">Publish for free</button>
+                                <span class="px-3 py-2 bg-purple-800 w-full mt-2 text-white text-bold block"></span>
                             </div>
                         </div>
                 </div>
