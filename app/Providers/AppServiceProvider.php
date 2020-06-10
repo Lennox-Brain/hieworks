@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Hieworks\Data;
 use App\View\Components\Alert;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
@@ -31,5 +32,8 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         View::share(['job_categories'=>Data::CATEGORIES,'home_categories'=>Data::jobCategories(),'job_locations' => Data::LOCATIONS]);
         Blade::component('alert', Alert::class);
+
+        // Paginator::useTailwind();
+        Paginator::defaultSimpleView('vendor.pagination.simple-default');
     }
 }

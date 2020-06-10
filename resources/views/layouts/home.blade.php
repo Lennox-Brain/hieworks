@@ -22,7 +22,7 @@
 
         <div class="container mx-auto px-2 sm:px-0">
             @include('partials.search')
-
+         
           {{-- content  --}}
             <div class="my-12">
                 <div class="job_ bg-white  sm:w-4/5 mx-auto p-1 sm:p-2">

@@ -44,12 +44,12 @@
             <div class="my-8">
                 <div class="job_ bg-white  sm:w-4/5 mx-auto p-1 sm:p-2">
                  
-                          <div class="text-sm md:text-lg flex items-center">
-                            <h4 class="font-bold text-blue-700">
+                          <div>
+                            <h4>
                               @if($title ?? '')
-                                  Latest {{$title ?? ''}} Jobs
+                                  <div class="text-blue-700 font-bold text-base flex items-center">All {{$title ?? ''}} Jobs</div>
                               @else
-                                  Latest Jobs
+                                  <div class="text-blue-700 font-bold text-xl flex items-center">Browsing Latest Jobs</div>
                               @endif
                             </h4>
                           </div>

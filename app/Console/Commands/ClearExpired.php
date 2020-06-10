@@ -6,32 +6,31 @@ use App\Job;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 
-class ClearJobs extends Command
+class ClearExpired extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    // protected $signature = 'command:name';
-    protected $signature = 'clear:jobs';
+    protected $signature = 'clear:expired';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Removes records of all jobs older than 45 days';
+    protected $description = 'clears jobs that have meet deadline';
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    // }
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     /**
      * Execute the console command.
@@ -40,9 +39,9 @@ class ClearJobs extends Command
      */
     public function handle()
     {
-      $jobs  = Job::where('created_at', '<', Carbon::now()->subDays(45)->toDateTimeString())->delete();
-      dd('jobs successfully cleared');
+        Job::where('job_deadline', '<', Carbon::now())->each(function ($item) {
+            $item->delete();
+          });
+          dd('expired jobs cleared');
     }
 }
-
-
