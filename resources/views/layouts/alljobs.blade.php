@@ -44,9 +44,7 @@
             <div class="my-8">
                 <div class="job_ bg-white  sm:w-4/5 mx-auto p-1 sm:p-2">
                  
-                          <div class="text-blue-700 font-bold text-xl flex items-center"> 
                           <div>
-
                             <h4>
                               @if(isset($title))
                                   <div class="text-blue-700 font-bold text-base flex items-center">All {{$title}} Jobs</div>
