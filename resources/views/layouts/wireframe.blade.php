@@ -95,7 +95,7 @@
         <header class="bg-purple-800">
           <div class="justify-between flex flex-wrap px-2 sm:px-0 text-white items-center container mx-auto">
            <div class="logo"><a href="/" class="outline-none"><img src="{{asset('assets/images/hieworks-logo.png')}}" width="100"></a></div>
-                <nav class="flex">
+                <nav class="flex" x-cloak>
                         <button class="sm:hidden focus:outline-none active:bg-transparent" @click="isOpen = !isOpen">
                            <template x-if.transition="!isOpen">
                             <svg fill="none" stroke-linecap="round" class="fill-current w-10 h-10" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
