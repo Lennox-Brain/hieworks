@@ -46,8 +46,8 @@
                  
                           <div>
                             <h4>
-                              @if($title ?? '')
-                                  <div class="text-blue-700 font-bold text-base flex items-center">All {{$title ?? ''}} Jobs</div>
+                              @if(isset($title))
+                                  <div class="text-blue-700 font-bold text-base flex items-center">All {{$title}} Jobs</div>
                               @else
                                   <div class="text-blue-700 font-bold text-xl flex items-center">Browsing Latest Jobs</div>
                               @endif
