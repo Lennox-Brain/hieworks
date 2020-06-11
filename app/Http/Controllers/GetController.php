@@ -27,12 +27,13 @@ class GetController extends Controller
 
         if(!$request->session()->has($id)){
             $request->session()->put($id,$id);
-           Job::find($id)->increment('views', 1);
+           Job::findOrFail($id)->increment('views', 1);
         }
 
         $jobInfo = Job::where(['id'=>$id])
                       ->where(['status'=>true])
                       ->first();
+        if(!$jobInfo) abort(404);
          
         
          $relatedjobs = Job::orderBy('created_at', 'desc')

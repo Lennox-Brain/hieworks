@@ -32,7 +32,7 @@
                                 <li> &hybull; Information about your location and the location of your device,
                                     including your device’s ip address information if applicable.
                                 </li>
-                                <li>&hybull; Form you fill to upload or apply for job positopns.
+                                <li>&hybull; Form you fill to upload or apply for job positions.
                                 </li>
                             </ul> 
                             

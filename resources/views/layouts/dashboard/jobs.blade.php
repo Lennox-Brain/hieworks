@@ -92,7 +92,7 @@
                                                         Category
                                                 </th>
                                                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-sm leading-4 uppercase tracking-wider">
-                                                        Experience
+                                                        Post date
                                                 </th>
                                                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-sm leading-4 uppercase tracking-wider">
                                                         action
@@ -127,7 +127,7 @@
                                                         </td>
 
                                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                            <div class="text-sm leading-5">{{$job->job_experience}}</div>
+                                                            <div class="text-sm leading-5">{{$job->created_at->diffForHumans()}}</div>
                                                         </td>
 
 
@@ -147,7 +147,7 @@
                                                     </tr>
                                                @empty
                                                     <tr>
-                                                       <td colspan="5">
+                                                       <td colspan="6">
                                                             <div class="text-center p-6 text-gray-500">
                                                                 <div class="w-1/2 mx-auto flex items-center justify-center">
                                                                 <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs">

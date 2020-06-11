@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         'App\Console\Commands\ClearJobs',
         'App\Console\Commands\SendNewletter',
+        'App\Console\Commands\ClearExpired',
     ];
 
     /**
@@ -30,6 +31,9 @@ class Kernel extends ConsoleKernel
         ->daily();
 
         $schedule->command('send:newsletter')
+        ->daily();
+
+        $schedule->command('clear:expired')
         ->daily();
     }
 

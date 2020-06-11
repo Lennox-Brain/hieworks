@@ -13,7 +13,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="@yield('page-description', 'Browse and apply for the latest works and job vacancies in Ghana.')">
         <link rel="canonical" href="https://hieworks.com" />
-        <meta name="keywords" content="works in Ghana, jobs in ghana, job vacancies, recruitements, works, employments, hire employees">
+        <meta name="keywords" content="works in Ghana, quick jobs, fast jobs, jobs in ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees">
         <meta name="theme-color" content="#553c9a">
         <meta name="MobileOptimized" content="320">
         <meta name="HandheldFriendly" content="true">
@@ -21,7 +21,7 @@
         <meta name="author" content="Lennox Inc.">
         <meta name="csrf-token" content="{{csrf_token()}}">
         <title>@yield('page-title', 'Browse latest works and job opportunities in Ghana - hieworks.com')</title>
-        <link rel="stylesheet" href="{{mix('css/app.css')}}"/>
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
         @stack('app_css')
 
 
@@ -95,7 +95,7 @@
         <header class="bg-purple-800">
           <div class="justify-between flex flex-wrap px-2 sm:px-0 text-white items-center container mx-auto">
            <div class="logo"><a href="/" class="outline-none"><img src="{{asset('assets/images/hieworks-logo.png')}}" width="100"></a></div>
-                <nav class="flex">
+                <nav class="flex" x-cloak>
                         <button class="sm:hidden focus:outline-none active:bg-transparent" @click="isOpen = !isOpen">
                            <template x-if.transition="!isOpen">
                             <svg fill="none" stroke-linecap="round" class="fill-current w-10 h-10" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">

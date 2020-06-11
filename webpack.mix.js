@@ -26,12 +26,14 @@ mix.js('resources/js/app.js', 'public/js')
     .purgeCss()
     .options({ processCssUrls: false });
 
-    if (mix.inProduction()) {
-        mix.version();
-    }
+
 
 
     // .options({
     //     processCssUrls:false,
     //     postCss:[tailwind('./tailwind.config.js')]
     // })
+
+    if (mix.inProduction()) {
+        mix.version();
+    }

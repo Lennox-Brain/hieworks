@@ -37,7 +37,7 @@
                         @endif
 
                         @if (session('postStatus'))
-                                <div class="bg-teal-100 shadow border-teal-400 border-t-2 pl-2 pr-1 py-3 sm:w-4/5 my-2 mx-auto flex justify-evenly" role="alert">
+                                <div class="bg-teal-100 shadow border-teal-400 border-t-2 pl-2 pr-1 py-3 sm:w-4/5 my-2 mx-auto flex justify-evenly" role="alert" x-cloak>
                                     <strong class="font-bold mr-2 text-gray-500">
                                         <svg class="fill-current text-teal-400 h-6 w-6 text-gray-500 mr-4" viewBox="0 0 20 20">
                                             <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
