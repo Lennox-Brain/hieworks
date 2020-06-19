@@ -54,8 +54,29 @@ class LoginController extends Controller
             return redirect(route('user:account'));
     }
 
+
+    public function backendAuthenticate(Request $request){
+           $data =  Validator::make($request->except('_token'), [
+                'email' => 'required',
+                'password' => 'required'
+            ])->validate();
+            $credentials =  ['email'=> $data['email'], 'password' => $data['password'], 'status' => true];
+
+            $isLoggedin = Auth::guard('admin')->attempt($credentials, true);
+            if(!$isLoggedin) return redirect()->back()->withErrors(['auth_error' => 'wrong username or password'])->withInput();
+            return redirect(route('backend:account'));
+    }
+
+
+
     public function logout(){
         Auth::logout();
+        return redirect(route('home'));
+    }
+
+     public function backendLogout()
+    {
+        Auth::guard('admin')->logout();
         return redirect(route('home'));
     }
 }

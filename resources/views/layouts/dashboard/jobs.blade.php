@@ -109,11 +109,7 @@
 
                                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                           <div class="text-sm leading-5">
-                                                            @if ($job->views >= 1000)
-                                                               {{ round(($job->views * (1/1000) ), PHP_ROUND_HALF_UP ) .'k' }}
-                                                            @else
-                                                               {{ $job->views }}
-                                                            @endif
+                                                            {{post_views($job->views)}}
                                                           </div>
                                                        </td>
 

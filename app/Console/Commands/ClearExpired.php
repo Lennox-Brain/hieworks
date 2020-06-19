@@ -40,7 +40,7 @@ class ClearExpired extends Command
     public function handle()
     {
         Job::where('job_deadline', '<', Carbon::now())->each(function ($item) {
-            $item->delete();
+            $item->update(['status' => false]);
           });
           dd('expired jobs cleared');
     }

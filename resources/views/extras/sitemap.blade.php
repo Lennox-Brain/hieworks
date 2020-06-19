@@ -9,7 +9,7 @@
                 Sitemap - hieworks.com
             </h3>
                <p>
-                    Our hieworks site map helps users to easily navigate to through pages with complete ease.
+                    Our hieworks site map helps users to easily navigate through pages with complete ease.
                </p>
                <div>
                 

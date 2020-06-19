@@ -37,10 +37,6 @@ class CreateJobsTable extends Migration
             $table->ipAddress('ip');
             $table->timestamps();
 
-            $table->foreign('user_id')
-            ->references('id')->on('users')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
         });
     }
 

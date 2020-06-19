@@ -51,7 +51,11 @@ class SendNewletter extends Command
                     ->toArray();
 
         
-          Mail::to($subscribers)->send( new MailNewsletter($jobs));   
+          foreach($subscribers->chunk(1) as $chunk){
+               foreach($chunk as $email){
+                     Mail::to($email)->send( new MailNewsletter($jobs));
+               }
+          }   
           echo 'newsletters sent';
       
 

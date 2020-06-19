@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Job;
 use App\User;
-use Carbon\Carbon;
 use App\Newsletter;
 use App\Application;
 use App\Hieworks\Data;

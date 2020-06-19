@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
+use App\Category;
 use App\Job;
 use App\Hieworks\Data;
 use App\Hieworks\Helpers;
@@ -24,14 +26,14 @@ class GetController extends Controller
     public function jobInfo(Request $request)
     {
         $id = base64_decode($request->id);
-
-        if(!$request->session()->has($id)){
-            $request->session()->put($id,$id);
-           Job::findOrFail($id)->increment('views', 1);
-        }
+        $job_id = 'job_'.$id;
+        
+        if(session()->has($job_id) == false){
+                Job::findOrFail($id)->increment('views', 1);
+                session()->put($job_id, $job_id);
+          }  
 
         $jobInfo = Job::where(['id'=>$id])
-                      ->where(['status'=>true])
                       ->first();
         if(!$jobInfo) abort(404);
          
@@ -80,6 +82,7 @@ class GetController extends Controller
 
    public function jobCategories(Request $request)
    {
+     
        $category = $request->category;
        $categories =  Job::where('job_category',$category)
                            ->orderBy('created_at', 'desc')
@@ -87,10 +90,16 @@ class GetController extends Controller
       return view('layouts.alljobs', ['jobs' => $categories, 'title'=>$category]);
      }
    
-     public function applyJob($id)
+   public function applyJob($id)
      {
             $id = base64_decode($id);
             $job = job::findOrFail($id)->id;
             return view('layouts.apply', ['job_id'=>$job]);
      }
+
+
+
+ 
+
+
 }

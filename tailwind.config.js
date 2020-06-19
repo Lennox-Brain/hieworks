@@ -1,8 +1,21 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    listStylePosition:{},
+    listStyleType:{},
+    listStyle:{}
+   
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    borderWidth: ['responsive', 'last', 'hover', 'focus'],
+    borderWidth: ['responsive', 'first', 'hover', 'focus'],
+  },
+  plugins: [
+    
+  ],
+  corePlugins: {
+    listStyle:false,
+    listStylePosition:false,
+    listStyleType:false
+  }
 }

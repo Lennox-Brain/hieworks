@@ -65,10 +65,14 @@ class Data{
 
     public static function jobCategories(){
         // return [];
-        return DB::table('jobs')
-        ->select(DB::raw('count(job_title) as jobs, job_category'))
-        ->groupBy('job_category')
-        ->orderBy('jobs', 'desc')
+        // return DB::table('jobs')
+        // ->select(DB::raw('count(job_title) as jobs, job_category'))
+        // ->groupBy('job_category')
+        // ->orderBy('jobs', 'desc')
+        // ->pluck('job_category');
+
+        return Job::groupBy('job_category')
+        ->orderByRaw('count(job_title) desc')
         ->pluck('job_category');
     }
 

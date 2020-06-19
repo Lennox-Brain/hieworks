@@ -55,6 +55,17 @@ class Validators{
     }
 
 
+    //backend validation rules 
+
+    public static function validateArticle($data){
+            return Validator::make($data, [
+                'article_title' => 'required|max:255',
+                'article_description' => 'required',
+                'article_category' => 'required|exists:categories,id'
+            ]);
+    }
+
+
 }
 
 

@@ -13,14 +13,17 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="@yield('page-description', 'Browse and apply for the latest works and job vacancies in Ghana.')">
         <link rel="canonical" href="https://hieworks.com" />
-        <meta name="keywords" content="works in Ghana, quick jobs, fast jobs, jobs in ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees">
+        <meta name="keywords" content="career, ghana careers, ghana, jobs, resumes, professions, recruitment agencies in ghana, ghana recruitment agencies, jobs in ghana, jobseekers, employers, employers in ghana, ghanaian companies, vacancy, job vacancy, human resource development, HR, cv, creating cvs, samples, application letter works in Ghana, quick jobs, fast jobs, jobs in ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees, remote jobs, remote work, job board, hiring remote workers, telecommunication jobs, remote job board">
         <meta name="theme-color" content="#553c9a">
         <meta name="MobileOptimized" content="320">
         <meta name="HandheldFriendly" content="true">
+        <meta name="distribution" content="global"/>
+        <meta name="robots" content="index, follow"/>
+        <meta name="copyright" content="2020 - {{date('Y')}} By hieworks.com Ltd - www.hieworks.com"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, target-densitydpi=device-dpi, shrink-to-fit=no">
         <meta name="author" content="Lennox Inc.">
         <meta name="csrf-token" content="{{csrf_token()}}">
-        <title>@yield('page-title', 'Browse latest works and job opportunities in Ghana - hieworks.com')</title>
+        <title>@yield('page-title', "Browse latest works opportunities and job vacancies in Ghana - hieworks.com")</title>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
         @stack('app_css')
 
@@ -180,7 +183,17 @@
                                   <span>Register</span>
                                 </a>
                             </li>
-                          @endguest
+
+                           @endguest
+
+                            <li class="p-2 py-3 hover:bg-purple-700">
+                                <a href="{{route('blog')}}" class="flex items-center outline-none">
+                                  <span>
+                                    <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                                  </span>
+                                  <span>Blog</span>
+                                </a>
+                            </li>
                         </ul>
                 </nav>
            </div>
@@ -301,6 +314,15 @@
                       </li>
                   @endauth
 
+                  <li>
+                      <a href="{{route('blog')}}" class="flex items-center outline-none">
+                      <span>
+                        <svg fill="none" class="h-6 w-6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                      </span>
+                      <span class="ml-1">Blog</span>
+                      </a>
+                  </li>
+
                 </ul>
             </div>
            </div>
@@ -316,9 +338,10 @@
               <div class="block md:flex flex-wrap justify-evenly text-gray-400">
                   <div class="my-4">
                       <h4 class="font-bold">Support & Help</h4>
-                      <div class="text-sm pt-2">
+                      <div class="text-sm pt-2 leading-7">
                         <ul>
                             <li><a href="/about#contact-us">Contact Us</a></li>
+                            <li><a href="{{route('blog')}}">Blog</a></li>
                             <li><a href="{{route('faq')}}">FAQ</a></li>
                             <li><a href="{{route('sitemap')}}">Sitemap</a></li>
                         </ul>
@@ -327,7 +350,7 @@
 
                   <div class="my-4 flex-grow-1">
                     <h4 class="font-bold">Get to know us</h4>
-                    <div class="text-sm pt-2">
+                    <div class="text-sm pt-2 leading-7">
                       <ul>
                         <li><a href="{{route('about')}}">About Us</a></li>
                         <li><a href="{{route('policy')}}">Privacy Policy</a></li>
@@ -342,7 +365,7 @@
                     <p>
                       follow us on our social media platforms to get the latest updates from us.
                     </p>
-                    <div class="flex items-center mt-3 flex-wrap">
+                    <div class="flex items-center mt-3 flex-wrap leading-7">
                         <div class="font-bold">
                           facebook, twitter (hieworks Gh)
                         </div>
@@ -353,7 +376,7 @@
               </div>
            </div>
            <div class=" text-gray-500">
-               <a href="/">&copy; {{date('Y')}} | hieworks ltd.</a>
+               <a href="/">&copy; {{date('Y')}} | hieworks Ltd.</a>
            </div>
         </footer>
       </main>
