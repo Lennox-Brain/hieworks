@@ -43,12 +43,19 @@
   }
 }
 
-
-
 .job-card{
-   @apply border w-full mx-auto p-1 flex items-center h-32;
-   margin-top:-.2px;
+   @apply w-full mx-auto p-2 flex items-center h-32 border border-t-0 border-l-0 border-r-0;
 }
+
+@screen sm{
+  @apply 
+  @apply 
+}
+
+
+
+
+
 
 
 .footer{
@@ -63,11 +70,13 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   box-sizing: border-box;
+  
   appearance: none;
   background-color: #fff;
   background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNSIgdmlld0JveD0iNyAxMCAxMCA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiMwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9Ii43NCIgZD0iTTcgMTBsNSA1IDUtNXoiLz48L3N2Zz4=);
   background-position: calc(100% - 10px) 18px;
   background-repeat: no-repeat;
+  
 
 }
 
@@ -85,6 +94,57 @@ form-group{
   @apply text-blue-700 font-bold
 }
 
+// articles
+
+.mini-title{
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.article_description{
+     ol li{
+      margin-left: 1rem;
+      list-style: initial;
+     }
+
+     ul li{
+      margin-left: 1rem;
+      list-style: initial;
+     }
+
+     a{
+          @apply text-blue-600;
+          text-decoration: underline;
+      }
+      .read-more{
+        @apply no-underline font-semibold block
+      }
+   
+     blockquote{
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+
+      &::before{
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+      }
+    
+      p{
+        display: inline;
+      }
+
+     }
+}
+
+ 
 
 @import "tailwindcss/utilities";
 

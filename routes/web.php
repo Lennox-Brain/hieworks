@@ -14,6 +14,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix'=>'backend'], function(){
+     Route::group(['middleware' => 'backendAuth'], function(){
+        Route::get('/account', 'Backend\GetController@showAccount')->name('backend:account');
+        Route::get('/new/article', 'Blog\GetController@showArticleForm')->name('show:newArticle');
+        Route::post('/post/article', 'Blog\PostController@postArticle')->name('backend:postArticle');
+        Route::post('/new/article/category', 'Blog\PostController@newArticleCategory')->name('backend:newArticleCategory');
+        Route::post('/update/category', 'Blog\UpdateController@updateArticleCategory')->name('backend:updateCategory');
+        Route::get('/update/article/{id}', 'Blog\UpdateController@updateArticle')->name('backend:updateArticle');
+        Route::post('/update/article', 'Blog\UpdateController@postUpdateArticle')->name('backend:postUpdateArticle');
+        Route::get('delete/category/{id}', 'Blog\DeleteController@deleteCategory')->name('delete_category');
+        Route::get('delete/article/{id}', 'Blog\DeleteController@deleteArticle')->name('backend:deleteArticle');
+        Route::get('backend/logout', 'Auth\LoginController@backendLogout')->name('backend:logout');
+
+        
+     });
+
+     Route::post('/authentication', 'Auth\LoginController@backendAuthenticate')->name('backend:auth');
+     Route::view('/login', 'layouts.backend.login')->name('backend:login');
+});
+
+
 
 
 Route::group(['prefix'=>'dashboard'], function(){
@@ -56,6 +77,11 @@ Route::get('/category/{category}', 'GetController@jobCategories')->name('categor
 Route::post('/newsletter', 'PostController@newsletter')->name('newsletter');
 
 
+Route::get('/blog', 'Blog\GetController@blogPosts')->name('blog');
+Route::get('/post/{title}/{id}', 'Blog\GetController@blogInfo')->name('bloginfo');
+Route::get('/category/{category}/{id?}', 'Blog\GetController@postByCategory')->name('blog:category');
+
+
 // auth routes 
 Route::view('/login', 'layouts.login')->name('login');
 Route::view('/register', 'layouts.register')->name('register');
@@ -85,7 +111,9 @@ Route::view('/sitemap', 'extras.sitemap')->name('sitemap');
 Route::view('/about', 'extras.about')->name('about');
 Route::view('/faq', 'extras.faq')->name('faq');
 
-
+Route::get('/test', function(){
+    return password_hash('lennox94', PASSWORD_BCRYPT);
+});
 Route::fallback(function(){
     return view('layouts.404');
 });

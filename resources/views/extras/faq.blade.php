@@ -154,6 +154,21 @@
                     </div>
                  </div>
 
+                 <div class="tab w-full overflow-hidden border-t">
+                    <input class="absolute opacity-0" id="tab-single-eight" type="radio" name="tabs2">
+                    <label class="block p-5 leading-normal cursor-pointer tab-heading text-base md:text-lg font-bold" for="tab-single-eight">What is a remote Job can I apply for one?</label>
+                    <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                       <p class="p-5 font-bold">
+                         Any job that is not tied to a physical office is termed as a remote job.
+                         In such a job, work is usually accomplished using an
+                         internet connection and a computer.
+                         Persons such as Graphic Designers, Freelance writters, software engineers, Digital marketters,
+                         custormer supports etc. may
+                         apply for remote jobs from any part of the world.
+                       </p>
+                    </div>
+                  </div>
+
                 </div>
              </div>
 

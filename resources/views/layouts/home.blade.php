@@ -20,28 +20,28 @@
         </div>
       </div>
 
-        <div class="container mx-auto px-2 sm:px-0">
+        <div class="container mx-auto">
             @include('partials.search')
          
           {{-- content  --}}
             <div class="my-12">
-                <div class="job_ bg-white  sm:w-4/5 mx-auto p-1 sm:p-2">
+                <div class="job_ bg-white w-full md:w-4/5 mx-auto">
                   @forelse ($home_categories as $category)
                       
                   <div class="my-8">
                   {{-- category title  --}}
                       @if(count(App\hieworks\Data::data_adapter($category)) > 0)
-                          <div class="text-blue-700 font-bold text-xl flex items-center">
+                          <div class="text-blue-700 font-bold text-xl flex items-center p-4"">
                             <h4 class="align-middle">{{$category}}</h4>
                            
                           </div>
                       @endif
                   
                      {{-- job_wrapper --}}
-                      <div class="sm:m-4 mt-3">
+                      <div class="mt-3">
                           @forelse(App\hieworks\Data::data_adapter($category) as $job)
-                                <a href="{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}" class="outline-none">
-                                    <div class="job-card sm:p-2">
+                                <a href="{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}" class="block outline-none first:border-t">
+                                    <div class="job-card sm:border-l sm:border-r">
                                       <div class="mr-2">
                                         @if($job->company_logo)
                                               <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
@@ -49,10 +49,13 @@
                                               <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
                                         @endif
                                       </div>
-
+                                    
                                       <div class="w-full">
                                         <div class="text-right text-sm text-gray-500">
-                                             <span>{{$job->created_at->diffForHumans()}}</span>
+                                           @if (latest_badge($job->created_at))
+                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold text-white">New</small>
+                                           @endif
+                                             <span class="pr-3">{{$job->created_at->diffForHumans()}}</span>
                                         </div>
                                          
                                           <div class="text-blue-700 font-bold job-title text-sm">
@@ -101,7 +104,7 @@
                             @endforelse
                       </div>
                       @if (count(App\hieworks\Data::data_adapter($category) ) > 0 )
-                          <div class="text-center text-purple-700 text-sm sm:font-bold my-4">
+                          <div class="text-center text-purple-700 text-sm sm:font-bold my-4 py-6">
                             <a href="{{route('category', ['category' =>$category])}}">Browse all ({{count(App\hieworks\Data::data_adapter($category) ) }}) {{$category}} jobs </a>
                           </div>
                       @endif

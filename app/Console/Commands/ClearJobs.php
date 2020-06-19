@@ -40,7 +40,8 @@ class ClearJobs extends Command
      */
     public function handle()
     {
-      $jobs  = Job::where('created_at', '<', Carbon::now()->subDays(45)->toDateTimeString())->delete();
+      $jobs  = Job::where('created_at', '<', Carbon::now()->subDays(45)->toDateTimeString())
+        ->update(['status'=> false]);
       dd('jobs successfully cleared');
     }
 }

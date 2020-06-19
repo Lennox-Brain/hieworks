@@ -21,13 +21,13 @@
                         <label class="block text-sm font-bold mb-2 text-gray-600" for="email">
                             Email Address
                         </label>
-                        <input class="appearance-none border rounded w-full py-1 px-3 text-gray-600" id="email" type="email" name="email" placeholder="Email Address">
+                        <input class="appearance-none border rounded w-full py-1 px-3 text-gray-600" value="{{old('email')}}" id="email" type="email" name="email" placeholder="Email Address">
                     </div>
                     <div class="mb-6">
                         <label class="block text-sm font-bold mb-2 text-gray-600" for="password">
                             Password
                         </label>
-                        <input name="password" class="appearance-none border rounded w-full py-1 px-3 text-gray-600 mb-3" id="password" :type="toggle == 0 ? 'password': 'text'" placeholder="**** **** ****">
+                        <input name="password" value="{{old('password')}}" class="appearance-none border rounded w-full py-1 px-3 text-gray-600 mb-3" id="password" :type="toggle == 0 ? 'password': 'text'" placeholder="**** **** ****">
                     </div>
 
                     <div class="mb-6">
@@ -81,12 +81,12 @@
                         </div>
 
                         <div class="mt-4 md:mt-0 text-blue-700">
-                            <a href="{{route('forgotpassword')}}" class="no-underline">Forget Password?</a>
+                            <a href="{{route('forgotpassword')}}" class="no-underline">Forgot Password?</a>
                         </div>
 
                     </div>
                     <div class="text-sm mt-4 text-blue-700">
-                        <a href="{{route('register')}}">don't have an account, signup</a>
+                        <a href="{{route('register')}}">don't have an account, sign up</a>
                     </div>
                 </form>
                 </div>

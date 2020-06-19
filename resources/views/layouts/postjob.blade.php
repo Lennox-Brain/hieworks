@@ -208,8 +208,8 @@
                                     </div>
 
                                     <div class="my-4 mx-2">
-                                        <label class="text-gray-700 text-sm bold block" for="job_description">Job Description*</label>
-                                        <textarea placeholder="Full job description" rows="8" class="input text-left" name="job_description" id="job_description">{{old('job_description')}}</textarea>
+                                        <label class="text-gray-700 text-sm bold block" for="description">Job Description*</label>
+                                        <textarea placeholder="Full job description" rows="8" class="input text-left" name="job_description" id="description">{{old('job_description')}}</textarea>
                                     </div>
                                     <div>
                                         @csrf
@@ -282,4 +282,5 @@
    <script src="{{ mix('/js/tinymce.min.js') }}"></script>
    <script src="{{ mix('/js/init.js') }}"></script>
    <script src="{{ mix('/js/app.js') }}"></script>
+   
 @endprepend

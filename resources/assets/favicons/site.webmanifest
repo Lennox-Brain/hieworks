@@ -15,6 +15,6 @@
     ],
     "theme_color": "#553c9a",
     "background_color": "#553c9a",
-    "start_url": "/?utm_source=pwa",
+    "start_url": "/?utm_source=pwa&utm_source=pwa&utm_campaign=pwa-app",
     "display": "standalone"
 }

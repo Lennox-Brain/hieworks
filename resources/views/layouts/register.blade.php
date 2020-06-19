@@ -11,7 +11,7 @@
             <div class="block md:flex p-2 sm:p-10 sm:w-4/5 mx-auto">
                 <div class="w-full md:w-2/5">
                   <img src="{{asset('/assets/icons/register.svg')}}" alt="registration illustration" class=" w-3/5 mx-auto md:w-4/5">
-                  <h4 class=" text-blue-700 text-xl md:text-2xl m-3 font">Why Signup for an account ?</h4>
+                  <h4 class=" text-blue-700 text-xl md:text-2xl m-3 font">Why Signbup for an account ?</h4>
                     <ul class="text-gray-700">
                         <li>
                             <div class="bg-white border rounded-full my-3 p-1 flex items-center">
@@ -42,7 +42,7 @@
                                         <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                                     </svg>
                                 </span>
-                                <span>Regular insigts notifcations</span>
+                                <span>Regular insights notifications</span>
                             </div>
                         </li>
 
@@ -53,7 +53,7 @@
                                         <path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
                                     </svg>
                                 </span>
-                                <span>Review Cv's on the go</span>
+                                <span>Review Cv's and cover letters on the go</span>
                             </div>
                         </li>
                     </ul>
