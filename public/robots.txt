@@ -1,2 +1,18 @@
 User-agent: *
-Disallow:
+
+Disallow: /backend/*
+Disallow: /dashboard/*
+Disallow: /terms
+Disallow: /policy
+
+Allow: /jobs
+Allow: /blog
+Allow: /job/*
+Allow: /category/*
+Allow: /job/apply/*
+Allow: /post/*
+Allow: /login
+Allow: /register
+Allow: /reset/password
+Allow: /about
+Allow: /faq

@@ -29,7 +29,7 @@
                     @forelse ($blogPosts as $article)
                         <div class="block md:flex items-center bg-white text-gray-700 p-3 border my-2">
                                     <div class="w-full md:w-1/5">
-                                      <img class="object-contain h-40 w-full" src="{{asset('assets/icons/blog_file.svg')}}">
+                                      <img class="object-contain h-40 w-full" src="{{asset('assets/icons/blog_file.svg')}}" alt="article-thumbnail" title="article image">
                                     </div>
                                     <div class="w-full md:4/5">
                                       <div class="md:pl-4 my-3 text-blue-700">
