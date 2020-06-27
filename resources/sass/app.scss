@@ -12,6 +12,11 @@
   background-size: cover;
   background-position: center center;
 }
+
+.welcome-message p{
+  font-family: 'Varela Round', sans-serif;
+}
+
 .dashboard-menu{
   @apply bg-white shadow px-0  hidden ;
 }

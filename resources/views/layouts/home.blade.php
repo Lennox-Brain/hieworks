@@ -4,14 +4,13 @@
    <div>
       <div class="bg-gray-200">
         <div class="flex flex-wrap items-center border-b pb-2 pt-4 container mx-auto">
-          <div class="lg:w-1/2 flex flex-col items-center px-3">
-            <h1 class="text-center lg:text-left text-2xl sm:text-4xl font-light text-blue-700 leading-tight mb-4">Bring your job search to an end <strong class="font-black text-3xl sm:text-4xl block">Get Hired, Get Happy!</strong></h1>
-            <p class="lg:text-right sm:text-lg text-gray-600 lg:pr-40 leading-relaxed">
-               We are your online destination for fresh jobs in
-               Ghana and Africa. Browse unlimited job offers
-               to end your job search!
+          <div class="lg:w-1/2 flex flex-col items-center px-3 welcome-message">
+            <h1 class="capitalize text-center text-xl sm:text-4xl font-light text-blue-700 leading-tight mb-4">Bring your job search to an end <strong class="font-black text-3xl sm:text-4xl block">Get Hired, Get Happy!</strong></h1>
+            <p class="lg:text-right sm:text-lg text-gray-600  leading-relaxed capitalize">
+               We are your online portal for latest job vacancies in Ghana and Remotely. We help end your job searching !
+               
             </p>
-            <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4 text-lg rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
+            <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4  rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
           </div>
 
            <div class="flex flex-grow-1 flex-start" >
@@ -53,7 +52,7 @@
                                       <div class="w-full">
                                         <div class="text-right text-sm text-gray-500">
                                            @if (latest_badge($job->created_at))
-                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold text-white">New</small>
+                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold">New</small>
                                            @endif
                                              <span class="pr-3">{{$job->created_at->diffForHumans()}}</span>
                                         </div>
@@ -62,7 +61,7 @@
                                               {{$job->job_title}}
                                           </div>
 
-                                          <div class="block flex mt-2">
+                                          <div class="flex mt-2">
                                             {{-- job type  --}}
                                              <div class="bg-purple-800 rounded-full px-2 py-1 text-white flex items-center mx-2">
                                                 <span>
@@ -144,7 +143,7 @@
                               </svg>
 
                             </h2>
-                            <p class="mt-2 text-gray-600 md:text-gray-400">Be the first to get latest job updates. Subscribe today</p>
+                            <p class="mt-2 text-gray-600 md:text-gray-400 capitalize">Be the first to get latest job updates. Subscribe today</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center pb-6 md:py-0 md:w-1/2 md:border-b-8 border-purple-900">

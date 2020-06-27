@@ -25,6 +25,7 @@
         <meta name="csrf-token" content="{{csrf_token()}}">
         <title>@yield('page-title', "Latest Job Vacancies in Ghana and Remotely - hieworks")</title>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Varela+Round&display=swap" rel="stylesheet">         
         @stack('app_css')
 
 
@@ -363,11 +364,11 @@
                   <h4 class="font-bold">Let's Get Interactive</h4>
                   <div class="text-sm pt-2 text-wrap">
                     <p>
-                      follow us on our social media platforms to get the latest updates from us.
+                      Follow us on our social media platforms to get the latest updates from us.
                     </p>
                     <div class="flex items-center mt-3 flex-wrap leading-7">
                         <div class="font-bold">
-                          facebook, twitter (hieworks Gh)
+                          <a href="https://www.facebook.com/hieworks/" target="_blank">Facebook</a>, <a href="https://twitter.com/hieworks" target="_blank">Twitter</a> (Hieworks Gh)
                         </div>
                     </div>
                   </div>
@@ -376,7 +377,7 @@
               </div>
            </div>
            <div class=" text-gray-500">
-               <a href="/">&copy; {{date('Y')}} | hieworks Ltd.</a>
+               <a href="/">&copy; {{date('Y')}} | Hieworks Ltd.</a>
            </div>
         </footer>
       </main>
