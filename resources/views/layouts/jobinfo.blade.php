@@ -192,7 +192,7 @@
                                             Fraud Alert
                                         </h3>
                                         <p>
-                                            Deceit from paying money to any person for job or employment opportunities.    
+                                            Do not pay money to anybody for job or employment opportunities.    
                                         </p>
                                     </div>
                                 </div>
@@ -205,21 +205,21 @@
 
             <div class="w-full md:w-4/6 my-2 bg-white">
                  <div class="my-4  text-center hidden sm:block">
-                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center  bg-gray-300 text-blue-700 px-4 py-3">
+                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
                                  view latest jobs today &nbsp;
                                 <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </a>
                  </div>
 
                 <div class="p-4">
-                    <h3 class="text-blue-700 font-bold text-base flex items-center text-2xl">Related Jobs</h3>
+                    <h3 class="text-blue-700 font-bold flex items-center text-2xl">Related Jobs</h3>
                 </div>
                 <div>
                     @forelse($relatedJobs as $job)
                                  
                             <a href="{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}" class="block outline-none first:border-t">
                                 <div class="job-card sm:border-l sm:border-r">
-                                <div class="mr-2">
+                                <div class="mr-2">npm
                                     @if($job->company_logo)
                                         <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
                                     @else 

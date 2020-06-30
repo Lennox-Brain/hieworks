@@ -78,10 +78,6 @@
         <meta name="theme-color" content="#553c9a">
 
 
-
-
-
- 
     </head>
     <body class=" bg-gray-100 min-h-screen">
         {{-- service scripts   --}}
