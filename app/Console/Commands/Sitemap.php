@@ -39,7 +39,8 @@ class Sitemap extends Command
     public function handle()
     {
         SitemapGenerator::create(config('app.url'))
-        ->writeToFile(public_path('/sitemap.xml'));
+        ->setMaximumCrawlCount(45000)
+        ->writeToFile(public_path('sitemap.xml'));
         dd('sitemap generated successfully');
     }
 }
