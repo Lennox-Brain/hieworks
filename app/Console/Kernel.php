@@ -35,6 +35,10 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('clear:expired')
         ->daily();
+
+        $schedule->command('generate:sitemap')
+        ->twiceDaily(11, 21);;
+        
     }
 
     /**

@@ -83,8 +83,6 @@
                                               <span class="text-sm">{{$job->job_location}}</span>
                                            </div>
                                         
-
-
                                            {{-- details ends  --}}
                                           </div>
 
@@ -92,14 +90,13 @@
                                     </div>
                                     
                                 </a>
-                               
                                   @if ($loop->iteration == 3)
                                       @break
                                   @endif
                                
                               
                             @empty
-                                {{-- <h3>yes</h3> --}}
+                                {{-- <h3>no post found</h3> --}}
                             @endforelse
                       </div>
                       @if (count(App\hieworks\Data::data_adapter($category) ) > 0 )
