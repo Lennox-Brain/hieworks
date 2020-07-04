@@ -1,6 +1,6 @@
 @extends('layouts.wireframe')
 
-@section('page-title', $job->job_title . ' - hieworks.com')
+@section('page-title', $job->job_title . ' | hieworks.com')
 @section('page-description', 'apply for '.$job->job_title .' role')
 
 @section('service-scripts')

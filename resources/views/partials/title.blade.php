@@ -1,0 +1,1 @@
+Current Jobs in Ghana {{date('Y')}} | Job Vacancies in Ghana Today

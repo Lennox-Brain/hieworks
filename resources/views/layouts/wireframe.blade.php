@@ -23,7 +23,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, target-densitydpi=device-dpi, shrink-to-fit=no">
         <meta name="author" content="Lennox Inc.">
         <meta name="csrf-token" content="{{csrf_token()}}">
-        <title>@yield('page-title', "Latest Jobs in Ghana and Remote Jobs - Hieworks")</title>
+        <title>@yield('page-title', View::make('partials.title'))</title>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
         <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Varela+Round&display=swap" rel="stylesheet">         
         @stack('app_css')

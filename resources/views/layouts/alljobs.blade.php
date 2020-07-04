@@ -1,6 +1,6 @@
 @extends('layouts.wireframe')
 
-@section('page-title', 'Current Jobs in Ghana - Remote Jobs '. date('Y'). ' - hieworks.com')
+@section('page-title', 'Current Jobs in Ghana | Remote Jobs '. date('Y'). ' - hieworks.com')
 
 @section('content-wrapper')
    <div>

@@ -36,7 +36,8 @@ class DeleteController extends Controller
         if($job->cpmpany_logo){
             Helpers::deleteFile($job->cpmpany_logo, $company_path);
         }
-        $job->delete();
+    
+        $job->update(['status'=> false]);
         return redirect(route('user:jobs'));
     }
 
