@@ -79,7 +79,8 @@
 
 
     </head>
-    <body class=" bg-gray-100 min-h-screen">
+    <body class="bg-gray-100 min-h-screen">
+
         {{-- service scripts   --}}
             <!-- Google Tag Manager (noscript) -->
                   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KD6JSCW"

@@ -1,7 +1,7 @@
 @extends('layouts.wireframe')
 
 @section('page-title', $job->job_title . ' | hieworks.com')
-@section('page-description', 'apply for '.$job->job_title .' role')
+@section('page-description', 'apply for '.$job->job_title .' job')
 
 @section('service-scripts')
     <div id="fb-root"></div>
@@ -13,8 +13,6 @@
 
 @section('content-wrapper')
 
-   <div>
-     
 
         <div class="container mx-auto px-2 sm:px-0">
             @include('partials.search')
@@ -99,12 +97,7 @@
                    </div>
 
                    <div class="w-full md:w-2/5 md:px-3 my-2">
-                        <div class="my-4  text-center sm:hidden">
-                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
-                                 view latest jobs today &nbsp;
-                                <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </a>
-                        </div>
+                       
                        <div class="border p-4">
                                 <div>
                                     <div class="block sm:flex flex-wrap items-center text-gray-600">
@@ -165,7 +158,7 @@
                                             <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                             </svg>
-                                           <span class="text-base">Dealine  {{$job->job_deadline->format('d M Y')}}</span>
+                                           <span class="text-base">Closing Date:  {{$job->job_deadline->format('d M Y')}}</span>
                                        @endif
                                     </div>
 
@@ -191,21 +184,28 @@
                                             </svg>
                                             Fraud Alert
                                         </h3>
-                                        <p>
-                                            Do not pay money to anybody for job or employment opportunities.    
+                                        <p class="text-xs font-bold capitalize">
+                                            Do not pay money to anybody for a job or employment.    
                                         </p>
                                     </div>
                                 </div>
 
                        </div>
                    </div>
+
+                    <div class="my-4  text-center sm:hidden">
+                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center capitalize justify-center text-blue-700 px-4 py-3">
+                                 view latest jobs today &nbsp;
+                                <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </a>
+                    </div>
                 </div>
                     
             </div>
 
-            <div class="w-full md:w-4/6 my-2 bg-white">
-                 <div class="my-4  text-center hidden sm:block">
-                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
+            <div class="w-full md:w-4/6 my-2 bg-white pb-12">
+                 <div class="my-4  text-center hidden sm:block pt-12">
+                            <a href="{{route('jobs')}}" class="outline-none capitalize text-sm mx-auto w-56 bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
                                  view latest jobs today &nbsp;
                                 <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </a>
@@ -272,14 +272,14 @@
                     
                     
                     @empty
-                                    <div class="text-center p-6 text-gray-500">
+                                <div class="text-center p-6 text-gray-500">
                                         <div class="w-1/2 mx-auto flex items-center justify-center">
                                           <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs">
                                         </div>
                                         <div>
                                             <h4>No Jobs Found</h4>
                                         </div>
-                                    </div>
+                                </div>
                     @endforelse
                 </div>
             </div>
