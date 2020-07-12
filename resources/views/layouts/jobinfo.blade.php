@@ -185,7 +185,11 @@
                                             Fraud Alert
                                         </h3>
                                         <p class="text-xs font-bold capitalize">
-                                            Do not pay money to anybody for a job or employment.    
+                                            Do not pay money to anybody for a job or employment. 
+                                            <a href="{{route('report:job', ['id'=> base64_encode($job->id)])}}" class="flex items-center bg-blue-800 px-3 py-2 w-32 justify-center mt-2 font-bold uppercase text-white text-center rounded-sm">
+                                                <svg fill="none" stroke-linecap="round" class="w-4 h-4" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg> 
+                                                Report Job
+                                            </a>   
                                         </p>
                                     </div>
                                 </div>

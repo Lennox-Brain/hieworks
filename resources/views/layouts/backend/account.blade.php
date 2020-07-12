@@ -54,11 +54,21 @@
 
                          <li>
                              <div class="bg-white py-3 px-2 mr-3 md:mr-6">
-                              <a href="#" class="flex items-center block">
+                              <a href="#" class="flex items-center">
                                 <span>
                                   <svg fill="none" stroke-linecap="round"  class="h-6 w-6 text-gray-600" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>                                
                                 </span>
                                 <span>SETTINGS</span>
+                              </a>
+                            </div>
+                         </li>
+
+                          <li>
+                             <div class="bg-white py-3 px-2 mr-3 md:mr-6">
+                              <a href="{{route('backend:reports')}}" class="flex items-center">
+                                <span>
+                                  <svg fill="none" stroke-linecap="round" class="h-6 w-6 text-gray-600" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg>                                </span>
+                                <span>REPORTS</span>
                               </a>
                             </div>
                          </li>
@@ -84,29 +94,49 @@
                         <div class="w-full">
                               <div class="block md:flex">
                                 
-                                <div class="mt-5 bg-white shadow w-full md:w-2/5 md:mx-2 p-1 rounded-md h-48 leading-10 pl-3">
-                                        <div class="items-center flex px-4 text-gray-600 pb-2 block md:flex border-b">
+                                <div class="mt-5 bg-white shadow w-full md:w-2/5 md:mx-2 p-1 rounded-md  leading-10 pl-3">
+                                        <div class="items-center flex px-4 text-gray-600 pb-2 md:flex border-b">
                                             <span class="font-bold text-blue-700">STATISTICS</span>
                                             <span class="text-right">
                                               <svg fill="none" stroke-linecap="round" class="h-8 w-8 md:h-10 md:w-10" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>                                    
                                             </span>
                                         </div>
+
                                         <div>
-                                          <h2 class="text-lg text-gray-600 font-bold text-purple-600"> JOBS : {{$count_jobs}}</h2>
+                                          <h3 class="font-semibold text-blue-600">Total Jobs : {{$active_jobs + $expired_jobs}}</h3>
                                         </div>
 
                                         <div>
-                                          <h2 class="text-lg text-gray-600 font-bold text-pink-500"> USERS : -</h2>
+                                          <h3 class="font-semibold text-green-600">Active Jobs : {{$active_jobs}}</h3>
                                         </div>
 
                                         <div>
-                                          <h2 class="text-lg text-gray-600 font-bold text-teal-600"> POSTS : -</h2>
+                                          <h3 class="font-semibold text-purple-600">Expired Jobs : {{$expired_jobs}} </h3>
                                         </div>
+
+                                        <div>
+                                          <h3 class="font-semibold text-pink-500">Active Employers : {{$active_employers}}</h3>
+                                        </div>
+
+                                        <div>
+                                          <h3 class="font-semibold text-teal-600">Published Articles : {{$active_articles}}</h3>
+                                        </div>
+
+                                        <div>
+                                          <h3 class="font-semibold text-orange-600">Reported Jobs :  {{$reports}}</h3>
+                                        </div>
+
+                                        <div>
+                                          <h3 class="font-semibold text-red-400">Active  Subscribers : {{$subscribers}}</h3>
+                                        </div>
+                                        
+
+                                        
                               
                                     </div>
                               
                                     <div class="mt-5 bg-white shadow w-full md:w-2/5 md:mx-2 p-1 rounded-md h-48 ">
-                                        <div class="flex items-center px-4 pb-2 text-gray-600 block md:flex border-b">
+                                        <div class="flex items-center px-4 pb-2 text-gray-600  md:flex border-b">
                                             <span class="font-bold text-blue-700">New Notifications</span>
                                             <span>
                                               <svg fill="none" stroke-linecap="round"  class="h-8 w-8 md:h-10 md:w-10" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>                                    

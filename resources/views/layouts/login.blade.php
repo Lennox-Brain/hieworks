@@ -1,5 +1,5 @@
 @extends('layouts.wireframe')
-    @section('page-title', 'login - hieworks.com')
+    @section('page-title', 'Login - hieworks.com')
 
 @prepend('app_css')
 

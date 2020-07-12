@@ -33,9 +33,9 @@ class DeleteController extends Controller
 
         $job_id = base64_decode($id);
         $job = Job::findOrFail($job_id);
-        if($job->cpmpany_logo){
-            Helpers::deleteFile($job->cpmpany_logo, $company_path);
-        }
+        // if($job->company_logo){
+        //     Helpers::deleteFile($job->company_logo, $company_path);
+        // }
     
         $job->update(['status'=> false]);
         return redirect(route('user:jobs'));

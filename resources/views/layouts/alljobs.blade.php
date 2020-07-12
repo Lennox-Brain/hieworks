@@ -72,7 +72,7 @@
                                       <div class="w-full">
                                         <div class="text-right text-sm text-gray-500">
                                           @if (latest_badge($job->created_at))
-                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold text-white">New</small>
+                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold">New</small>
                                           @endif
                                            <span>{{$job->created_at->diffForHumans()}}</span>
                                         </div>
@@ -81,7 +81,7 @@
                                               {{$job->job_title}}
                                           </div>
 
-                                          <div class="block flex mt-2">
+                                          <div class="flex mt-2">
                                             {{-- job type  --}}
                                              <div class="bg-purple-800 rounded-full px-2 py-1 text-white flex items-center mx-2">
                                                 <span>

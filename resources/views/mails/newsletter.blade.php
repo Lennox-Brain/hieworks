@@ -8,7 +8,7 @@
         <!--[if !mso]><!-->
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
         <!--<![endif]-->
-        <title>job application request - hieworks.com</title>
+        <title>Weekly Newsletters - hieworks.com</title>
         <!--[if !mso]><!-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"/>
 
@@ -42,9 +42,7 @@
        <style id="media-query" type="text/css">
                  @media (max-width: 595px) {
                      .container{
-                         width: 100%;
-                        
-                         
+                         width: 100%;                       
                      }
                      
                  }
@@ -53,7 +51,7 @@
 <body>
     <div class="container">
        <div style=" font-weight:bold">Hi there,</div>
-             <h3 style="color:#553c9a">Top jobs selected for you this week</h3>
+             <h3 style="color:#553c9a">Top Jobs Selected For You This Week</h3>
              <div>
                  {{-- {{dd($jobs)}} --}}
                     <div>
@@ -76,6 +74,9 @@
                         </div>
                         @endforeach
                         
+                    </div>
+                    <div style="text-align:center;margin-top:10px">
+                        <a href="{{route('jobs')}}" style="text-decoration: none;">Browse All Recent Jobs</a>
                     </div>
              </div>
             <div style="color:#8d8c8c;margin-top:16px">Thanks, hieworks Team</div>

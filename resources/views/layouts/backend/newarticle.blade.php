@@ -61,11 +61,21 @@
 
                          <li>
                              <div class="bg-white py-3 px-2 mr-3 md:mr-6">
-                              <a href="#" class="flex items-center block">
+                              <a href="#" class="flex items-center">
                                 <span>
                                   <svg fill="none" stroke-linecap="round"  class="h-6 w-6 text-gray-600" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>                                
                                 </span>
                                 <span>SETTINGS</span>
+                              </a>
+                            </div>
+                         </li>
+
+                           <li>
+                             <div class="bg-white py-3 px-2 mr-3 md:mr-6">
+                              <a href="{{route('backend:reports')}}" class="flex items-center">
+                                <span>
+                                  <svg fill="none" stroke-linecap="round" class="h-6 w-6 text-gray-600" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg>                                </span>
+                                <span>REPORTS</span>
                               </a>
                             </div>
                          </li>
@@ -92,7 +102,7 @@
                                           
                                                 <div class="bg-gray-100 shadow border-red-400 border-t-2 text-red-dark pl-2 pr-1 py-3 w-full my-2 mx-auto flex justify-evenly" role="alert">
                                                     <strong class="font-bold mr-2 text-red-500">
-                                                        <svg class="fill-current text-red-300 h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20">
+                                                        <svg class="fill-current h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20">
                                                             <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
                                                         </svg>                                
                                                     </strong>
@@ -112,7 +122,7 @@
                                       @if (session('new_article_success'))
                                             <div class="bg-teal-100 shadow border-teal-400 border-t-2 pl-2 pr-1 py-3 w-full my-2 mx-auto flex justify-evenly" role="alert" x-cloak>
                                                 <strong class="font-bold mr-2 text-gray-500">
-                                                    <svg class="fill-current text-teal-400 h-6 w-6 text-gray-500 mr-4" viewBox="0 0 20 20">
+                                                    <svg class="fill-current text-teal-400 h-6 w-6  mr-4" viewBox="0 0 20 20">
                                                         <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
                                                     </svg>                                
                                                 </strong>
@@ -164,7 +174,7 @@
 
                                        <div x-data="{featured:'0', modal:false}">
                                        
-                                          <span role="button" class="text-gray-700 text-xs block font-bold flex items-center my-1" @click="modal = !modal">
+                                          <span role="button" class="text-gray-700 text-xs font-bold flex items-center my-1" @click="modal = !modal">
                                               Feature post 
                                               <svg fill="currentColor" class="h-5 w-5" viewBox="0 0 20 20">
                                                   <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
@@ -219,7 +229,7 @@
                                             <span class="text-orange-500 text-xs font-bold">{{read_time($article->article_description)}}</span>
                                             <span class="text-teal-500 text-xs font-bold">{{($article->views)}}</span>
                                             @if($article->featured)
-                                               <span class="text-sm text-gray-500 font-semibold bg-orange-300 text-orange-600 px-4 py-1 rounded-full mx-4">featured</span>
+                                               <span class="text-sm font-semibold bg-orange-300 text-orange-600 px-4 py-1 rounded-full mx-4">featured</span>
                                             @endif
                                             <span class=" text-sm px-4 py-1 text-gray-500 font-semibold rounded-full">{{ $article->category->category }}</span>
                                             <span class=" text-sm px-4 py-1 bg-teal-400 font-semibold text-teal-700 rounded-full"><a href="{{route('backend:updateArticle', ['id' => base64_encode($article->id)])}}">Edit</a></span>
@@ -248,7 +258,7 @@
                                 @if (session('new_category_success'))
                                     <div class="bg-teal-100 shadow border-teal-400 border-t-2 pl-2 pr-1 py-3 w-full my-2 mx-auto flex justify-evenly" role="alert" x-cloak>
                                         <strong class="font-bold mr-2 text-gray-500">
-                                            <svg class="fill-current text-teal-400 h-6 w-6 text-gray-500 mr-4" viewBox="0 0 20 20">
+                                            <svg class="fill-current text-teal-400 h-6 w-6 mr-4" viewBox="0 0 20 20">
                                                 <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
                                             </svg>                                
                                         </strong>
@@ -265,7 +275,7 @@
                                 @if ($errors->has('creating_category_error'))
                                       <div class="bg-gray-100 shadow border-red-400 border-t-2 text-red-dark pl-2 pr-1 py-3 w-full my-2 mx-auto flex justify-evenly" role="alert">
                                         <strong class="font-bold mr-2 text-red-500">
-                                            <svg class="fill-current text-red-300 h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20">
+                                            <svg class="fill-current text-red-300 h-6 w-6 mr-4" viewBox="0 0 20 20">
                                                 <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
                                             </svg>                                
                                         </strong>

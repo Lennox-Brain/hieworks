@@ -11,7 +11,7 @@
 
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs ')">
+        <meta name="description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs')">
         <link rel="canonical" href="https://hieworks.com" />
         <meta name="keywords" content="graduate recruitment, current jobs in Ghana, work from home, online work, latest jobs, full time jobs, contract, job interviews, job opportunities, jobseekers, employers, employers in Ghana, Ghanaian companies, vacancy, job vacancy, human resource, cv, office works in Ghana, quick jobs, fast jobs, jobs in Ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees, remote jobs, remote work, online works, job board, hiring remote workers, telecommunication jobs">
         <meta name="theme-color" content="#553c9a">

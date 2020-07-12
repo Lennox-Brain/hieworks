@@ -1,5 +1,5 @@
 @extends('layouts.wireframe')
-    @section('page-title', 'signup for an account - hieworks.com')
+    @section('page-title', 'Signup For an Account - hieworks.com')
 
 @prepend('app_css')
 
@@ -66,12 +66,10 @@
                                     @if (session('info'))
                                         <div class="bg-teal-100 shadow border-teal-400 border-t-2 pl-2 pr-1 py-3 sm:w-4/5 my-2 mx-auto flex justify-evenly" role="alert">
                                             <strong class="font-bold mr-2 text-gray-500">
-                                                <svg class="fill-current h-6 w-6 text-teal-500 mr-4" viewBox="0 0 20 20">
-                                                    <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
-                                                </svg>                                
+                                                <svg fill="none" stroke-linecap="round" class="h-6 w-6 text-teal-500 mr-4" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                             </strong>
 
-                                            <span class="block sm:inline text-sm w-4/5 font-semibold text-gray-700">{{session('info')}} <a href="{{route('login')}}" class="outline-none bg-purple-800 text-white px-2 py-1 rounded-full">click to login</a></span>
+                                            <span class="block sm:inline text-sm w-4/5 capitalize font-semibold text-gray-700">{{session('info')}} <a href="{{route('login')}}" class="outline-none bg-purple-800 text-white px-2 py-1 rounded-full">click to login</a></span>
                                             <span class="text-right" role="button" @click="$event.target.closest('div').style.display = 'none'">
                                                 <svg class="h-6 w-6 text-gray-700 fill-current" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title>
                                                     <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>

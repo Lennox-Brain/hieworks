@@ -99,6 +99,13 @@ class GetController extends Controller
 
 
 
+ public function reportJob($id)
+     {
+            $id = base64_decode($id);
+            $job = job::findOrFail($id)->id;
+            return view('layouts.report', ['job_id'=>$job]);
+     }
+
  
 
 
