@@ -1,7 +1,7 @@
 @extends('layouts.wireframe')
 
-@section('page-title', $job->job_title . ' - hieworks.com')
-@section('page-description', 'apply for '.$job->job_title .' role')
+@section('page-title', $job->job_title . ' | hieworks.com')
+@section('page-description', 'apply for '.$job->job_title .' job')
 
 @section('service-scripts')
     <div id="fb-root"></div>
@@ -13,8 +13,6 @@
 
 @section('content-wrapper')
 
-   <div>
-     
 
         <div class="container mx-auto px-2 sm:px-0">
             @include('partials.search')
@@ -33,7 +31,7 @@
                                 <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                     <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
-                                    <span>{{$job->job_type}}</span>
+                                    <span class="capitalize">{{$job->job_type}}</span>
                             </div>
 
                             <div class="flex items-center">
@@ -41,7 +39,7 @@
                                     <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                    <span>{{$job->job_location}}</span>
+                                    <span class="capitalize">{{$job->job_location}}</span>
                             </div>
 
                             <div class="flex items-center">
@@ -49,7 +47,7 @@
                                     <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                                     </path>
                                 </svg>
-                                    <span>
+                                    <span class="capitalize">
                                         @if ($job->expected_salary)
                                              {{$job->expected_salary}}
                                         @else
@@ -99,6 +97,7 @@
                    </div>
 
                    <div class="w-full md:w-2/5 md:px-3 my-2">
+<<<<<<< HEAD
                         <div class="my-4  text-center sm:hidden">
                             <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
                                  view latest jobs today &nbsp;
@@ -108,15 +107,28 @@
                        <div class="border p-4">
                                 <div>
                                     <div class="flex flex-wrap items-center text-gray-600">
+=======
+                       
+                       <div class="border p-4">
+                                <div>
+                                    <div class="block sm:flex flex-wrap items-center text-gray-600">
+>>>>>>> master
                                          @if($job->company_logo)
                                             <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="120">
                                          @else 
                                             <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="120">
                                          @endif
+<<<<<<< HEAD
                                         <span class="text-base font-bold">{{$job->job_company}}</span>
                                     </div>
 
                                     <div class="flex flex-wrap items-center text-gray-500">
+=======
+                                        <span class="text-base sm:text-lg font-bold">{{$job->job_company}}</span>
+                                    </div>
+
+                                    <div class="block sm:flex flex-wrap items-center text-gray-500">
+>>>>>>> master
                                         <span class="bg-gray-200 font-semibold text-lg px-3 py-1 rounded-full text-blue-700 m-1">more info</span>
                                         <div>
                                             @if($job->onsite)
@@ -159,13 +171,17 @@
                                           </div>
                                     </div>
 
+<<<<<<< HEAD
                                     <div class="flex flex-wrap items-center text-gray-500">
+=======
+                                    <div class="block sm:flex flex-wrap items-center text-gray-500">
+>>>>>>> master
                                         
-                                       @if ($job->job_deadline)
+                                       @if($job->job_deadline)
                                             <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                             </svg>
-                                           <span class="text-base">Dealine  {{$job->job_deadline->format('d M Y')}}</span>
+                                           <span class="text-base">Closing Date:  {{$job->job_deadline->format('d M Y')}}</span>
                                        @endif
                                     </div>
 
@@ -191,21 +207,38 @@
                                             </svg>
                                             Fraud Alert
                                         </h3>
-                                        <p>
-                                            Deceit from paying money to any person for job or employment opportunities.    
+                                        <p class="text-xs font-bold capitalize">
+                                            Do not pay money to anybody for a job or employment. 
+                                            <a href="{{route('report:job', ['id'=> base64_encode($job->id)])}}" class="flex items-center bg-blue-800 px-3 py-2 w-32 justify-center mt-2 font-bold uppercase text-white text-center rounded-sm">
+                                                <svg fill="none" stroke-linecap="round" class="w-4 h-4" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg> 
+                                                Report Job
+                                            </a>   
                                         </p>
                                     </div>
                                 </div>
 
                        </div>
                    </div>
+
+                    <div class="my-4  text-center sm:hidden">
+                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center capitalize justify-center text-blue-700 px-4 py-3">
+                                 view latest jobs today &nbsp;
+                                <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </a>
+                    </div>
                 </div>
                     
             </div>
 
+<<<<<<< HEAD
             <div class="w-full md:w-4/6 my-2 bg-white">
                  <div class="my-4  text-center hidden sm:block">
                             <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
+=======
+            <div class="w-full md:w-4/6 my-2 bg-white pb-12">
+                 <div class="my-4  text-center hidden sm:block pt-12">
+                            <a href="{{route('jobs')}}" class="outline-none capitalize text-sm mx-auto w-56 bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
+>>>>>>> master
                                  view latest jobs today &nbsp;
                                 <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </a>
@@ -247,7 +280,7 @@
                                                 <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                                 </svg>
                                             </span>
-                                            <span class=" text-sm ">{{$job->job_type}}</span>
+                                            <span class="text-sm capitalize">{{$job->job_type}}</span>
                                         </div>
                     
                                         {{-- job location  --}}
@@ -272,14 +305,14 @@
                     
                     
                     @empty
-                                    <div class="text-center p-6 text-gray-500">
+                                <div class="text-center p-6 text-gray-500">
                                         <div class="w-1/2 mx-auto flex items-center justify-center">
                                           <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs">
                                         </div>
                                         <div>
                                             <h4>No Jobs Found</h4>
                                         </div>
-                                    </div>
+                                </div>
                     @endforelse
                 </div>
             </div>

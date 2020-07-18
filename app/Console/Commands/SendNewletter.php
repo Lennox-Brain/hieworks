@@ -56,8 +56,7 @@ class SendNewletter extends Command
                      Mail::to($email)->send( new MailNewsletter($jobs));
                }
           }   
-          echo 'newsletters sent';
-      
+          echo 'newsletters sent';      
 
     }
 }

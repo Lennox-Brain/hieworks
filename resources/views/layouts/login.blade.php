@@ -1,14 +1,16 @@
 @extends('layouts.wireframe')
+    @section('page-title', 'Login - hieworks.com')
+
 @prepend('app_css')
 
 @endprepend
 
 @section('content-wrapper')
    <div>
-        <div class="page container mx-auto px-2 md:px-0 bg-white px-2 md:px-4 py-4 min-h-screen">
+        <div class="page container mx-auto bg-white px-2 md:px-4 py-4 min-h-screen">
             <div class="p-2 md:p-10 md:w-3/5 mx-auto border">
                 <div class="p-4 md:w-full lg:w-3/5 mx-auto">
-                  <h4 class="text-gray-500 font-bold flex items-center align-middle">
+                  <h4 class="text-blue-700 font-bold flex items-center align-middle">
                       <span>
                           <svg fill="none" class="h-8 w-8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
@@ -33,10 +35,11 @@
                     <div class="mb-6">
                         <div>
                             @if ($errors->any())
+                          
                                 @foreach ($errors->all() as $error)
-                                    <div class="bg-gray-100 shadow border-red-400 border-t-2 text-red-dark pl-2 pr-1 py-3 sm:w-4/5 my-2 mx-auto flex justify-evenly" role="alert">
+                                    <div class="bg-gray-100 shadow border-red-400 border-t-2 text-red-dark pl-2 pr-1 py-3  my-2 mx-auto flex justify-evenly" role="alert">
                                         <strong class="font-bold mr-2 text-red-500">
-                                            <svg class="fill-current text-red-300 h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20">
+                                            <svg class="fill-current h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20">
                                                 <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
                                             </svg>                                
                                         </strong>
@@ -73,7 +76,7 @@
 
                     <div class="block md:flex items-center justify-between">
                         <div>
-                            <button class="bg-purple-700 hover:bg-purple-800 text-white py-2 px-4 rounded-full w-full outline-none" type="submit">
+                            <button class="bg-purple-700 hover:bg-purple-800 text-white py-1 px-4 rounded-full w-full outline-none" type="submit">
                                 Sign In
                             </button>
                             @csrf

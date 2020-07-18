@@ -11,7 +11,7 @@
                             <div class="py-3 px-2 mr-1 md:mr-2">
                               <a href="{{route('user:account')}}" class="flex items-center">
                                 <span>
-                                  <svg fill="none" stroke-linecap="round" class="h-6 w-6 text-gray-600 text-gray-600" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                  <svg fill="none" stroke-linecap="round" class="h-6 w-6 text-gray-600" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </span>
                                 <span>ACCOUNT</span>
                               </a>
@@ -53,7 +53,7 @@
 
                          <li>
                              <div class="bg-white py-3 px-2 mr-3 md:mr-6 active-tab">
-                              <a href="{{route('user:settings')}}" class="flex items-center block">
+                              <a href="{{route('user:settings')}}" class="flex items-center">
                                 <span>
                                   <svg fill="none" stroke-linecap="round"  class="h-6 w-6" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>                                
                                 </span>
@@ -86,7 +86,7 @@
                                                   @foreach ($errors->all() as $error)
                                                       <div class="bg-gray-100 shadow border-red-400 border-t-2 text-red-dark pl-2 pr-1 py-3 sm:w-4/5 my-2 mx-auto flex justify-evenly" role="alert">
                                                           <strong class="font-bold mr-2 text-red-500">
-                                                              <svg class="fill-current text-red-300 h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20">
+                                                              <svg class="fill-current h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20">
                                                                   <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
                                                               </svg>                                
                                                           </strong>
@@ -107,7 +107,7 @@
                                         @if (session('info'))
                                         <div class="bg-teal-100 shadow border-teal-400 border-t-2 pl-2 pr-1 py-3 sm:w-4/5 my-2 mx-auto flex justify-evenly" role="alert">
                                             <strong class="font-bold mr-2 text-gray-500">
-                                                <svg class="fill-current text-teal-400 h-6 w-6 text-gray-500 mr-4" viewBox="0 0 20 20">
+                                                <svg class="fill-current text-teal-400 h-6 w-6  mr-4" viewBox="0 0 20 20">
                                                     <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
                                                 </svg>                                
                                             </strong>
@@ -140,7 +140,7 @@
                                    </div>
 
                                    <div class="block md:flex flex-wrap justify-around my-2">
-                                        <div class="w-full md:w-2/5 my-2 my-2">
+                                        <div class="w-full md:w-2/5 my-2">
                                             <label class="label" for="email">Email</label>
                                             <input type="text" name="email" id="email" value="{{auth()->user()->email}}" class="input">
                                         </div>
@@ -175,8 +175,8 @@
                                         <textarea class="input" name="company_summary" id="company_summary">{{auth()->user()->company_summary}}</textarea>
                                    </div>
                                       @csrf
-                                   <div class="md:mx-10 my-2" x-data="{application_mail: '{{auth()->user()->application_notice}}' }">
-                                        <span class="text-gray-700 text-sm bold block">Receive email on new application</span>
+                                   <div class="md:mx-10 my-3" x-data="{application_mail: '{{auth()->user()->application_notice}}' }">
+                                        <span class="text-gray-700 text-sm bold block capitalize">Receive email on new application</span>
                                         <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
                                         :class="[application_mail == '1' ? 'bg-green-400' : 'bg-gray-400']">
                                         <label for="application_mail"
@@ -188,7 +188,7 @@
                                         </div>
                                    </div>
 
-                                    <div class="md:mx-10 my-2 text-right my-2">
+                                    <div class="md:mx-10 text-right my-2">
                                       <button class="btn btn-primary" type="submit" role="button">save changes</button>
                                     </div>
 

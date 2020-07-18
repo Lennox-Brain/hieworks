@@ -28,13 +28,17 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('clear:jobs')
-        ->daily();
+        ->dailyAt('19:00');
 
         $schedule->command('send:newsletter')
-        ->daily();
+        ->weeklyOn(5, '3:00');
 
         $schedule->command('clear:expired')
-        ->daily();
+        ->dailyAt('19:00');
+
+        $schedule->command('generate:sitemap')
+        ->twiceDaily(7, 19);
+        
     }
 
     /**

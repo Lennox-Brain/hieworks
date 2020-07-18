@@ -2,16 +2,19 @@
 
 @section('content-wrapper')
    <div>
-      <div class="bg-gray-200">
+      <div class="bg-blue-100">
         <div class="flex flex-wrap items-center border-b pb-2 pt-4 container mx-auto">
-          <div class="lg:w-1/2 flex flex-col items-center px-3">
-            <h1 class="text-center lg:text-left text-2xl sm:text-4xl font-light text-blue-700 leading-tight mb-4">Bring your job search to an end <strong class="font-black text-3xl sm:text-4xl block">Get Hired, Get Happy!</strong></h1>
-            <p class="lg:text-right sm:text-lg text-gray-600 lg:pr-40 leading-relaxed">
-               We are your online destination for fresh jobs in
-               Ghana and Africa. Browse unlimited job offers
-               to end your job search!
+          <div class="lg:w-1/2 flex flex-col items-center px-3 welcome-message">
+            <h1 class="capitalize text-center text-xl sm:text-4xl font-light text-blue-700 leading-tight mb-4">Bring your job search to an end <strong class="font-black text-3xl sm:text-4xl block">Get Hired, Get Happy!</strong></h1>
+            <p class="lg:text-right sm:text-lg text-gray-600  leading-relaxed capitalize">
+               We are your online portal for latest job vacancies in Ghana and Remotely. We help end your job searching !
+               
             </p>
+<<<<<<< HEAD
             <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4 rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
+=======
+            <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4  rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
+>>>>>>> master
           </div>
 
            <div class="flex flex-grow-1 flex-start" >
@@ -70,7 +73,7 @@
                                                       <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                                     </svg>
                                                 </span>
-                                                <span class=" text-sm ">{{$job->job_type}}</span>
+                                                <span class="text-sm capitalize">{{$job->job_type}}</span>
                                              </div>
 
                                               {{-- job location  --}}
@@ -84,8 +87,6 @@
                                               <span class="text-sm">{{$job->job_location}}</span>
                                            </div>
                                         
-
-
                                            {{-- details ends  --}}
                                           </div>
 
@@ -93,14 +94,13 @@
                                     </div>
                                     
                                 </a>
-                               
                                   @if ($loop->iteration == 3)
                                       @break
                                   @endif
                                
                               
                             @empty
-                                {{-- <h3>yes</h3> --}}
+                                {{-- <h3>no post found</h3> --}}
                             @endforelse
                       </div>
                       @if (count(App\hieworks\Data::data_adapter($category) ) > 0 )
@@ -144,7 +144,7 @@
                               </svg>
 
                             </h2>
-                            <p class="mt-2 text-gray-600 md:text-gray-400">Be the first to get latest job updates. Subscribe today</p>
+                            <p class="mt-2 text-gray-600 md:text-gray-400 capitalize">Be the first to get latest job updates. Subscribe today</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center pb-6 md:py-0 md:w-1/2 md:border-b-8 border-purple-900">

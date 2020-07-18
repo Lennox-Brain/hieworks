@@ -11,9 +11,9 @@
 
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="@yield('page-description', 'Browse and apply for the latest works and job vacancies in Ghana.')">
+        <meta name="description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs')">
         <link rel="canonical" href="https://hieworks.com" />
-        <meta name="keywords" content="career, ghana careers, ghana, jobs, resumes, professions, recruitment agencies in ghana, ghana recruitment agencies, jobs in ghana, jobseekers, employers, employers in ghana, ghanaian companies, vacancy, job vacancy, human resource development, HR, cv, creating cvs, samples, application letter works in Ghana, quick jobs, fast jobs, jobs in ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees, remote jobs, remote work, job board, hiring remote workers, telecommunication jobs, remote job board">
+        <meta name="keywords" content="graduate recruitment, current jobs in Ghana, work from home, online work, latest jobs, full time jobs, contract, job interviews, job opportunities, jobseekers, employers, employers in Ghana, Ghanaian companies, vacancy, job vacancy, human resource, cv, office works in Ghana, quick jobs, fast jobs, jobs in Ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees, remote jobs, remote work, online works, job board, hiring remote workers, telecommunication jobs">
         <meta name="theme-color" content="#553c9a">
         <meta name="MobileOptimized" content="320">
         <meta name="HandheldFriendly" content="true">
@@ -23,33 +23,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, target-densitydpi=device-dpi, shrink-to-fit=no">
         <meta name="author" content="Lennox Inc.">
         <meta name="csrf-token" content="{{csrf_token()}}">
-        <title>@yield('page-title', "Browse latest works opportunities and job vacancies in Ghana - hieworks.com")</title>
+        <title>@yield('page-title', View::make('partials.title'))</title>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Varela+Round&display=swap" rel="stylesheet">         
         @stack('app_css')
 
 
         {{-- fb open graph meta data  --}}
           <meta property="og:url" content="{{url()->full()}}"/>
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="@yield('page-title','Browse and apply for the latest works and job opportunities in Ghana - hieworks.com')" />
-          <meta property="og:description" content="@yield('page-description', 'Browse and apply for the latest works and job vacancies in Ghana on hiework.com.')"/>
+          <meta property="og:title" content="@yield('page-title','Latest Jobs in Ghana and Remote Jobs - Hieworks')" />
+          <meta property="og:description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
           <meta property="og:image" content="{{asset('assets/images/social-medium.png')}}"/>
           <meta property="og:updated_time" content="{{date('Y-d-m')}}"/>
           {{-- <meta property="fb:app_id" content="1097972650562984"/> --}}
         {{-- open graph ends  --}}
 
         {{-- twitter share api  --}}
-          <meta name="twitter:title" content="@yield('page-title','Browse latest works and job opportunities in Ghana - hieworks.com')"/>
-          <meta name="twitter:description" content="@yield('page-description', 'Browse and apply for the latest works and job vacancies in Ghana on hieworks.')"/>
+          <meta name="twitter:title" content="@yield('page-title','Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
+          <meta name="twitter:description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
           <meta name="twitter:image" content="{{asset('assets/images/social-medium.png')}}"/>
           <meta name="twitter:card" content="summary"/>
         {{-- twitter api ends  --}}
 
         {{-- linkedIn meta tags  --}}
           
-        <meta property="og:title" content="@yield('page-title','Browse and apply for the latest works and job opportunities in Ghana - hieworks.com')"/>
+        <meta property="og:title" content="@yield('page-title','Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
         <meta property="og:image" content="{{asset('assets/images/social-large.png')}}"/>
-        <meta property="og:description" content="@yield('page-description', 'Browse and apply for the latest works and job vacancies in Ghana on hieworks.')"/>
+        <meta property="og:description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
         <meta property="og:url" content="{{ url()->full() }}"/>
 
         {{-- linkedIn ends  --}}
@@ -77,12 +78,9 @@
         <meta name="theme-color" content="#553c9a">
 
 
-
-
-
- 
     </head>
-    <body class=" bg-gray-100 min-h-screen">
+    <body class="bg-gray-100 min-h-screen">
+
         {{-- service scripts   --}}
             <!-- Google Tag Manager (noscript) -->
                   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KD6JSCW"
@@ -363,11 +361,11 @@
                   <h4 class="font-bold">Let's Get Interactive</h4>
                   <div class="text-sm pt-2 text-wrap">
                     <p>
-                      follow us on our social media platforms to get the latest updates from us.
+                      Follow us on our social media platforms to get the latest updates from us.
                     </p>
                     <div class="flex items-center mt-3 flex-wrap leading-7">
                         <div class="font-bold">
-                          facebook, twitter (hieworks Gh)
+                          <a href="https://www.facebook.com/hieworks/" target="_blank">Facebook</a>, <a href="https://twitter.com/hieworks" target="_blank">Twitter</a> (Hieworks Gh)
                         </div>
                     </div>
                   </div>
@@ -376,7 +374,7 @@
               </div>
            </div>
            <div class=" text-gray-500">
-               <a href="/">&copy; {{date('Y')}} | hieworks Ltd.</a>
+               <a href="/">&copy; {{date('Y')}} | Hieworks Ltd.</a>
            </div>
         </footer>
       </main>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Job;
 use App\User;
+use App\Report;
 use App\Newsletter;
 use App\Application;
 use App\Hieworks\Data;
@@ -129,4 +130,30 @@ class PostController extends Controller
 
         if($status) return redirect()->back()->with(['info' =>'Subscription successful']);
     }
+
+    
+    public function reportJob(Request $request)
+    {
+        $validate =   Validator::make($request->except('_token'), [
+              'fullname' => 'required|max:255',
+              'contact' => 'sometimes|nullable|max:15',
+              'subject' => 'required|max:190',
+              'comment' => 'required|max:300',
+              'job_id' =>'',
+          ])->validate();
+  
+          $status = Report::create([
+              'job_id'=>  base64_decode($validate['job_id']),
+              'fullname'=> $validate['fullname'],
+              'contact'=>  $validate['contact'],
+              'subject'=>  $validate['subject'],
+              'comment'=>  $validate['comment']
+                          
+          ]);
+          
+
+          if(!$status) return redirect()->back()->withErrors(['report_error' =>'service temporary unavailale'])->withInput();
+
+          return redirect()->to(route('report:success'));
+      }
 }

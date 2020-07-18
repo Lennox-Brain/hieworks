@@ -39,7 +39,7 @@ class Data{
         'Consultation & Legal Services',
         'Courrier & Delivery',
         'Creative, Fashion & Design',
-        'Custormer Service',
+        'Customer Service',
         'Engineering & Mechanics', 
         'Education, Research, Training',
         'FMCG, Retail, Wholesale',

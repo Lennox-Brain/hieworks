@@ -1,6 +1,6 @@
 @extends('layouts.wireframe')
 
-@section('page-title', 'Current works and job vacancies in Ghana '. date('M Y'). ' - hieworks.com')
+@section('page-title', 'Current Jobs in Ghana | Remote Jobs '. date('Y'). ' - hieworks.com')
 
 @section('content-wrapper')
    <div>
@@ -72,7 +72,7 @@
                                       <div class="w-full">
                                         <div class="text-right text-sm text-gray-500">
                                           @if (latest_badge($job->created_at))
-                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold text-white">New</small>
+                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold">New</small>
                                           @endif
                                            <span>{{$job->created_at->diffForHumans()}}</span>
                                         </div>
@@ -81,7 +81,7 @@
                                               {{$job->job_title}}
                                           </div>
 
-                                          <div class="block flex mt-2">
+                                          <div class="flex mt-2">
                                             {{-- job type  --}}
                                              <div class="bg-purple-800 rounded-full px-2 py-1 text-white flex items-center mx-2">
                                                 <span>
@@ -89,7 +89,7 @@
                                                       <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                                     </svg>
                                                 </span>
-                                                <span class=" text-sm ">{{$job->job_type}}</span>
+                                                <span class="text-sm capitalize">{{$job->job_type}}</span>
                                              </div>
 
                                               {{-- job location  --}}

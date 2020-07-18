@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix'=>'backend'], function(){
      Route::group(['middleware' => 'backendAuth'], function(){
         Route::get('/account', 'Backend\GetController@showAccount')->name('backend:account');
+        Route::get('/reports', 'Backend\GetController@showReports')->name('backend:reports');
+        Route::get('suspend/job/{id}', 'Backend\PostController@suspendJob')->name('suspend:job');
+
         Route::get('/new/article', 'Blog\GetController@showArticleForm')->name('show:newArticle');
         Route::post('/post/article', 'Blog\PostController@postArticle')->name('backend:postArticle');
         Route::post('/new/article/category', 'Blog\PostController@newArticleCategory')->name('backend:newArticleCategory');
@@ -26,7 +29,6 @@ Route::group(['prefix'=>'backend'], function(){
         Route::get('delete/category/{id}', 'Blog\DeleteController@deleteCategory')->name('delete_category');
         Route::get('delete/article/{id}', 'Blog\DeleteController@deleteArticle')->name('backend:deleteArticle');
         Route::get('backend/logout', 'Auth\LoginController@backendLogout')->name('backend:logout');
-
         
      });
 
@@ -104,6 +106,10 @@ Route::get('/confirm/password/reset/{id}', 'Auth\ResetPasswordController@confirm
 
 //post to finally reset password
 Route::post('/confirm/password/reset', 'Auth\ResetPasswordController@resetPassword')->name('reset:password');
+Route::get('/report/job/{id}', 'GetController@reportJob')->name('report:job');
+Route::post('/report/job/', 'PostController@reportJob')->name('post:report');
+Route::view('/report/success/','layouts.reportcallback')->name('report:success');
+
 
 Route::view('/terms', 'extras.terms')->name('terms');
 Route::view('/policy', 'extras.policy')->name('policy');
@@ -111,9 +117,6 @@ Route::view('/sitemap', 'extras.sitemap')->name('sitemap');
 Route::view('/about', 'extras.about')->name('about');
 Route::view('/faq', 'extras.faq')->name('faq');
 
-Route::get('/test', function(){
-    return password_hash('lennox94', PASSWORD_BCRYPT);
-});
 Route::fallback(function(){
     return view('layouts.404');
 });

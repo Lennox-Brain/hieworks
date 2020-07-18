@@ -162,8 +162,8 @@
                          Any job that is not tied to a physical office is termed as a remote job.
                          In such a job, work is usually accomplished using an
                          internet connection and a computer.
-                         Persons such as Graphic Designers, Freelance writters, software engineers, Digital marketters,
-                         custormer supports etc. may
+                         Persons such as Graphic Designers, Freelance writters, software engineers, Digital marketers,
+                         customer supports etc. may
                          apply for remote jobs from any part of the world.
                        </p>
                     </div>
