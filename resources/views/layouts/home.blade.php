@@ -2,7 +2,7 @@
 
 @section('content-wrapper')
    <div>
-      <div class="bg-gray-200">
+      <div class="bg-blue-100">
         <div class="flex flex-wrap items-center border-b pb-2 pt-4 container mx-auto">
           <div class="lg:w-1/2 flex flex-col items-center px-3 welcome-message">
             <h1 class="capitalize text-center text-xl sm:text-4xl font-light text-blue-700 leading-tight mb-4">Bring your job search to an end <strong class="font-black text-3xl sm:text-4xl block">Get Hired, Get Happy!</strong></h1>
@@ -69,7 +69,7 @@
                                                       <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                                     </svg>
                                                 </span>
-                                                <span class=" text-sm ">{{$job->job_type}}</span>
+                                                <span class="text-sm capitalize">{{$job->job_type}}</span>
                                              </div>
 
                                               {{-- job location  --}}
