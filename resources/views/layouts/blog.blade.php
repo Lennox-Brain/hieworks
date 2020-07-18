@@ -45,7 +45,7 @@
                                             <div class="bg-pink-200 text-sm px-3 py-1 m-2 rounded-full text-gray-600"><a href="{{route('blog:category', ['category' =>Str::slug(category_name($article->category_id), '-'), 'id'=> base64_encode($article->category_id)])}}">{{category_name($article->category_id)}}</a></div>
                                             <div class="bg-teal-200 text-sm px-3 py-1 m-2 rounded-full text-gray-600">{{read_time($article->article_description)}}</div>
                                             {{-- <div class="text-sm text-gray-500 font-semibold">{{($article->featured) ? 'featured' : ''}}</div> --}}
-                                            <div class="flex items-center text-xs px-3 m-2 py-1 text-gray-500 text-sm font-semibold rounded-full">
+                                            <div class="flex items-center px-3 m-2 py-1 text-gray-500 text-xs font-semibold rounded-full">
                                                 <div>
                                                     <svg fill="none" class="w-5 h-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                                                 </div>
