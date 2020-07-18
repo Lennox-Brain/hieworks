@@ -100,23 +100,23 @@
 
                    <div class="w-full md:w-2/5 md:px-3 my-2">
                         <div class="my-4  text-center sm:hidden">
-                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center  bg-gray-300 text-blue-700 px-4 py-3">
+                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
                                  view latest jobs today &nbsp;
                                 <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </a>
                         </div>
                        <div class="border p-4">
                                 <div>
-                                    <div class="block flex flex-wrap items-center text-gray-600">
+                                    <div class="flex flex-wrap items-center text-gray-600">
                                          @if($job->company_logo)
                                             <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="120">
                                          @else 
                                             <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="120">
                                          @endif
-                                        <span class=" text-base text-lg font-bold">{{$job->job_company}}</span>
+                                        <span class="text-base font-bold">{{$job->job_company}}</span>
                                     </div>
 
-                                    <div class="block flex flex-wrap items-center text-gray-500">
+                                    <div class="flex flex-wrap items-center text-gray-500">
                                         <span class="bg-gray-200 font-semibold text-lg px-3 py-1 rounded-full text-blue-700 m-1">more info</span>
                                         <div>
                                             @if($job->onsite)
@@ -159,7 +159,7 @@
                                           </div>
                                     </div>
 
-                                    <div class="block flex flex-wrap items-center text-gray-500">
+                                    <div class="flex flex-wrap items-center text-gray-500">
                                         
                                        @if ($job->job_deadline)
                                             <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,14 +205,14 @@
 
             <div class="w-full md:w-4/6 my-2 bg-white">
                  <div class="my-4  text-center hidden sm:block">
-                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center  bg-gray-300 text-blue-700 px-4 py-3">
+                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
                                  view latest jobs today &nbsp;
                                 <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </a>
                  </div>
 
                 <div class="p-4">
-                    <h3 class="text-blue-700 font-bold text-base flex items-center text-2xl">Related Jobs</h3>
+                    <h3 class="text-blue-700 font-bold flex items-center text-2xl">Related Jobs</h3>
                 </div>
                 <div>
                     @forelse($relatedJobs as $job)
@@ -230,7 +230,7 @@
                                 <div class="w-full">
                                     <div class="text-right text-sm text-gray-500">
                                     @if (latest_badge($job->created_at))
-                                        <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold text-white">New</small>
+                                        <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold">New</small>
                                     @endif
                                     <span>{{$job->created_at->diffForHumans()}}</span>
                                     </div>
@@ -239,7 +239,7 @@
                                         {{$job->job_title}}
                                     </div>
                     
-                                    <div class="block flex mt-2">
+                                    <div class="flex mt-2">
                                         {{-- job type  --}}
                                         <div class="bg-purple-800 rounded-full px-2 py-1 text-white flex items-center mx-2">
                                             <span>

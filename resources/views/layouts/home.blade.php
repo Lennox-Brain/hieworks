@@ -11,7 +11,7 @@
                Ghana and Africa. Browse unlimited job offers
                to end your job search!
             </p>
-            <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4 text-lg rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
+            <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4 rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
           </div>
 
            <div class="flex flex-grow-1 flex-start" >
@@ -53,7 +53,7 @@
                                       <div class="w-full">
                                         <div class="text-right text-sm text-gray-500">
                                            @if (latest_badge($job->created_at))
-                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold text-white">New</small>
+                                              <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold">New</small>
                                            @endif
                                              <span class="pr-3">{{$job->created_at->diffForHumans()}}</span>
                                         </div>
@@ -62,7 +62,7 @@
                                               {{$job->job_title}}
                                           </div>
 
-                                          <div class="block flex mt-2">
+                                          <div class="flex mt-2">
                                             {{-- job type  --}}
                                              <div class="bg-purple-800 rounded-full px-2 py-1 text-white flex items-center mx-2">
                                                 <span>
