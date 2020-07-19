@@ -36,7 +36,7 @@
                         <label class="block text-sm font-bold mb-2 text-gray-600" for="password">
                             New Password
                         </label>
-                        <input class="appearance-none border rounded w-full py-1 px-3 text-gray-600" id="password" type="password" value="{{old('password')}}" required name="password" placeholder="new password">
+                        <input class="appearance-none border rounded w-full py-1 px-3 text-gray-600" id="password" type="password" value="{{old('password')}}" required name="password" placeholder="New Password">
                     </div>
 
                     <div class="mb-4">

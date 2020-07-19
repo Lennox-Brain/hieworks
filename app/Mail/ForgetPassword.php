@@ -28,7 +28,7 @@ class ForgetPassword extends Mailable
      */
     public function build()
     {
-        return $this->from(config('MAIL_FROM_ADDRESS', 'info@hieworks.com'))
+        return $this->from(config('MAIL_FROM_ADDRESS', 'no-reply@hieworks.com'))
                     ->subject('Reset account password')
                     ->view('mails.forgetpassword', ['link' =>$this->link]);
     }

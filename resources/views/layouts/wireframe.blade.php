@@ -11,9 +11,9 @@
 
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs')">
+        <meta name="description" content="@yield('page-description', 'Find current job vacancies from top companies and employers in Ghana and Online. Easily apply online and land your dream job today')">
         <link rel="canonical" href="https://hieworks.com" />
-        <meta name="keywords" content="graduate recruitment, current jobs in Ghana, work from home, online work, latest jobs, full time jobs, contract, job interviews, job opportunities, jobseekers, employers, employers in Ghana, Ghanaian companies, vacancy, job vacancy, human resource, cv, office works in Ghana, quick jobs, fast jobs, jobs in Ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees, remote jobs, remote work, online works, job board, hiring remote workers, telecommunication jobs">
+        <meta name="keywords" content="graduate recruitment, current jobs in Ghana, work from home, online jobs, latest jobs, full time jobs, contract, job interviews, job opportunities, jobseekers, employers, employers in Ghana, Ghanaian companies, vacancy, job vacancy, human resource, cv, office works in Ghana, quick jobs, fast jobs, jobs in Ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees, remote jobs, remote work, online works, job board, hiring remote workers, telecommunication jobs">
         <meta name="theme-color" content="#553c9a">
         <meta name="MobileOptimized" content="320">
         <meta name="HandheldFriendly" content="true">
@@ -33,15 +33,15 @@
           <meta property="og:url" content="{{url()->full()}}"/>
           <meta property="og:type" content="website" />
           <meta property="og:title" content="@yield('page-title','Latest Jobs in Ghana and Remote Jobs - Hieworks')" />
-          <meta property="og:description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
+          <meta property="og:description" content="@yield('page-description', 'Find current job vacancies from top companies and employers in Ghana and Online. Easily apply online and land your dream job today')"/>
           <meta property="og:image" content="{{asset('assets/images/social-medium.png')}}"/>
           <meta property="og:updated_time" content="{{date('Y-d-m')}}"/>
-          {{-- <meta property="fb:app_id" content="1097972650562984"/> --}}
+          <meta property="fb:app_id" content="250776776263089"/>
         {{-- open graph ends  --}}
 
         {{-- twitter share api  --}}
           <meta name="twitter:title" content="@yield('page-title','Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
-          <meta name="twitter:description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
+          <meta name="twitter:description" content="@yield('page-description', 'Find current job vacancies from top companies and employers in Ghana and Online. Easily apply online and land your dream job today')"/>
           <meta name="twitter:image" content="{{asset('assets/images/social-medium.png')}}"/>
           <meta name="twitter:card" content="summary"/>
         {{-- twitter api ends  --}}
@@ -50,7 +50,7 @@
           
         <meta property="og:title" content="@yield('page-title','Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
         <meta property="og:image" content="{{asset('assets/images/social-large.png')}}"/>
-        <meta property="og:description" content="@yield('page-description', 'Latest Jobs in Ghana and Remote Jobs - Hieworks')"/>
+        <meta property="og:description" content="@yield('page-description', 'Find current job vacancies from top companies and employers in Ghana and Online. Easily apply online and land your dream job today')"/>
         <meta property="og:url" content="{{ url()->full() }}"/>
 
         {{-- linkedIn ends  --}}
