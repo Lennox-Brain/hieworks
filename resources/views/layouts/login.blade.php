@@ -1,5 +1,7 @@
 @extends('layouts.wireframe')
     @section('page-title', 'Login - hieworks.com')
+    @section('page-description', 'Login to your hieworks account and make unlimited job posts and manage your recruitment process.')
+
 
 @prepend('app_css')
 

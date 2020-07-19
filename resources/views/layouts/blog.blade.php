@@ -1,6 +1,8 @@
 @extends('layouts.wireframe')
 
-@section('page-title', 'blog posts '. date('M Y'). ' - hieworks.com')
+@section('page-title', 'Latest Blog Posts '. date('Y'). ' - Hieworks')
+@section('page-description', 'Latest Jobs in Ghana recruitments and vacancies website with information in career tips, hr services and employment opportunities.')
+
 
 @section('content-wrapper')
    <div>
