@@ -1,0 +1,282 @@
+[33mcommit 953c76bb4f2a6efe1958b2a23ca8926cb465732f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 75a3029 734131f
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Mon Jul 20 18:36:23 2020 +0000
+
+    Merge branch 'dev'
+
+[33mcommit 75a3029ed5d39e26b92396d2e1fdf4cabb2084eb[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Mon Jul 20 18:35:26 2020 +0000
+
+    changes
+
+[33mcommit 4c0caa61cfb9181c3e5aea00a8ec1df63f810613[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sun Jul 19 22:03:14 2020 +0000
+
+    changes seo
+
+[33mcommit 0750236387290bd1e510860005552facb50a9d3e[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sun Jul 19 17:10:29 2020 +0000
+
+    minor changes
+
+[33mcommit 3d124d5b72318fa8e4fd5ccb76c6de969e98f775[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sun Jul 19 17:03:41 2020 +0000
+
+    minor changes
+
+[33mcommit 734131f47d50da4ef9ed2ca58e11ef1333a7aff7[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m
+Merge: 609dd86 c48358b
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jul 18 21:16:54 2020 +0000
+
+    dev changes
+
+[33mcommit 609dd8689f7e9cd0a8e283933290b8abfc943449[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jul 18 21:13:18 2020 +0000
+
+    dev changes
+
+[33mcommit c48358bba44ea3beadf99a86ef20774d193d0ad8[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jul 18 21:07:14 2020 +0000
+
+    changes
+
+[33mcommit 2f0f1960faaa30ae98edd8ae059a0bf8e9d11368[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jul 18 21:02:26 2020 +0000
+
+    updates changes
+
+[33mcommit b46e7ea3e161fbe877306b6934ee41c30f01264a[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sun Jul 12 20:50:09 2020 +0000
+
+    Job Report Option
+
+[33mcommit 63e5664de096668c5c3f694d82a28a2aa7d838e0[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Fri Jul 10 20:49:26 2020 +0000
+
+    minor fixes
+
+[33mcommit b651f9bfd2317cd2842655e952226d48c5cbb131[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jul 4 17:27:02 2020 +0000
+
+    seo optimization
+
+[33mcommit e624048dbe6c52297d9d7d0ffc17dc04c1e82550[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jul 1 20:56:36 2020 +0000
+
+    autogenerate sitemap
+
+[33mcommit f46013f5a3df444e2604a728ca85dbf31c5da0f5[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jul 1 19:19:21 2020 +0000
+
+    autogenerate sitemap
+
+[33mcommit 8cfdf59d05ba3933b608a8fec8a5f32eda0d562f[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jul 1 18:53:20 2020 +0000
+
+    autogenerate sitemap
+
+[33mcommit e8bce3ed7cf527a1c2b8fb48e7c5c72ed45e347a[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jul 1 18:29:52 2020 +0000
+
+    autogenerate sitemap
+
+[33mcommit 5541677149bfa0ff919eaf7a9e8bddf9445c68c0[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jul 1 18:12:01 2020 +0000
+
+    automated sitemaps
+
+[33mcommit e03e631ad24b8fc16f2e97213ea6273e1c7603c3[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jul 1 17:29:15 2020 +0000
+
+    auto generate sitemaps
+
+[33mcommit d141ca246b2a621e845b5ee36c9a214ccb348096[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Tue Jun 30 21:48:27 2020 +0000
+
+    text corrections
+
+[33mcommit 6222d021a135a1b7f3cc2ad97379e4ad098ef97e[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Mon Jun 29 19:18:47 2020 +0000
+
+    seo keywords
+
+[33mcommit 669a2d6aeea4ca1721ae85e09200ae403bcddae0[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jun 27 20:15:08 2020 +0000
+
+    text corrections
+
+[33mcommit a4c83deae386db10b1ce3fbf9bcebc92bc0ecd18[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jun 27 20:12:08 2020 +0000
+
+    text errors corrections
+
+[33mcommit 24d022ba9750e5d4c58327c9e874d0f0a4556c78[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jun 24 22:24:56 2020 +0000
+
+    text corrections
+
+[33mcommit ba32c5879e7463716787678b49876bfb468c276c[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jun 24 20:57:19 2020 +0000
+
+    text corrections
+
+[33mcommit 052af322f31123e44ff4664083ace08c369365db[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sun Jun 21 20:16:54 2020 +0000
+
+    fixed robots text
+
+[33mcommit aba548e725fc2777999e36d17767bbd0e51b3e9e[m
+Merge: 21416ed 5ee2182
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Fri Jun 19 21:57:48 2020 +0000
+
+    mgerge branch 'dev' with master on work on blog
+
+[33mcommit 5ee2182685991755248000c43385db9d792b5bc6[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Fri Jun 19 21:55:00 2020 +0000
+
+    blog and more
+
+[33mcommit 21416ed6e36704d45c2ff603e07141a135c932b5[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Thu Jun 11 22:03:26 2020 +0000
+
+    changes
+
+[33mcommit f6289872f21b5a4de391b099b65f1f50506d9920[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Thu Jun 11 21:58:43 2020 +0000
+
+    issue
+
+[33mcommit 44dab2b952c44aa5030b85532f9e3475cd283906[m
+Merge: d944911 5eb3f40
+Author: Lennox <lennoxbrain@gmail.com>
+Date:   Thu Jun 11 14:51:03 2020 -0700
+
+    Merge pull request #1 from Lennox-Brain/dev
+    
+    head issue
+
+[33mcommit 5eb3f4008f62fd31af365ef578cbdbfc6ef8bcca[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Thu Jun 11 21:45:54 2020 +0000
+
+    head issue
+
+[33mcommit d944911749fcbde0d60eba6266473bfef9161987[m
+Merge: 8872d7f 32fd3db
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Thu Jun 11 21:22:46 2020 +0000
+
+    minor fixes
+
+[33mcommit 32fd3db47f12b6330c77830ea3278883d40ca484[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Thu Jun 11 21:16:34 2020 +0000
+
+    minor fixex
+
+[33mcommit 8c698ae9859a5b25cccb5a615b94c949f5256b2e[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jun 10 21:27:11 2020 +0000
+
+    minor fixes
+
+[33mcommit 2fe25560b2b82e0dea9dff51861a7c33f1a34175[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Wed Jun 10 20:55:35 2020 +0000
+
+    minor fixes
+
+[33mcommit 8872d7f3c29d8d021a78c86b125bc271fdca0e17[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Tue Jun 9 22:44:28 2020 +0000
+
+    intial commit
+
+[33mcommit b3647de13b8504d745490c5a51f9d4b7c29b7f7e[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Tue Jun 9 22:33:48 2020 +0000
+
+    suggestions and corrections
+
+[33mcommit 1973cda25598c4c818f7503d65b7daa03d205eba[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Mon Jun 8 23:51:35 2020 +0000
+
+    suggestions and corrections
+
+[33mcommit 5730c5108ec6dbd7f288b9e7291ad8f0ecd8cc01[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Mon Jun 8 22:51:02 2020 +0000
+
+    suggestions and corrections
+
+[33mcommit 3af98dcccc24099ee721857713731d8624fbe721[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Mon Jun 8 21:57:58 2020 +0000
+
+    suggestions and corrections
+
+[33mcommit c5d52a20ffee85312adf79f55db0ef4bf57a80e4[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sun Jun 7 21:45:46 2020 +0000
+
+    added related job post
+
+[33mcommit 736ed4f79fc84231e7d41731c1415fbca58a4c65[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sun Jun 7 21:29:56 2020 +0000
+
+    added related job post
+
+[33mcommit 851120cd4417aac9b602f64c5bb4088329bfd3a8[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jun 6 16:22:11 2020 +0000
+
+    initial commit
+
+[33mcommit 1db66f2ed0142c849ee2afbb792f7e92a96c39ab[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jun 6 14:00:30 2020 +0000
+
+    initial commit
+
+[33mcommit 2e0621f02575eaad3bc058e068fa140383c29e80[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jun 6 13:56:57 2020 +0000
+
+    initial commit
+
+[33mcommit 4ef5696cfee133130b7e867082a4c898dd69b99c[m
+Author: Lennox-Brain <lennoxbrain@gmail.com>
+Date:   Sat Jun 6 13:29:29 2020 +0000
+
+    initial commit
