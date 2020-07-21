@@ -127,6 +127,7 @@
                       </div>
                       {{-- job wrapper ends  --}}
 
+                     
                       <div class="my-4">
                            {{$jobs->links()}}
                       </div>
@@ -145,3 +146,25 @@
         </div>
    </div>
 @endsection
+
+@prepend('app_js')
+    <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+            "@type": "ItemList",
+            "url": "{{config('app.url')}}",
+            "name": "Jobs in Ghana",
+            "numberOfItems": 20,
+            "itemListElement": [
+               @foreach ($jobs as $job)
+                  {
+                    "@type": "ListItem",
+                    "position": {{$loop->iteration}},
+                    "name": "{{$job->job_title}}",
+                    "url": "{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}"
+                    }{{ ($loop->last) ? '' : ','}}
+               @endforeach
+            ]
+      }
+    </script>
+@endprepend

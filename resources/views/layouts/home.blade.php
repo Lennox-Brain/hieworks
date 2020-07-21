@@ -10,11 +10,8 @@
                We are your online portal for latest job vacancies in Ghana and Remotely. We help end your job searching !
                
             </p>
-<<<<<<< HEAD
             <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4 rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
-=======
-            <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4  rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
->>>>>>> master
+
           </div>
 
            <div class="flex flex-grow-1 flex-start" >

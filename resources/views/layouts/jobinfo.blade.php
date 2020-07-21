@@ -97,38 +97,19 @@
                    </div>
 
                    <div class="w-full md:w-2/5 md:px-3 my-2">
-<<<<<<< HEAD
-                        <div class="my-4  text-center sm:hidden">
-                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
-                                 view latest jobs today &nbsp;
-                                <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </a>
-                        </div>
-                       <div class="border p-4">
-                                <div>
-                                    <div class="flex flex-wrap items-center text-gray-600">
-=======
                        
                        <div class="border p-4">
                                 <div>
                                     <div class="block sm:flex flex-wrap items-center text-gray-600">
->>>>>>> master
                                          @if($job->company_logo)
                                             <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="120">
                                          @else 
                                             <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="120">
                                          @endif
-<<<<<<< HEAD
-                                        <span class="text-base font-bold">{{$job->job_company}}</span>
-                                    </div>
-
-                                    <div class="flex flex-wrap items-center text-gray-500">
-=======
                                         <span class="text-base sm:text-lg font-bold">{{$job->job_company}}</span>
                                     </div>
 
                                     <div class="block sm:flex flex-wrap items-center text-gray-500">
->>>>>>> master
                                         <span class="bg-gray-200 font-semibold text-lg px-3 py-1 rounded-full text-blue-700 m-1">more info</span>
                                         <div>
                                             @if($job->onsite)
@@ -171,11 +152,7 @@
                                           </div>
                                     </div>
 
-<<<<<<< HEAD
-                                    <div class="flex flex-wrap items-center text-gray-500">
-=======
                                     <div class="block sm:flex flex-wrap items-center text-gray-500">
->>>>>>> master
                                         
                                        @if($job->job_deadline)
                                             <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
@@ -230,15 +207,9 @@
                     
             </div>
 
-<<<<<<< HEAD
-            <div class="w-full md:w-4/6 my-2 bg-white">
-                 <div class="my-4  text-center hidden sm:block">
-                            <a href="{{route('jobs')}}" class="outline-none bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
-=======
             <div class="w-full md:w-4/6 my-2 bg-white pb-12">
                  <div class="my-4  text-center hidden sm:block pt-12">
                             <a href="{{route('jobs')}}" class="outline-none capitalize text-sm mx-auto w-56 bg-blue-200 font-semibold flex items-center justify-center text-blue-700 px-4 py-3">
->>>>>>> master
                                  view latest jobs today &nbsp;
                                 <svg fill="none" class="h-5 w-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </a>
@@ -321,3 +292,77 @@
           </div>
    </div>
 @endsection
+
+@prepend('app_js')
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "{{config('app.url')}}",
+                    "name": "Homepage",
+                    "image": "{{asset('assets/images/hieworks-logo-300x300.png')}}"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "{{route('category', ['category' =>$job->job_category])}}",
+                    "name": "Research, Teaching & Training",
+                    "image": "{{asset('assets/images/hieworks-logo-300x300.png')}}"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}",
+                    "name": "{{$job->job_title}}",
+                    "image": "{{asset('assets/images/hieworks-logo-300x300.png')}}"
+                }
+            }
+        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "image": "{{asset('assets/images/hieworks-logo-300x300.png')}}",
+            "url":"{{url()->current()}}",
+            "datePosted": "{{$job->created_at}}",
+            "description": "{{$job->job_description}}",
+            "employmentType": "{{Str::slug($job->job_type, '-')}}",
+            "industry": "{{$job->job_category}}",
+            "occupationalCategory": "{{ $job->job_category }}",
+            "salaryCurrency": "GHS",
+            "title": "{{$job->job_title}}",
+            identifier:"{{$job->job_id}}",
+            "validThrough": "{{($job->job_deadline) ? $job->job_deadline : $job->created_at->addDays(45)}}",
+            "educationRequirements": "{{$job->job_qualification}}",
+            "qualifications": "{{$job->job_experience}}",
+            "experienceRequirements": "{{$job->job_experience}}",
+            "jobLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "{{$job->job_location}}",
+                    "addressRegion": "Ghana",
+                    "addressCountry": "GH"
+                }
+            },
+            "hiringOrganization": {
+                "@type": "Organization",
+                "name": "{{$job->job_company}}",
+                "sameAs": ""
+            }
+        }
+</script>
+   
+@endprepend

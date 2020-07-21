@@ -381,6 +381,64 @@
       <script src="{{ mix('/js/vendor.js') }}"></script>
       <script src="{{ mix('/js/activate_sw.js') }}"></script>
        @stack('app_js')
+
+       {{-- schema.org --}}
+       <script type="application/ld+json">
+            {
+            "@context": "http://www.schema.org",
+            "@type": "Organization",
+            "@id": "https://www.hieworks.com.gh#organisation",
+            "name": "Hieworks Ghana",
+            "url": "{{config('app.url')}}",
+            "logo": "{{asset('assets/images/social-medium.png')}}",
+            "description": "Find current jobs in Ghana and online from top companies and employers. Easily apply for vacancies and land your dream job today. Ghana's leading jobs website",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "",
+                "addressLocality": "Accra, Ghana",
+                "addressRegion": "",
+                "addressCountry": "Ghana"
+            },
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+233241775839",
+                    "contactType": "Customer Support"
+                }
+            ],
+            "sameAs": [
+                "https://web.facebook.com/hieworks",
+                "https://twitter.com/hieworks",
+                "https://www.instagram.com/hieworks/",
+                "https://www.linkedin.com/company/hieworks"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+      [
+        @foreach($home_categories as $category)
+              {
+                "@context": "https://schema.org",
+                "@type": "SiteNavigationElement",
+                "name": "{{$category}}",
+                "url": "{{route('category', ['category' =>$category])}}"
+              }
+        @endforeach        
+      ]
+    </script>
+    <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Hieworks Ghana",
+          "url": "{{config('app.url')}}",
+          "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://hieworks.com/search?q={q}",
+              "query-input": "required name=q"
+          }
+        }
+      </script>
     </body>
     
 </html>

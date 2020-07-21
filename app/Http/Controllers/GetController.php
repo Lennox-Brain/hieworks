@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
-use App\Category;
+
 use App\Job;
-use App\Hieworks\Data;
-use App\Hieworks\Helpers;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 
@@ -18,7 +14,7 @@ class GetController extends Controller
     {
          $jobs = Job::where(['status'=>true])
                 ->orderBy('created_at', 'DESC')
-                ->simplePaginate();
+                ->simplePaginate(20);
         return view('layouts.alljobs', ['jobs'=>$jobs]);
     }
 
