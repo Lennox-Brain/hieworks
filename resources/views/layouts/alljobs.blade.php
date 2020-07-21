@@ -1,6 +1,6 @@
 @extends('layouts.wireframe')
 
-@section('page-title', 'Current Jobs in Ghana | Remote Jobs '. date('Y'). ' - hieworks.com')
+@section('page-title', 'Current Jobs in Ghana'. date('Y'). ' - Hieworks')
 
 @section('content-wrapper')
    <div>
@@ -11,7 +11,7 @@
 
             <div class="sm:w-4/5 mx-auto p-1 sm:p-2 mt-8 bg-white">
               
-                <form method="GET" action="{{route('filter')}}" class="bloc sm:flex justify-evenly items-center">
+                <form method="GET" action="{{route('filter')}}" class="block sm:flex justify-evenly items-center">
                     <div class="flex flex-grow-1 my-2">
                     
                        <select class="appearance-none bg-transparent w-full text-gray-600 border-b-2 border-purple-600 py-1 px-6  select" name="job_category">

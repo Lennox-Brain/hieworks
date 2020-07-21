@@ -1,6 +1,8 @@
 @extends('layouts.wireframe')
 
 @section('page-title',  $blogInfo->article_title)
+@section('page-description', 'Latest Jobs in Ghana recruitments and vacancies website with information in career tips, hr services and employment opportunities.')
+
 
 @section('service-scripts')
     <div id="fb-root"></div>

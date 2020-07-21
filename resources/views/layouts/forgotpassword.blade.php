@@ -1,5 +1,5 @@
 @extends('layouts.wireframe')
-    @section('page-title','Forgot Password? Reset now- hieworks.com')
+    @section('page-title','Reset Account Password - hieworks.com')
 
 @prepend('app_css')
 
