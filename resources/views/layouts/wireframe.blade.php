@@ -415,7 +415,7 @@
         }
     </script>
 
-    <script type="application/ld+json">
+    {{-- <script type="application/ld+json">
       {
         "@context":"http://schema.org",
         "@type":"ItemList",
@@ -431,7 +431,7 @@
             @endforeach  
         ]
       }
-    </script>
+    </script> --}}
    
     </body>
     
