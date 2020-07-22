@@ -414,17 +414,23 @@
             ]
         }
     </script>
+
     <script type="application/ld+json">
-      [
-        @foreach($home_categories as $category)
-              {
-                "@context": "https://schema.org",
-                "@type": "SiteNavigationElement",
+      {
+        "@context":"http://schema.org",
+        "@type":"ItemList",
+        "itemListElement":[
+          @foreach($home_categories as $category)
+            {
+                "@type":"SiteNavigationElement",
+                "position":{{$loop->iteration}},
                 "name": "{{$category}}",
+                "description": "Hieworks Jobs Category for {{$category}} Jobs",
                 "url": "{{route('category', ['category' =>$category])}}"
               },
-        @endforeach        
-      ]
+            @endforeach  
+        ]
+      }
     </script>
    
     </body>
