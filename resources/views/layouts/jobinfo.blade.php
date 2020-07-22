@@ -343,7 +343,7 @@
             "occupationalCategory": "{{ $job->job_category }}",
             "salaryCurrency": "GHS",
             "title": "{{$job->job_title}}",
-            identifier:"{{$job->job_id}}",
+            "identifier":"{{$job->job_id}}",
             "validThrough": "{{($job->job_deadline) ? $job->job_deadline : $job->created_at->addDays(45)}}",
             "educationRequirements": "{{$job->job_qualification}}",
             "qualifications": "{{$job->job_experience}}",
