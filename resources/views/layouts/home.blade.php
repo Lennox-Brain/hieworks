@@ -31,7 +31,7 @@
                   <div class="my-8">
                   {{-- category title  --}}
                       @if(count(App\hieworks\Data::data_adapter($category)) > 0)
-                          <div class="text-blue-700 font-bold text-xl flex items-center p-4"">
+                          <div class="text-blue-700 font-bold text-xl flex items-center p-4">
                             <h4 class="align-middle">{{$category}}</h4>
                            
                           </div>

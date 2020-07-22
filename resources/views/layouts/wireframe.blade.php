@@ -394,9 +394,9 @@
             "description": "Find current jobs in Ghana and online from top companies and employers. Easily apply for vacancies and land your dream job today. Ghana's leading jobs website",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "",
+                "streetAddress": "Nii Boi Town",
                 "addressLocality": "Accra, Ghana",
-                "addressRegion": "",
+                "addressRegion": "Greater Accra",
                 "addressCountry": "Ghana"
             },
             "contactPoint": [
@@ -422,7 +422,7 @@
                 "@type": "SiteNavigationElement",
                 "name": "{{$category}}",
                 "url": "{{route('category', ['category' =>$category])}}"
-              }
+              },
         @endforeach        
       ]
     </script>
