@@ -1,6 +1,7 @@
 @extends('layouts.wireframe')
 
-@section('page-title', 'Current Jobs in Ghana'. date('Y'). ' - Hieworks')
+@section('page-title', 'Current Jobs in Ghana '. date('Y'). ' - Hieworks')
+@section('page-description', 'Find current job vacancies from top companies and employers in Ghana and Online. Easily apply online and land your dream job today')
 
 @section('content-wrapper')
    <div>

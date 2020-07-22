@@ -1,7 +1,7 @@
 @extends('layouts.wireframe')
 
 @section('page-title', $job->job_title . ' | hieworks.com')
-@section('page-description', 'apply for '.$job->job_title .' job')
+@section('page-description', 'Apply for '.$job->job_title .' Job')
 
 @section('service-scripts')
     <div id="fb-root"></div>
