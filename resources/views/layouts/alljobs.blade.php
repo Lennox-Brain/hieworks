@@ -168,4 +168,18 @@
             ]
       }
     </script>
+
+    <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Hieworks Ghana",
+          "url": "{{config('app.url')}}",
+          "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://hieworks.com/search?q={q}",
+              "query-input": "required name=q"
+          }
+        }
+      </script>
 @endprepend
