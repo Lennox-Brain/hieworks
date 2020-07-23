@@ -154,7 +154,7 @@
           "@context": "https://schema.org",
             "@type": "ItemList",
             "url": "{{config('app.url')}}",
-            "name": "Jobs in Ghana",
+            "name": "Current Jobs in Ghana and Remote Careers",
             "numberOfItems": 20,
             "itemListElement": [
                @foreach ($jobs as $job)

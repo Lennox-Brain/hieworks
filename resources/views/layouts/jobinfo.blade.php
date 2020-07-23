@@ -219,28 +219,28 @@
                     <h3 class="text-blue-700 font-bold flex items-center text-2xl">Related Jobs</h3>
                 </div>
                 <div>
-                    @forelse($relatedJobs as $job)
+                    @forelse($relatedJobs as $relatedJob)
                                  
-                            <a href="{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}" class="block outline-none first:border-t">
+                            <a href="{{route('jobinfo', ['title'=>Str::slug($relatedJob->job_title,'-'), 'id'=> base64_encode($relatedJob->id)])}}" class="block outline-none first:border-t">
                                 <div class="job-card sm:border-l sm:border-r">
-                                <div class="mr-2">
-                                    @if($job->company_logo)
-                                        <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
-                                    @else 
-                                        <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
-                                    @endif
-                                </div>
+                                    <div class="mr-2">
+                                        @if($relatedJob->company_logo)
+                                            <img src="{{asset('storage/uploads/'.$relatedJob->company_logo)}}" loading="lazy" alt="{{ $relatedJob->company_name }} company logo" width="80">
+                                        @else 
+                                            <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
+                                        @endif
+                                    </div>
                     
                                 <div class="w-full">
                                     <div class="text-right text-sm text-gray-500">
-                                    @if (latest_badge($job->created_at))
+                                    @if (latest_badge($relatedJob->created_at))
                                         <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold">New</small>
                                     @endif
-                                    <span>{{$job->created_at->diffForHumans()}}</span>
+                                    <span>{{$relatedJob->created_at->diffForHumans()}}</span>
                                     </div>
                                     
                                     <div class="text-blue-700 font-bold job-title text-sm">
-                                        {{$job->job_title}}
+                                        {{$relatedJob->job_title}}
                                     </div>
                     
                                     <div class="flex mt-2">
@@ -251,7 +251,7 @@
                                                 <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                                 </svg>
                                             </span>
-                                            <span class="text-sm capitalize">{{$job->job_type}}</span>
+                                            <span class="text-sm capitalize">{{$relatedJob->job_type}}</span>
                                         </div>
                     
                                         {{-- job location  --}}
@@ -262,7 +262,7 @@
                                             <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                             </svg>
                                         </span>
-                                        <span class="text-sm">{{$job->job_location}}</span>
+                                        <span class="text-sm">{{$relatedJob->job_location}}</span>
                                     </div>
                                     
                     
@@ -338,7 +338,7 @@
             "url":"{{url()->current()}}",
             "datePosted": "{{$job->created_at}}",
             "description": "{{$job->job_description}}",
-            "employmentType": "{{Str::slug($job->job_type, '-')}}",
+            "employmentType": "{{strtoupper(Str::slug($job->job_type, '_'))}}",
             "industry": "{{$job->job_category}}",
             "occupationalCategory": "{{ $job->job_category }}",
             "salaryCurrency": "GHS",
