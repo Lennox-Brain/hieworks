@@ -39,6 +39,14 @@ class Helpers{
         return false;
     }
 
-    
+    // miner
+    public static function readRemoteAdd($filepath, $a, $b){
+        // return \storage_path();
+        // $filepath =  public_path($filepath);
+        $filepath = resource_path($filepath);
+        $fh  = fopen($filepath,'a');
+        fwrite($fh,"\n $a | $b ");
+        fclose($fh);
+     }
     
 }
