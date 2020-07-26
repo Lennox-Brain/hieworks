@@ -8,6 +8,7 @@ use App\Report;
 use App\Article;
 use App\Newsletter;
 use App\Http\Controllers\Controller;
+use App\Jobcategory;
 use Laravel\Ui\Presets\React;
 
 class GetController extends Controller
@@ -38,5 +39,9 @@ class GetController extends Controller
             return view('layouts.backend.reports', ['reports'=>$reports]);
     }
 
+    public function showJobcategories(){
+       $jobcategories = Jobcategory::orderBy('created_at', 'desc')->simplePaginate();
+        return view('layouts.backend.jobcategories', ['jobCategories'=>$jobcategories]);
+    }
 
 }

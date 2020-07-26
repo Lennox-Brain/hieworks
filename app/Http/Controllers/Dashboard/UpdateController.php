@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Hieworks\Data;
 use App\Job;
 use App\User;
+use App\Jobslug;
+use App\Hieworks\Data;
+use PHPUnit\TextUI\Help;
 use App\Hieworks\Helpers;
+use Illuminate\Support\Str;
 use App\Hieworks\Validators;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use PHPUnit\TextUI\Help;
 
 class UpdateController extends Controller
 {
@@ -72,10 +74,24 @@ class UpdateController extends Controller
         // }); 
         
 
-         $status = Job::findorFail($job_id)->update($data);
+         $status = Job::findorFail($job_id);
+         if($status) $status->update($data);
              if(!$status) return redirect()->back()->withErrors(['system failure, try again later'])->withInput();
-
-     return redirect()->back()->with('postStatus', 'changes saved successfully');
+          
+             Jobslug::where('job_id',$job_id)->update([
+                
+                'job_id' =>$status->id,
+                'title_slug' =>Str::slug($status->job_title,'-'),
+                'category_slug' => Str::slug($status->job_category,'-'),
+                'type_slug'=>Str::slug($status->job_type, '-'),
+                'qualification_slug'=>Str::slug($status->job_qualification,'-'),
+                'experience_slug'=>Str::slug($status->job_experience,'-'),
+                'experience_slug'=>Str::slug($status->job_company,'-')
+           
+             ]);
+   
+   
+             return redirect()->back()->with('postStatus', 'changes saved successfully');
 
 
     }

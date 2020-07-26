@@ -23,7 +23,7 @@
                 <div class="job_ bg-white mx-auto p-1 sm:p-2 block md:flex ">
                    <div class="w-full md:w-4/5 border p-4 my-2">
                        <div>
-                           <h3 class="font-bold md:font-normal md:text-lg text-purple-800">{{$job->job_title}}</h3>
+                           <h3 class="font-bold text-purple-700">{{$job->job_title}}</h3>
                            
                          {{-- set one  --}}
                            <div class="flex items-center flex-wrap justify-between text-gray-600 text-sm border-t my-2 pt-1">  
@@ -151,16 +151,21 @@
                                             </span>
                                           </div>
                                     </div>
+                                    
 
                                     <div class="block sm:flex flex-wrap items-center text-gray-500">
-                                        
-                                       @if($job->job_deadline)
+                                                                             
+                                        @if($job->job_deadline)
                                             <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                             </svg>
                                            <span class="text-base">Deadline:  {{$job->job_deadline->format('d M Y')}}</span>
-                                       @endif
+                                        @endif
                                     </div>
+
+                                     @if($job->status == false)
+                                            <div class="text-red-200 font-bold">Job Post Expired</div>
+                                     @endif
 
                                     <div class="my-3 flex justify-evenly items-center">
                                         <div class="fb-share-button" data-href="{{url()->full().'?utm_source=facebook&utm_medium=social&utm_campaign=share-button&utm_content='.$job->job_id}}" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url()->full()}}" class="fb-xfbml-parse-ignore">Share</a></div>

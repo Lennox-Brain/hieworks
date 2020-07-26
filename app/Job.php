@@ -18,6 +18,10 @@ class Job extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function jobslugs(){
+        return $this->hasOne('App\Jobslug');
+     }
+
     public function reports(){
         return $this->hasMany('App\Report');
      }

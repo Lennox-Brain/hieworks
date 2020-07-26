@@ -71,7 +71,7 @@
                                                    <option value="">Job Category</option>
                                                 @endif 
                                                 @foreach ($job_categories as $category)
-                                                    <option value="{{$category}}">{{$category}}</option>
+                                                    <option value="{{$category->title}}">{{$category->title}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

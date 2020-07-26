@@ -28,6 +28,9 @@ class Newsletter extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.newsletter', ['jobs' => $this->jobs]);
+        return $this
+        ->subject('Hieworks Jobs Alert')
+        ->from('no-reply@hieworks.com')
+        ->view('mails.newsletter', ['jobs' => $this->jobs]);
     }
 }
