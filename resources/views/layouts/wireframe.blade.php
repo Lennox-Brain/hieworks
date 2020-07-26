@@ -437,7 +437,7 @@
         }
     </script>
 
-    <script type="application/ld+json">
+    {{-- <script type="application/ld+json">
       {
         "@context":"http://schema.org",
         "@type":"ItemList",
@@ -446,12 +446,12 @@
             {
                 "@type":"SiteNavigationElement",
                 "position":{{$loop->iteration}},
-                "url": "{{route('category', ['category' =>$category])}}"
+                "url": "{{route('category', ['category' =>Str::slug($category,'-')])}}"
               },
             @endforeach  
         ]
       }
-    </script>
+    </script> --}}
    
     </body>
     
