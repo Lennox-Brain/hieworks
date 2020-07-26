@@ -60,7 +60,7 @@ class Data{
     //     'Security',
     //     'Sports & Fitness',
     //     'Transport, Travel',
-    //     'Trade, Shiping, Courier',
+    //     'Trade, Shiping',
     //     'Tourism, Hospitality'
     // ];
 

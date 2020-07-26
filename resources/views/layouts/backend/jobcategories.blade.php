@@ -143,6 +143,9 @@
                                    @endforelse
                               </tbody>
                             </table>
+                            <div>
+                              {{$jobCategories->links()}}
+                            </div>
                          </div>
                       </div>
                        <aside class="w-full lg:w-2/5 px-3 bg-white shadow h-48">
