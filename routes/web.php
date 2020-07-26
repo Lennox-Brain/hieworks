@@ -19,7 +19,13 @@ Route::group(['prefix'=>'backend'], function(){
         Route::get('/account', 'Backend\GetController@showAccount')->name('backend:account');
         Route::get('/reports', 'Backend\GetController@showReports')->name('backend:reports');
         Route::get('suspend/job/{id}', 'Backend\PostController@suspendJob')->name('suspend:job');
-
+        
+        Route::get('/job/categories', 'Backend\GetController@showJobcategories')->name('show:jobcategories');
+        Route::post('/new/job/category', 'Backend\PostController@addJobcategory')->name('add:jobcategory');
+        Route::post('/edit/job/category/{id}', 'Backend\UpdateController@updateJobcategory')->name('update:jobcategory');
+        Route::get('/delete/job/category/{id}', 'Backend\DeleteController@deleteJobcategory')->name('delete:jobcategory');
+    
+     
         Route::get('/new/article', 'Blog\GetController@showArticleForm')->name('show:newArticle');
         Route::post('/post/article', 'Blog\PostController@postArticle')->name('backend:postArticle');
         Route::post('/new/article/category', 'Blog\PostController@newArticleCategory')->name('backend:newArticleCategory');

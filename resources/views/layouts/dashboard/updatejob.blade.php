@@ -66,7 +66,7 @@
                                             <select class="input select" name="job_category" id="job_category" required>
                                                   <option value="{{old('job_category',$job->job_category )}}"> {{old('$job->job_category', $job->job_category)}}</option>
                                                 @foreach ($job_categories as $category)
-                                                    <option value="{{$category}}">{{$category}}</option>
+                                                    <option value="{{$category->title}}">{{$category->title}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

@@ -102,7 +102,7 @@
                       </div>
                       @if (count(App\hieworks\Data::data_adapter($category) ) > 0 )
                           <div class="text-center text-purple-700 text-sm sm:font-bold my-4 py-6">
-                            <a href="{{route('category', ['category' =>$category])}}">Browse all ({{count(App\hieworks\Data::data_adapter($category) ) }}) {{$category}} jobs </a>
+                            <a href="{{route('category', ['category' =>Str::slug($category, '-')])}}">Browse all ({{count(App\hieworks\Data::data_adapter($category) ) }}) {{$category}} jobs </a>
                           </div>
                       @endif
 
@@ -131,7 +131,7 @@
             {{-- newsletters --}}
             <div class="sm:w-4/5 mx-auto">
                 <!-- component -->
-                  <div class="flex flex-col w-full md:h-48 bg-white rounded-lg shadow-md overflow-hidden md:flex-row my-10">
+                  <div class="flex flex-col w-full md:h-48 bg-white rounded-lg shadow-md overflow-hidden md:flex-row my-10" id="sub">
                     <div class="md:flex items-center justify-center md:w-1/2 md:bg-purple-900">
                         <div class="py-6 px-8 md:py-0">
                             <h2 class="text-purple-800 flex items-center  text-lg sm:text-2xl font-bold md:text-gray-100">
@@ -141,7 +141,7 @@
                               </svg>
 
                             </h2>
-                            <p class="mt-2 text-gray-600 md:text-gray-400 capitalize">Be the first to get latest job updates. Subscribe today</p>
+                            <p class="mt-2 text-gray-600 md:text-gray-400 capitalize font-semibold">Don't miss out on any job post again</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center pb-6 md:py-0 md:w-1/2 md:border-b-8 border-purple-900">

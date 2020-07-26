@@ -115,6 +115,7 @@
   
                           {{-- desktop menu begins  --}}
                         <ul class="justify-between hidden sm:flex">
+                          
                           <li class="p-2 py-3">
                             <a href="{{route('user:postjob')}}" class="flex items-center bg-purple-900 rounded-full p-1 outline-none">
                               <span>
@@ -123,6 +124,15 @@
                                 </svg>
                               </span>
                               <span>Post Job</span>
+                            </a>
+                          </li>
+
+                          <li class="p-2 hover:bg-purple-700 py-3">
+                            <a href="{{route('home')}}" class="flex items-center outline-none">
+                              <svg fill="currentColor" class="h-5 w-5" viewBox="0 0 20 20">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                              </svg>
+                              <span>Home</span>
                             </a>
                           </li>
 
@@ -202,8 +212,19 @@
           <div x-show.immediate="isOpen" class="z-50 bg-purple-900 opacity-low absolute w-full h-full pt-12">
             <div x-show.transition="isOpen">
                 <ul class="text-white text-2xl ml-4 leading-10">
-                 
-                   <li>
+                  <li>
+                      <a href="{{ route('home') }}" class="flex items-center outline-none">
+                        <span>
+                          <svg fill="currentColor" class="h-6 w-6" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                          </svg>
+                        </span>
+                        <span class="ml-1">Home</span>
+                      </a>
+                  </li>
+                   
+                  
+                  <li>
                       <a href="{{ route('jobs') }}" class="flex items-center outline-none">
                         <span>
                           <svg fill="none" class="h-6 w-6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -213,6 +234,7 @@
                         <span class="ml-1">Browse Jobs</span>
                       </a>
                   </li>
+
                   @auth
                       <li>
                           <a href="{{route('user:account')}}" class="flex items-center outline-none">

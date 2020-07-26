@@ -46,14 +46,15 @@ class SendNewletter extends Command
 
         $jobs = Job::where('status', true)
                     ->orderBy('created_at', 'DESC')
-                    ->take(4)
+                    ->take(6)
                     ->get(['id', 'job_title', 'job_location','job_category', 'job_type'])
                     ->toArray();
 
         
-          foreach($subscribers->chunk(1) as $chunk){
+          foreach($subscribers->chunk(100) as $chunk){
                foreach($chunk as $email){
-                     Mail::to($email)->send( new MailNewsletter($jobs));
+                     Mail::to($email)
+                     ->send( new MailNewsletter($jobs));
                }
           }   
           echo 'newsletters sent';      

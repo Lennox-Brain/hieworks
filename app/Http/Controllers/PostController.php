@@ -11,6 +11,7 @@ use App\Hieworks\Data;
 use App\Hieworks\Helpers;
 use Illuminate\Support\Str;
 use App\Hieworks\Validators;
+use App\Jobslug;
 use Illuminate\Http\Request;
 use App\Mail\ApplicationMail;
 use Illuminate\Support\Facades\URL;
@@ -69,7 +70,17 @@ class PostController extends Controller
 
        if(!$status) return redirect()->back()->withErrors(['system failure, try again later'])->withInput();
         
-        return redirect()->back()->with('postStatus', 'job successfully uploaded');
+       Jobslug::create([
+            'job_id' =>$status->id,
+            'title_slug' =>Str::slug($status->job_title,'-'),
+            'category_slug' => Str::slug($status->job_category,'-'),
+            'type_slug'=>Str::slug($status->job_type, '-'),
+            'qualification_slug'=>Str::slug($status->job_qualification,'-'),
+            'experience_slug'=>Str::slug($status->job_experience,'-'),
+            'experience_slug'=>Str::slug($status->job_company,'-')
+       ]);
+        
+       return redirect()->back()->with('postStatus', 'job successfully uploaded');
 
     }
 

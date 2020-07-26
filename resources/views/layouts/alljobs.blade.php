@@ -17,7 +17,7 @@
                        <select class="appearance-none bg-transparent w-full text-gray-600 border-b-2 border-purple-600 py-1 px-6  select" name="job_category">
                             <option value="">Select Job Category</option>
                             @foreach ($job_categories as $category)
-                                      <option value="{{$category}}">{{$category}}</option>
+                                      <option value="{{$category->slug}}">{{$category->title}}</option>
                             @endforeach
                        </select>
                     </div>

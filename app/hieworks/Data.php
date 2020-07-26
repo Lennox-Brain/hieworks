@@ -2,6 +2,7 @@
 namespace App\Hieworks;
 
 use App\Job;
+use App\Jobcategory;
 use Illuminate\Support\Facades\DB;
  
 class Data{
@@ -23,45 +24,52 @@ class Data{
     public const  COVER_PATH = '/storage/docs/cover';
 
 
-    const CATEGORIES = [
-        'Accounting, Banking, Finance',
-        'Administration & Office Service',
-        'Agriculture, Farming',
-        'Animation, Audio & Multimedia',
-        'Artisan',
-        'Arts, Culture & Drama',
-        'Beauty & Therapy',
-        'Building & Construction',
-        'Branding & Advertisment',
-        'Business Development',
-        'Catering, Food Services',
-        'Communication, Media',
-        'Consultation & Legal Services',
-        'Courrier & Delivery',
-        'Creative, Fashion & Design',
-        'Customer Service',
-        'Engineering & Mechanics', 
-        'Education, Research, Training',
-        'FMCG, Retail, Wholesale',
-        'Healthcare & Pharmacy',
-        'IT,Telecom & Computing',
-        'Manufacturing, Packaging',
-        'Management & Operation',
-        'Monitoring, Evaluation',
-        'NGO, Charity',
-        'Others',
-        'Oil, Gas & Energy',
-        'Ports, Shipping & Marintime',
-        'Public Sector & Government',
-        'Real Estate, Housing',
-        'Sales & Marketing',
-        'Sanitation & Wast Management',
-        'Security',
-        'Sports & Fitness',
-        'Transport, Travel',
-        'Trade, Shiping, Courier',
-        'Tourism, Hospitality'
-    ];
+    // const CATEGORIES = [
+    //     'Accounting, Banking, Finance',
+    //     'Administration & Office Service',
+    //     'Agriculture, Farming',
+    //     'Animation, Audio & Multimedia',
+    //     'Artisan',
+    //     'Arts, Culture & Drama',
+    //     'Beauty & Therapy',
+    //     'Building & Construction',
+    //     'Branding & Advertisment',
+    //     'Business Development',
+    //     'Catering, Food Services',
+    //     'Communication, Media',
+    //     'Consultation & Legal Services',
+    //     'Courrier & Delivery',
+    //     'Creative, Fashion & Design',
+    //     'Customer Service',
+    //     'Engineering & Mechanics', 
+    //     'Education, Research, Training',
+    //     'FMCG, Retail, Wholesale',
+    //     'Healthcare & Pharmacy',
+    //     'IT,Telecom & Computing',
+    //     'Manufacturing, Packaging',
+    //     'Management & Operation',
+    //     'Monitoring, Evaluation',
+    //     'NGO, Charity',
+    //     'Others',
+    //     'Oil, Gas & Energy',
+    //     'Ports, Shipping & Marintime',
+    //     'Public Sector & Government',
+    //     'Real Estate, Housing',
+    //     'Sales & Marketing',
+    //     'Sanitation & Wast Management',
+    //     'Security',
+    //     'Sports & Fitness',
+    //     'Transport, Travel',
+    //     'Trade, Shiping, Courier',
+    //     'Tourism, Hospitality'
+    // ];
+
+    
+
+     public static function jobCategories_source(){
+        return $categories = Jobcategory::orderBy('title', 'asc')->get(['title','slug']);
+     }
+
 
     public static function jobCategories(){
         // return [];
