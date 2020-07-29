@@ -186,3 +186,37 @@
         </div>
    </div>
 @endsection
+
+@prepend('app_js')
+
+<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{{url()->current()}}"
+        },
+        "headline": "{{$blogInfo->article_title}}",
+        "image": [
+          "{{asset('/assets/images/social-large.png')}}",
+        ],
+        "datePublished": "{{$blogInfo->created_at}}",
+        "dateModified": "{{$blogInfo->updated_at}}",
+        "author": {
+          "@type": "Person",
+          "name": "Lennox Kaidzro"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Hiework Ghana",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{asset('/assets/images/hieworks-logo-300x300.png')}}"
+          }
+        }
+      }
+  </script>
+
+
+@endprepend

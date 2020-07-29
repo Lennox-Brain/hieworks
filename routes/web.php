@@ -123,6 +123,10 @@ Route::view('/sitemap', 'extras.sitemap')->name('sitemap');
 Route::view('/about', 'extras.about')->name('about');
 Route::view('/faq', 'extras.faq')->name('faq');
 
+Route::get('/test', function(){
+    return password_hash('lennox94', PASSWORD_DEFAULT);
+});
+
 Route::fallback(function(){
     return view('layouts.404');
 });

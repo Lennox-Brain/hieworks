@@ -55,3 +55,14 @@
    </div>
 @endsection
 
+@prepend('app_js')
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "{{route('home')}}",
+      "logo": "{{asset('assets/images/hieworks-logo-300x300.png')}}"
+    }
+</script>
+
+@endprepend

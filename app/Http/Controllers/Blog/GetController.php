@@ -29,11 +29,13 @@ class GetController extends Controller
         return Article::where('featured', true)->orderBy('created_at', 'desc')->get(['id', 'article_title']);
     } 
 
+   
+   
     public function blogPosts()
     {
         
         $blogPosts = Article::orderBy('created_at', 'desc')
-                             ->simplePaginate(5);
+                             ->simplePaginate(8);
         $categories = Category::orderBy('created_at', 'desc')->get();
       
         return view('layouts.blog', ['blogPosts' => $blogPosts, 'categories' =>$categories, 'featuredPosts' => $this->featuredArticles() ]);
@@ -68,7 +70,8 @@ class GetController extends Controller
         $blogPosts = Article::where('category_id', $id)
                               ->where('status', true)
                               ->orderBy('created_at', 'desc')
-                              ->simplePaginate(5);
+                              ->simplePaginate(8);
+
         $category = Str::slug($category, ' ');                    
         return view('layouts.blog', 
             ['blogPosts' => $blogPosts,

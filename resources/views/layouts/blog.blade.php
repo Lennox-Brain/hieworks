@@ -119,3 +119,26 @@
         </div>
    </div>
 @endsection
+
+@prepend('app_js')
+    <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+            "@type": "ItemList",
+            "url": "{{config('app.url')}}",
+            "name": "Current Jobs in Ghana and Remote Careers",
+            "numberOfItems": 8,
+            "itemListElement": [
+               @foreach ($blogPosts as $post)
+                  {
+                    "@type": "ListItem",
+                    "position": {{$loop->iteration}},
+                    "name": "{{$post->article_title}}",
+                    "url": "{{route('bloginfo', ['title' => Str::slug($post->article_title, '-'),'id' => base64_encode($post->id)])}}"
+                    }{{ ($loop->last) ? '' : ','}}
+               @endforeach
+            ]
+      }
+    </script>
+
+@endprepend

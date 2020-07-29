@@ -317,8 +317,8 @@
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "{{route('category', ['category' =>$job->job_category])}}",
-                    "name": "Research, Teaching & Training",
+                    "@id": "{{route('category', ['category' =>Str::slug($job->job_category, '-')])}}",
+                    "name": "{{$job->job_category}}",
                     "image": "{{asset('assets/images/hieworks-logo-300x300.png')}}"
                 }
             },
@@ -328,7 +328,7 @@
                 "item": {
                     "@id": "{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}",
                     "name": "{{$job->job_title}}",
-                    "image": "{{asset('assets/images/hieworks-logo-300x300.png')}}"
+                    "image": "{{($job->company_logo)  ?  asset('storage/uploads/'.$job->company_logo) : asset('assets/images/hieworks-logo-300x300.png')}}"
                 }
             }
         ]
@@ -339,6 +339,7 @@
     {
             "@context": "https://schema.org/",
             "@type": "JobPosting",
+            "title": "{{$job->job_title}}",
             "image": "{{asset('assets/images/hieworks-logo-300x300.png')}}",
             "url":"{{url()->current()}}",
             "datePosted": "{{$job->created_at}}",
@@ -347,7 +348,7 @@
             "industry": "{{$job->job_category}}",
             "occupationalCategory": "{{ $job->job_category }}",
             "salaryCurrency": "GHS",
-            "title": "{{$job->job_title}}",
+            
             "identifier":"{{$job->job_id}}",
             "validThrough": "{{($job->job_deadline) ? $job->job_deadline : $job->created_at->addDays(45)}}",
             "educationRequirements": "{{$job->job_qualification}}",
@@ -364,7 +365,8 @@
             },
             "hiringOrganization": {
                 "@type": "Organization",
-                "name": "{{$job->job_company}}",
+                "name": "{{($job->job_company) ? $job->job_company : 'Reputable Company'}}",
+                "logo" : "{{($job->company_logo)  ?  asset('storage/uploads/'.$job->company_logo) : asset('assets/images/hieworks-logo-300x300.png')}}"
                 "sameAs": ""
             }
         }

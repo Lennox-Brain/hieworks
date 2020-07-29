@@ -143,7 +143,7 @@
                                    @endforelse
                               </tbody>
                             </table>
-                            <div>
+                            <div class="py-3">
                               {{$jobCategories->links()}}
                             </div>
                          </div>
