@@ -199,7 +199,7 @@
         },
         "headline": "{{$blogInfo->article_title}}",
         "image": [
-          "{{asset('/assets/images/social-large.png')}}",
+          "{{asset('/assets/images/social-large.png')}}"
         ],
         "datePublished": "{{$blogInfo->created_at}}",
         "dateModified": "{{$blogInfo->updated_at}}",
