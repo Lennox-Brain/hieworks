@@ -366,7 +366,7 @@
             "hiringOrganization": {
                 "@type": "Organization",
                 "name": "{{($job->job_company) ? $job->job_company : 'Reputable Company'}}",
-                "logo" : "{{($job->company_logo)  ?  asset('storage/uploads/'.$job->company_logo) : asset('assets/images/hieworks-logo-300x300.png')}}"
+                "logo" : "{{($job->company_logo)  ?  asset('storage/uploads/'.$job->company_logo) : asset('assets/images/hieworks-logo-300x300.png')}}",
                 "sameAs": ""
             }
         }

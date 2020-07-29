@@ -20,7 +20,8 @@
         <meta name="distribution" content="global"/>
         <meta name="robots" content="index, follow"/>
         <meta name="copyright" content="2020 - {{date('Y')}} By hieworks.com Ltd - www.hieworks.com"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, target-densitydpi=device-dpi, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
+        {{-- <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, target-densitydpi=device-dpi, shrink-to-fit=no"> --}}
         <meta name="author" content="Lennox Inc.">
         <meta name="csrf-token" content="{{csrf_token()}}">
         <title>@yield('page-title', View::make('partials.title'))</title>
