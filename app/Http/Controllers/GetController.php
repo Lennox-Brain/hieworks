@@ -89,13 +89,15 @@ class GetController extends Controller
 
       $category = $request->category;
       $category =  Jobcategory::where('slug', $category)->first()->title;
-      $category;
+    //   $category;
     
        $categories =  Job::where('job_category',$category)
+                           ->where('status', true)
                            ->orderBy('created_at', 'desc')
                            ->simplePaginate();
       return view('layouts.alljobs', ['jobs' => $categories, 'title'=>$category]);
-     }
+    
+    }
 
    
    public function applyJob($id)

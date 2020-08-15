@@ -81,6 +81,7 @@ class Data{
 
         return Job::groupBy('job_category')
         ->orderByRaw('count(job_title) desc')
+        ->where('status', true)
         ->pluck('job_category');
     }
 

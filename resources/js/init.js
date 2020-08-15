@@ -1,12 +1,29 @@
 (function(){
     tinymce.init({
         selector: '#description',
-        plugins: "lists, advlist, link, autolink",        
+        plugins: "lists, advlist, link, autolink autosave",        
         menubar: false,
         toolbar:  `| 
                     'italic backcolor | alignleft aligncenter ' 
                     'alignright alignjustify | bullist numlist outdent indent | ' 
-                    'italic underline blockquote bold | link | removeformat`, 
+                    'italic underline blockquote bold | link image | removeformat restoredraft`, 
+                    
+        allow_unsafe_link_target: true,
+        link_default_protocol: "https"     
+    })
+
+
+    tinymce.init({
+        selector: '#article-description',
+        plugins: "lists, advlist, link, autolink image imagetools autosave",        
+        menubar: false,
+        toolbar:  `| 
+                    'italic backcolor | alignleft aligncenter ' 
+                    'alignright alignjustify | bullist numlist outdent indent | ' 
+                    'italic underline blockquote bold | link image | removeformat restoredraft`, 
+                    
+        imagetools_cors_hosts: ['127.0.0.1', 'hieworks.com'],
+        // imagetools_proxy: 'proxy.php',
         allow_unsafe_link_target: true,
         link_default_protocol: "https"     
     })

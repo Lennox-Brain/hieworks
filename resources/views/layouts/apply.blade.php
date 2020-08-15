@@ -15,7 +15,7 @@
                             <svg fill="none" class="h-8 w-8 text-gray-500" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                             </svg>
-                            <span class=" font-bold text-gray-700">apply online now</span>
+                            <span class=" font-bold text-gray-700 capitalize">apply online now</span>
                         </h3>
 
                         <div class="alerts">
@@ -24,7 +24,7 @@
                                          @foreach ($errors->all() as $error)
                                              <div class="bg-gray-100 shadow border-red-400 border-t-2 text-red-dark pl-2 pr-1 py-3 sm:w-4/5 my-2 mx-auto flex justify-evenly" role="alert">
                                                  <strong class="font-bold mr-2 text-red-500">
-                                                     <svg class="fill-current text-red-300 h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20">
+                                                     <svg class="fill-current text-red-300 h-6 w-6 mr-4" viewBox="0 0 20 20">
                                                          <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"></path>
                                                      </svg>                                
                                                  </strong>
@@ -101,7 +101,7 @@
                             </div>
                          </div>
                          <div class="text-right">
-                             <button type="submit" class="btn btn-primary">apply now</button>
+                             <button type="submit" class="btn btn-primary text-xs">Submit Application</button>
                          </div>
 
                     </form>

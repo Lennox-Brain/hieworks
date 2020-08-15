@@ -131,15 +131,16 @@ class PostController extends Controller
 
 
     public function newsletter(Request $request){
-      $validate =   Validator::make($request->only('email'), [
+         $validate =   Validator::make($request->only('email'), [
             'email' => 'required|email:rfc,dns|max:255|unique:newsletters,email'
         ])->validate();
+
 
         $status = Newsletter::create([
             'email'=> $validate['email']
         ]);
 
-        if($status) return redirect()->back()->with(['info' =>'Subscription successful']);
+        if($status) return redirect()->back()->with(['info' =>'You Will Now Receive Latest Job Updates']);
     }
 
     

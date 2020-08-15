@@ -2,15 +2,26 @@
 
 @import "tailwindcss/components";
 [x-cloak] { display: none; }
+
 .btn{
   @apply text-white font-bold py-2 px-4 rounded;
 }
+
 .banner{
   min-height: 35vmin;
   background: url('/page/images/test.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.newsletter-panel{
+   background-image: url('../assets/icons/bg-pattern.jpg');
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   @apply bg-opacity-0
+   
 }
 
 .welcome-message p{

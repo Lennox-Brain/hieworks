@@ -27,6 +27,7 @@
         <title>@yield('page-title', View::make('partials.title'))</title>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
         <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Varela+Round&display=swap" rel="stylesheet">         
+        <livewire:styles />
         @stack('app_css')
 
 
@@ -93,7 +94,9 @@
         
 
         {{-- services scripts ends  --}}
-      <main x-data={isOpen:false} x-cloak>
+
+      <main x-data="{isOpen:false}" x-cloak>
+       
         <header class="bg-purple-800">
           <div class="justify-between flex flex-wrap px-2 sm:px-0 text-white items-center container mx-auto">
            <div class="logo"><a href="/" class="outline-none"><img src="{{asset('assets/images/hieworks-logo.png')}}" width="100"></a></div>
@@ -210,7 +213,7 @@
           {{-- desktop menu ends  --}}
 
           {{-- mobile menu  --}}
-          <div x-show.immediate="isOpen" class="z-50 bg-purple-900 opacity-low absolute w-full h-full pt-12">
+          <div x-show.immediate="isOpen" class="absolute z-50 bg-purple-900 opacity-low w-full h-full pt-12">
             <div x-show.transition="isOpen">
                 <ul class="text-white text-2xl ml-4 leading-10">
                   <li>
@@ -354,6 +357,21 @@
             @yield('content-wrapper')
         </section>
 
+        {{-- <div class="bg-orange-600 px-1 py-1 fixed flex-start bottom-0 mb-2 right-0 rounded" :class="{'-mr-20' : isOut}" x-data="{isOut:false}" @click.away="isOut = !isOut">
+            <div class="flex items-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" x-show="isOut" class="w-5 h-5 lg:w-6 lg:h-6" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <polyline points="15 6 9 12 15 18" />
+              </svg>
+                <span class="lg:font-semibold">Subscribe</span>
+              <svg xmlns="http://www.w3.org/2000/svg" x-show="!isOut" class="w-5 h-5 lg:w-6 lg:h-6" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <polyline points="9 6 15 12 9 18" />
+              </svg>
+              
+            </div>
+           
+        </div> --}}
         <footer class="footer p-2 md:p-6">
            <div class="container mx-auto">
               <div class="block md:flex flex-wrap justify-evenly text-gray-400">
@@ -403,6 +421,7 @@
       </main>
       <script src="{{ mix('/js/vendor.js') }}"></script>
       <script src="{{ mix('/js/activate_sw.js') }}"></script>
+      <livewire:scripts />
        @stack('app_js')
 
        {{-- schema.org --}}
@@ -437,6 +456,7 @@
             ]
         }
     </script>
+
 
     {{-- <script type="application/ld+json">
       {

@@ -20,8 +20,8 @@
 
           {{-- content  --}}
             <div class="my-8">
-                <div class="job_ bg-white mx-auto p-1 sm:p-2 block md:flex ">
-                   <div class="w-full md:w-4/5 border p-4 my-2">
+                <div class="job_ bg-white mx-auto p-0 sm:p-2 block md:flex ">
+                   <div class="w-full md:w-4/5 border p-2 lg:p-4 my-2">
                        <div>
                            <h3 class="font-bold text-purple-700">{{$job->job_title}}</h3>
                            
@@ -98,23 +98,23 @@
 
                    <div class="w-full md:w-2/5 md:px-3 my-2">
                        
-                       <div class="border p-4">
+                       <div class="border p-1">
                                 <div>
-                                    <div class="block sm:flex flex-wrap items-center text-gray-600">
+                                    <div class="text-center py-3">
+                                        <span class="bg-gray-200 font-semibold text-lg px-3 py-1 rounded-full text-blue-700 m-1">More Information</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center justify-center text-gray-600">
                                          @if($job->company_logo)
-                                            <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="120">
-                                         @else 
-                                            <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="120">
+                                            <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
                                          @endif
-                                        <span class="text-base sm:text-lg font-bold">{{$job->job_company}}</span>
+                                        <span class="text-base sm:text-lg font-bold"><i class="text-gray-500">{{$job->job_company}}</i></span>
                                     </div>
 
                                     <div class="block sm:flex flex-wrap items-center text-gray-500">
-                                        <span class="bg-gray-200 font-semibold text-lg px-3 py-1 rounded-full text-blue-700 m-1">more info</span>
                                         <div>
                                             @if($job->onsite)
                                                 <div class="flex justify-center my-2">
-                                                     <a href="{{route('apply:job', ['id'=> base64_encode($job->id)])}}" class="py-1 px-3 bg-purple-800 text-white rounded-full">apply on hieworks</a>
+                                                     <a href="{{route('apply:job', ['id'=> base64_encode($job->id)])}}" class="py-1 px-3 bg-purple-800 text-white rounded-full text-xs font-bold">Apply On Hieworks</a>
                                                 </div>
                                             @endif
                                             <span class="text-base mx-3 my-2 flex items-center"> 
@@ -143,7 +143,7 @@
                                                 </svg>
                                                 <span>
                                                     @if ($job->application_url)
-                                                        <a href="{{$job->application_url}}" target="_blank" class="text-blue-400">click link to apply</a>
+                                                        <a href="{{$job->application_url}}" target="_blank" class="text-blue-700 text-sm font-bold">Apply with Link</a>
                                                     @else
                                                         Not Specified
                                                     @endif
@@ -182,21 +182,45 @@
 
                                 {{-- informaition  --}}
                                 <div class="mt-3">
+                                    <div class="w-full my-3 p-4">
+                                        <div class="capitalize py-1 text-sm font-semibold flex items-center">
+                                            <img src="{{asset('assets/icons/subscribe.png')}}" class="object-contain w-16" width="75">
+                                            <div>
+                                                <span class="text-xs lg:text-sm font-bold text-blue-600">Get The Job Before Others Do</span> 
+                                                <br>
+                                                <small class="italic text-gray-600">you for look sharp !</small>
+                                            </div>                                           
+                                        </div>
+                                       <form method="POST" action="{{route('newsletter')}}">
+                                           <div class="text-center">
+                                               <input type="email" name="email" class=" @error('email') border border-red-500 @enderror text-gray-600 text-sm bg-gray-200 px-3 rounded-full py-2 w-full lg:w-5/6 mx-auto focus:border focus:border-blue-500" value="{{old('email')}}" placeholder="Subscribe for Latest Job Updates"/>
+                                           </div>
+                                           @error('email')
+                                                <div class="text-xs text-red-400 font-semibold px-2 py-1 text-center">{{$message}}</div>
+                                           @enderror
+                                           <div>
+                                                @if (session('info'))
+                                                <div class="text-xs text-teal-500 font-semibold px-2 py-1 text-center">{{session('info')}}</div>
+                                                @endif
+                                           </div>
+                                           <div class="text-center my-2">
+                                                <button class="bg-orange-500 px-6 py-2 text-white rounded-full mx-auto uppercase text-xs font-bold">subscribe</button>
+                                           </div>
+                                           @csrf
+                                       </form>
+
+                                    </div>
+                                   
+
                                     <div class="text-red-400">
-                                        <h3 class="flex items-center font-bold">
-                                            <svg fill="none" stroke-linecap="round" class="h-5 w-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"></path>
-                                            </svg>
-                                            Fraud Alert
-                                        </h3>
-                                        <p class="text-xs font-bold capitalize">
-                                            Do not pay money to anybody for a job or employment. 
-                                            <a href="{{route('report:job', ['id'=> base64_encode($job->id)])}}" class="flex items-center bg-blue-800 px-3 py-2 w-32 justify-center mt-2 font-bold uppercase text-white text-center rounded-sm">
+                                       <p class="text-xs font-bold capitalize">
+                                            <a href="{{route('report:job', ['id'=> base64_encode($job->id)])}}" class="flex items-center bg-blue-500 px-2 py-1 w-32 justify-center mt-2 font-bold uppercase text-white text-center rounded-sm">
                                                 <svg fill="none" stroke-linecap="round" class="w-4 h-4" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg> 
                                                 Report Job
                                             </a>   
                                         </p>
                                     </div>
+                                    
                                 </div>
 
                        </div>

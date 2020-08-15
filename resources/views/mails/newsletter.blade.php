@@ -55,36 +55,32 @@
              <div>
                  {{-- {{dd($jobs)}} --}}
                     <div>
-                      
-                        @foreach ($jobs as $job)
-                          
-                        <div class="job_card">
-                        <a href="{{URL::route('jobinfo',['title'=>   Str::slug($job['job_title'],'-'), 'id'=>base64_encode($job['id'])  ])}}/?utm_source=email&utm_medium=email-newsletters&utm_campaign=newsletters&utm_content={{$job['id']}}" style="text-overflow: ellipsis; word-break: break-all">
-                                <div class="job_title">{{$job['job_title']}}</div>
-                                <div style="font-weight:bold">
-                                    <span style="background:#553c9a;padding:4px;border-radius:5px;color:white ">{{$job['job_type']}}</span>
-                                    <span style="color: #7a7676"> | {{$job['job_location']}}</span>
-                                    <span style="color: #7a7676"> | {{$job['job_category']}}</span>
-                                </div>
-                                <div style="text-align: right">
-                                    <span style="background: #553c9a; padding:5px;color:white;">view details</span>
-                                </div>
-                            </a>
-
-                        </div>
-                        @endforeach
-                        
+                      @foreach ($jobs as $job)
+                          <div class="job_card">
+                                    <a href="{{URL::route('jobinfo',['title'=>   Str::slug($job['job_title'],'-'), 'id'=>base64_encode($job['id'])  ])}}/?utm_source=email&utm_medium=email-newsletters&utm_campaign=newsletters&utm_content={{$job['id']}}" style="text-overflow: ellipsis; word-break: break-all">
+                                            <div class="job_title">{{$job['job_title']}}</div>
+                                            <div style="font-weight:bold">
+                                                <span style="background:#553c9a;padding:4px;border-radius:5px;color:white ">{{$job['job_type']}}</span>
+                                                <span style="color: #7a7676"> | {{$job['job_location']}}</span>
+                                                <span style="color: #7a7676"> | {{$job['job_category']}}</span>
+                                            </div>
+                                            <div style="text-align: right">
+                                                <span style="background: #553c9a; padding:5px;color:white;">view details</span>
+                                            </div>
+                                    </a>
+                            </div>
+                        @endforeach                        
                     </div>
                     <div style="text-align:center;margin-top:10px">
-                        <a href="{{route('jobs')}}" style="text-decoration: none;">Browse All Recent Jobs</a>
+                        <a href="{{route('jobs')}}" style="text-decoration: none;">Browse All Jobs</a>
                     </div>
              </div>
-            <div style="color:#8d8c8c;margin-top:16px">Thanks, hieworks Team</div>
+            <div style="color:#8d8c8c;margin-top:16px">Thanks, The Hieworks Team</div>
             <div>
                 <img src="{{asset('assets/images/hieworks-logo.png')}}" alt="hieworks logo" width="120">
             </div>
             <div style="text-align: center">
-                <a href="https://hieworks.com?utm_source=email&utm_medium=email-newsletter&utm_campaign=password-reset" style="text-decoration: none;color:royalblue;font-weight:bold">hieworks.com&copy;{{date('Y')}}</a>
+                <a href="https://hieworks.com?utm_source=email&utm_medium=email-newsletter&utm_campaign=newsletter" style="text-decoration: none;color:royalblue;font-weight:bold">hieworks.com&copy;{{date('Y')}}</a>
             </div>
 
     </div>

@@ -176,7 +176,7 @@
                                       
                                         <div class="my-4">
                                             <label for="description" class="text-gray-600 font-semibold block">Description*</label>
-                                            <textarea name="article_description" id="description" placeholder="Article Description" class="border bg-gray-100 w-full p-4 @error('article_description') border-red-400  @enderror"" rows="12">{{old('article_description')}}</textarea>
+                                            <textarea name="article_description" id="article-description" placeholder="Article Description" class="border bg-gray-100 w-full p-4 @error('article_description') border-red-400  @enderror"" rows="12">{{old('article_description')}}</textarea>
                                             @error('article_description')
                                                 <span class="text-red-400 text-sm font-semibold mt-4">{{$message}}</span>
                                             @enderror
