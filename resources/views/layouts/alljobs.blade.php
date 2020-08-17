@@ -15,7 +15,7 @@
                 <form method="GET" action="{{route('filter')}}" class="block sm:flex justify-evenly items-center">
                     <div class="flex flex-grow-1 my-2">
                     
-                       <select class="appearance-none bg-transparent w-full text-gray-600 border-b-2 border-purple-600 py-1 px-6  select" name="job_category">
+                       <select class="w-full text-gray-600 bg-gray-300 py-2 border-2 rounded border-blue-600 px-6 select" name="job_category">
                             <option value="">Select Job Category</option>
                             @foreach ($job_categories as $category)
                                       <option value="{{$category->slug}}">{{$category->title}}</option>
@@ -23,8 +23,8 @@
                        </select>
                     </div>
                     <div class="flex flex-grow-1 my-2">
-                        <select class="appearance-none bg-transparent w-full border-b-2 text-gray-500  border-purple-600 py-1 px-6 select" name="job_location">
-                            <option value="">Select Job by Location</option>
+                        <select class="w-full text-gray-600 bg-gray-300 py-2 border border-blue-600 rounded px-6 select" name="job_location">
+                            <option value="">Select Job Location</option>
                              @foreach ($job_locations as $location)
                                        <option value="{{$location}}">{{$location}}</option>
                              @endforeach
@@ -130,7 +130,7 @@
                       {{-- job wrapper ends  --}}
 
                      
-                      <div class="my-4">
+                      <div class="my-4 py-6">
                            {{$jobs->links()}}
                       </div>
                      
