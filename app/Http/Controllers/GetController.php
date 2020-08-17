@@ -71,7 +71,6 @@ class GetController extends Controller
 
     public function filterJob(Request $request)
     {
-      
        $category_title = Jobcategory::where('slug', $request->job_category)->first();
        if($category_title){
            $category_title  = $category_title->title;
@@ -83,7 +82,12 @@ class GetController extends Controller
             }
        $filters =  $query->
                     where('status', true)->
-                    simplePaginate(1);
+                    simplePaginate();
+
+        // $filters->appends([
+        //     'job_category'=>$category_title,
+        //     'job_location' =>$request->job_location
+        // ]);
 
         return view('layouts.alljobs', ['jobs'=>$filters]);
    }
