@@ -15,12 +15,12 @@
                 <form method="GET" action="{{route('filter')}}" class="block sm:flex justify-evenly items-center">
                     <div class="flex flex-grow-1 my-2">
                     
-                       {{-- <select class="appearance-none bg-transparent w-full text-gray-600 border-b-2 border-purple-600 py-1 px-6  select" name="job_category">
+                       <select class="appearance-none bg-transparent w-full text-gray-600 border-b-2 border-purple-600 py-1 px-6  select" name="job_category">
                             <option value="">Select Job Category</option>
                             @foreach ($job_categories as $category)
                                       <option value="{{$category->slug}}">{{$category->title}}</option>
                             @endforeach
-                       </select> --}}
+                       </select>
                     </div>
                     <div class="flex flex-grow-1 my-2">
                         <select class="appearance-none bg-transparent w-full border-b-2 text-gray-500  border-purple-600 py-1 px-6 select" name="job_location">
@@ -32,10 +32,11 @@
                     </div>
 
                     <div class="my-2 text-right">
-                        <button class="p-2 bg-purple-800 rounded-lg text-white">
+                        <button class="px-3 py-1 bg-purple-800 rounded-lg text-white flex items-center">
                             <svg fill="none" stroke-linecap="round" class="w-5 h-5" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
                             </svg>
+                            Filter
                         </button>
                     </div>
                 </form>

@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 
 use App\Job;
-use App\Jobcategory;
-use App\Jobslug;
 use App\Search;
+use App\Jobslug;
+use App\Jobcategory;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 
@@ -74,20 +75,26 @@ class GetController extends Controller
        $category_title = Jobcategory::where('slug', $request->job_category)->first();
        if($category_title){
            $category_title  = $category_title->title;
+       }else{
+           $category_title = '';
        }
         $query =  Job::where('job_category', $category_title);
         
             if($request->job_location != 'All of Ghana'){
-                $query->orWhere('job_location',$request->job_location);
+                $query->orWhere('job_location', $request->job_location);
             }
-       $filters =  $query->
-                    where('status', true)->
-                    simplePaginate();
+       $filters =  $query->where('status', true)
+                         ->orderBy('created_at', 'DESC')
+                         ->simplePaginate();
+                         
+        if(!$filters) $filters = Job::orderBy('created_at', 'desc')
+                                      ->where('status', true)
+                                      ->simplePaginate();
 
-        // $filters->appends([
-        //     'job_category'=>$category_title,
-        //     'job_location' =>$request->job_location
-        // ]);
+        $filters->appends([
+            'job_category'=>Str::slug($category_title, '-'),
+            'job_location' =>$request->job_location
+        ]);
 
         return view('layouts.alljobs', ['jobs'=>$filters]);
    }
