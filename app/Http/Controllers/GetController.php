@@ -71,14 +71,19 @@ class GetController extends Controller
 
     public function filterJob(Request $request)
     {
-       
-       $category_title = Jobcategory::where('slug', $request->job_category)->first()->title;
+      
+       $category_title = Jobcategory::where('slug', $request->job_category)->first();
+       if($category_title){
+           $category_title  = $category_title->title;
+       }
         $query =  Job::where('job_category', $category_title);
         
             if($request->job_location != 'All of Ghana'){
                 $query->orWhere('job_location',$request->job_location);
             }
-       $filters =  $query->simplePaginate();
+       $filters =  $query->
+                    where('status', true)->
+                    simplePaginate(1);
 
         return view('layouts.alljobs', ['jobs'=>$filters]);
    }
