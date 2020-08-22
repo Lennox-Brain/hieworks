@@ -7,7 +7,7 @@
         <form method="POST" action="{{route('newsletter')}}" wire:submit.prevent="subscribe">
           <div class="my-2 font-semibold text-gray-600 text-lg">Get Alerts of Latest Job Updates</div>
             <div>
-               <input type="email" class="input @error('email') border border-red-500  @enderror" placeholder="example@example.com"  wire:model="email" name="email" value="{{old('email')}}">
+               <input type="email" class=" bg-gray-300 w-full rounded-full py-2 px-3 @error('email') border border-red-500  @enderror" placeholder="Enter valid email addr."  wire:model="email" name="email" value="{{old('email')}}">
             </div>
             <div class="text-sm font-semibold text-green-500 pb-3">
                 @if (session('info'))
@@ -18,8 +18,8 @@
                 <span class=" text-xs text-red-500 font-semibold">{{$message}}</span>
             @enderror
            
-            <div class="text-right">
-              <button type="submit"  class="bg-purple-800 text-white px-4 w-full rounded py-3 my-3" wire:target="subscribe"  wire:loading.attr="disabled">
+            <div class="text-center">
+              <button type="submit"  class="bg-purple-800 text-white px-4 w-full rounded-full py-2" wire:target="subscribe"  wire:loading.attr="disabled">
                   <span wire:loading wire:target="subscribe">please wait...</span>
                   <span wire:loading.remove wire:target="subscribe">Subscribe</span>
               </button>
