@@ -17,15 +17,15 @@
                 <div class="lg:w-1/2 flex flex-col items-center px-3 welcome-message">
                   <h1 class="capitalize text-center text-xl sm:text-4xl font-light text-blue-700 leading-tight mb-4">Bring your job search to an end <strong class="font-black text-3xl sm:text-4xl block">Get Hired, Get Happy!</strong></h1>
                   <p class="lg:text-right sm:text-lg text-gray-600  leading-relaxed capitalize">
-                    We are your online portal for latest job vacancies in Ghana and Remotely. We help end your job searching !
+                    We are your online portal for latest job vacancies in Ghana and Remote Opportunities. We help end your job search Journey !
                     
                   </p>
                     <a href="{{route('jobs')}}" class="bg-purple-700 hover:bg-purple-800 mt-8 py-3 px-4 rounded-full font-bold uppercase text-white tracking-widest text-sm">Browse Jobs</a>
                 
                 </div>
        
-                <div class="flex flex-grow-1 flex-start" >
-                    <img src="{{asset('assets/icons/recruite.svg')}}" width="500">
+                <div class="flex flex-grow-1 flex-start">
+                    <img src="{{asset('assets/icons/recruite.svg')}}" style="width:30rem" alt="hieworks jobs in Ghana image">
                   </div>
               </div>
         </div>
@@ -62,9 +62,9 @@
                                       <div class="job-card sm:border-l sm:border-r">
                                         <div class="mr-2">
                                           @if($job->company_logo)
-                                                <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
+                                                <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" class="w-16 object-contain">
                                           @else 
-                                                <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
+                                                <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" class="w-16 object-contain">
                                           @endif
                                         </div>
                                       
@@ -131,7 +131,7 @@
                        @empty
                          <div class="text-center p-6 text-gray-500">
                                <div class="w-1/2 mx-auto flex items-center justify-center">
-                                <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs">
+                                <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="hieworks empty jobs post">
                               </div>
                               <div>
                                 <h4>No Post Found</h4>

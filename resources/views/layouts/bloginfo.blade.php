@@ -65,7 +65,7 @@
                                           <script type="IN/Share" data-url="{{url()->full().'?utm_source=linkedin&utm_medium=linkedin&utm_campaign=share-button&utm_content='.$blogInfo->id}}"></script>
                                           <div class="sm:hidden mx-3">
                                               <a href="https://api.whatsapp.com/send?text={{url()->full().'?utm_source=whatsapp&utm_medium=whatsapp&utm_campaign=share-button&utm_content='.$blogInfo->id}}" target="_blank">
-                                                  <img src="{{asset('assets/icons/whatsapp.svg')}}" width="32">
+                                                  <img src="{{asset('assets/icons/whatsapp.svg')}}" class="w-6" alt="whatsapp share">
                                               </a>
                                           </div>
                                         </div>
@@ -78,8 +78,8 @@
                         </div>
 
                         <div class="my-6 bg-white">
-                           <div class="flex justify-center my-4 pb-3">
-                             <span class="bg-blue-200 text-blue-700 text-center font-semibold text-lg w-full px-6 py-3"><a href="{{route('jobs')}}" class="outline-none block capitalize">view latest jobs today</a></span>
+                           <div class="flex justify-center py-6">
+                             <span class=" bg-indigo-500 text-white text-center w-48 rounded-full px-6 py-3"><a href="{{route('jobs')}}" class="outline-none block capitalize">view latest jobs today</a></span>
                            </div>
 
                             <div class="text-blue-600 text-xl font-bold my-6 pl-3">
@@ -93,9 +93,9 @@
                                       <div class="job-card sm:border-l sm:border-r">
                                         <div class="mr-2">
                                           @if($job->company_logo)
-                                              <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
+                                              <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" class="w-16 object-contain">
                                            @else 
-                                              <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
+                                              <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" class="w-16 object-contain">
                                           @endif
                                          </div>
                              

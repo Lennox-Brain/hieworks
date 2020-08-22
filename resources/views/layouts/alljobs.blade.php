@@ -65,9 +65,9 @@
                                     <div class="job-card sm:border-l sm:border-r">
                                       <div class="mr-2">
                                         @if($job->company_logo)
-                                            <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
+                                            <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" class="w-16 object-contain">
                                          @else 
-                                            <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
+                                            <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" class="w-16 object-contain">
                                         @endif
                                        </div>
 
@@ -118,10 +118,16 @@
                               @empty
                                 <div class="text-center p-6 text-gray-500">
                                     <div class="w-1/2 mx-auto flex items-center justify-center">
-                                      <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs">
+                                      <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs icon">
                                     </div>
                                     <div>
                                         <h4>No Post Found</h4>
+                                        <div class="my-4 text-center flex items-center justify-center">
+                                           <div class="px-3 py-2 bg-indigo-500 text-white rounded-full w-48 flex">
+                                              <a href="{{route('jobs')}}" class="">Browse Jobs</a>
+                                              <svg viewBox="0 0 20 20" fill="currentColor" class="briefcase w-6 h-6"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path></svg>
+                                           </div>
+                                        </div>
                                     </div>
                                 </div>
 

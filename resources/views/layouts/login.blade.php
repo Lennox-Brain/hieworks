@@ -78,7 +78,7 @@
 
                     <div class="block md:flex items-center justify-between">
                         <div>
-                            <button class="bg-purple-700 hover:bg-purple-800 text-white py-1 px-4 rounded-full w-full outline-none" type="submit">
+                            <button class="bg-purple-700 hover:bg-purple-800 text-white py-2 px-6 rounded-full w-full outline-none" type="submit">
                                 Sign In
                             </button>
                             @csrf

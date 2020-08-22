@@ -59,7 +59,7 @@
                     @empty
                          <div class="text-center p-6 text-gray-500">
                                     <div class="w-1/2 mx-auto flex items-center justify-center">
-                                      <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs">
+                                      <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="hieworks empty jobs icon">
                                     </div>
                                     <div>
                                         <h4>No Post Found</h4>

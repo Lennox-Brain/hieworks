@@ -7,7 +7,7 @@
 
 @section('content-wrapper')
    <div>
-        <div class="page container mx-auto px-2 md:px-0 bg-white px-2 md:px-4 py-4 min-h-screen">
+        <div class="page container mx-auto bg-white px-2 md:px-4 py-4 min-h-screen">
             <div class="p-2 md:p-10 md:w-3/5 mx-auto border">
                 <div class="p-4 md:w-full lg:w-3/5 mx-auto">
                   <h4 class="text-gray-500 font-bold items-center">

@@ -105,7 +105,7 @@
                                     </div>
                                     <div class="flex flex-wrap items-center justify-center text-gray-600">
                                          @if($job->company_logo)
-                                            <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" width="80">
+                                            <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" class="w-16">
                                          @endif
                                         <span class="text-base sm:text-lg font-bold"><i class="text-gray-500">{{$job->job_company}}</i></span>
                                     </div>
@@ -175,7 +175,7 @@
                                         <script type="IN/Share" data-url="{{url()->full().'?utm_source=linkedin&utm_medium=linkedin&utm_campaign=share-button&utm_content='.$job->job_id}}"></script>
                                         <div class="sm:hidden">
                                             <a href="https://api.whatsapp.com/send?text={{url()->full().'?utm_source=whatsapp&utm_medium=whatsapp&utm_campaign=share-button&utm_content='.$job->job_id}}" target="_blank">
-                                                <img src="{{asset('assets/icons/whatsapp.svg')}}" width="32">
+                                                <img src="{{asset('assets/icons/whatsapp.svg')}}" class="w-6" alt="hieworks whatsapp share icon">
                                             </a>
                                         </div>
                                     </div>
@@ -184,7 +184,7 @@
                                 <div class="mt-3">
                                     <div class="w-full my-3 p-4">
                                         <div class="capitalize py-1 text-sm font-semibold flex items-center">
-                                            <img src="{{asset('assets/icons/subscribe.png')}}" class="object-contain w-16" width="75">
+                                            <img src="{{asset('assets/icons/subscribe.png')}}" class="object-contain w-16" alt="hieworks subscribe icon">
                                             <div>
                                                 <span class="text-xs lg:text-sm font-bold text-blue-600">Get The Job Before Others Do</span> 
                                                 <br>
@@ -254,9 +254,9 @@
                                 <div class="job-card sm:border-l sm:border-r">
                                     <div class="mr-2">
                                         @if($relatedJob->company_logo)
-                                            <img src="{{asset('storage/uploads/'.$relatedJob->company_logo)}}" loading="lazy" alt="{{ $relatedJob->company_name }} company logo" width="80">
+                                            <img src="{{asset('storage/uploads/'.$relatedJob->company_logo)}}" loading="lazy" alt="{{ $relatedJob->company_name }} company logo" class="w-16 object-contain">
                                         @else 
-                                            <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" width="80">
+                                            <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" class="w-16 object-contain">
                                         @endif
                                     </div>
                     
@@ -307,7 +307,7 @@
                     @empty
                                 <div class="text-center p-6 text-gray-500">
                                         <div class="w-1/2 mx-auto flex items-center justify-center">
-                                          <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs">
+                                          <img src="{{asset('/assets/images/empty.png')}}" loading="lazy"  alt="empty jobs post icon">
                                         </div>
                                         <div>
                                             <h4>No Jobs Found</h4>

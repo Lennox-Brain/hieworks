@@ -72,7 +72,7 @@
                         @endforeach                        
                     </div>
                     <div style="text-align:center;margin-top:10px">
-                        <a href="{{route('jobs')}}" style="text-decoration: none;">Browse All Jobs</a>
+                        <a href="{{route('jobs')}}?utm_source=email&utm_campaign=browse_all_jobs&utm_medium=email-newletters" style="text-decoration: none;">Browse All Jobs</a>
                     </div>
              </div>
             <div style="color:#8d8c8c;margin-top:16px">Thanks, The Hieworks Team</div>
