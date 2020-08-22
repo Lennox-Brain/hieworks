@@ -11,7 +11,7 @@
 
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="@yield('page-description', 'Find current jobs in Ghana from top companies and employers. Browse and apply for unlimited job vacancies and land your dream job today')">
+        <meta name="description" content="@yield('page-description', 'Find current Jobs in Ghana From Top Companies and Employers. Browse and Apply For Unlimited Job Vacancies and Land your Dream Job Today')">
         <link rel="canonical" href="https://hieworks.com" />
         <meta name="keywords" content="graduate recruitment, current jobs in Ghana, work from home, online jobs, latest jobs, full time jobs, contract, job interviews, job opportunities, jobseekers, employers, employers in Ghana, Ghanaian companies, vacancy, job vacancy, human resource, cv, office works in Ghana, quick jobs, fast jobs, jobs in Ghana, jobs, by day jobs, job vacancies, recruitments, works, employments, hire employees, remote jobs, remote work, online works, job board, hiring remote workers, telecommunication jobs">
         <meta name="theme-color" content="#553c9a">
@@ -19,7 +19,7 @@
         <meta name="HandheldFriendly" content="true">
         <meta name="distribution" content="global"/>
         <meta name="robots" content="index, follow"/>
-        <meta name="copyright" content="2020 - {{date('Y')}} By hieworks.com Ltd - www.hieworks.com"/>
+        <meta name="copyright" content="2020 - {{date('Y')}} By Hieworks.com Ltd - www.hieworks.com"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
         {{-- <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, target-densitydpi=device-dpi, shrink-to-fit=no"> --}}
         <meta name="author" content="Lennox Inc.">
@@ -99,7 +99,7 @@
        
         <header class="bg-purple-800">
           <div class="justify-between flex flex-wrap px-2 sm:px-0 text-white items-center container mx-auto">
-           <div class="logo"><a href="/" class="outline-none"><img src="{{asset('assets/images/hieworks-logo.png')}}" width="100"></a></div>
+           <div class="logo"><a href="/" class="outline-none"><img src="{{asset('assets/images/hieworks-logo.png')}}" width="100" alt="hieworks logo"></a></div>
                 <nav class="flex" x-cloak>
                         <button class="sm:hidden focus:outline-none active:bg-transparent" @click="isOpen = !isOpen">
                            <template x-if.transition="!isOpen">

@@ -9,6 +9,7 @@ use App\Jobslug;
 use App\Jobcategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\ModelFilters\Job as Fil;
 
 
 class GetController extends Controller
@@ -72,8 +73,38 @@ class GetController extends Controller
 
     public function filterJob(Request $request)
     {
-       $category_title = Jobcategory::where('slug', $request->job_category)->first();
-       if($category_title){
+        $query = Job::where('status', true)
+                    ->orderBy('created_at', 'DESC');
+
+                    
+        if($request->filled('job_category')){
+            $category_title = Jobcategory::where('slug', $request->job_category)->first();
+             if($category_title != null){
+                $query->where('job_category', $category_title->title);
+                $request->merge(['job_category' => $category_title->title ]); 
+             }           
+        }
+
+        if($request->filled('job_location')){
+            $query->where('job_location', $request->job_location);
+        }
+        
+       
+       $filters = $query->simplePaginate()->appends([
+                'job_category' =>Str::slug($request->job_category, '-'),
+                'job_location' => $request->job_location
+         ]);
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       /*if($category_title){
            $category_title  = $category_title->title;
        }else{
            $category_title = '';
@@ -96,6 +127,7 @@ class GetController extends Controller
             'job_location' =>$request->job_location
         ]);
 
+        */
         return view('layouts.alljobs', ['jobs'=>$filters]);
    }
    

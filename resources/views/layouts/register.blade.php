@@ -12,7 +12,7 @@
             <div class="block md:flex p-2 sm:p-10 sm:w-4/5 mx-auto">
                 <div class="w-full md:w-2/5">
                   <img src="{{asset('/assets/icons/register.svg')}}" alt="registration illustration" class=" w-3/5 mx-auto md:w-4/5">
-                  <h4 class=" text-center text-blue-700 text-xl m-3 font-bold">Why Signup for an account ?</h4>
+                  <h1 class=" text-center text-blue-700 text-xl m-3 font-bold">Why Signup for an account ?</h1>
                     <ul class="text-sm font-semibold text-gray-600">
                         <li>
                             <div class="bg-white border rounded-full my-3 p-3 flex items-center">

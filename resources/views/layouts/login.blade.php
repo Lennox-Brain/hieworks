@@ -12,14 +12,14 @@
         <div class="page container mx-auto bg-white px-2 md:px-4 py-4 min-h-screen">
             <div class="p-2 md:p-10 md:w-3/5 mx-auto border">
                 <div class="p-4 md:w-full lg:w-3/5 mx-auto">
-                  <h4 class="text-blue-700 font-bold flex items-center align-middle">
+                  <h1 class="text-blue-700 font-bold flex items-center align-middle">
                       <span>
                           <svg fill="none" class="h-8 w-8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
                           </svg>
                       </span>
                       <span>Signin</span>
-                  </h4>
+                  </h1>
                   <form method="POST" action="{{route('auth')}}" class="pt-6 pb-2 my-2" x-data={toggle:0}>
                     <div class="mb-4">
                         <label class="block text-sm font-bold mb-2 text-gray-600" for="email">

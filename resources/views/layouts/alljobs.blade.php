@@ -47,13 +47,13 @@
                 <div class="job_ bg-white w-full  md:w-4/5 mx-auto">
                  
                           <div class="p-4">
-                            <h4>
+                            <h1>
                               @if(isset($title))
                                   <div class="text-blue-700 font-bold text-base flex items-center">All {{$title}} Jobs</div>
                               @else
                                   <div class="text-blue-700 font-bold text-xl flex items-center">Browsing Latest Jobs</div>
                               @endif
-                            </h4>
+                            </h1>
                           </div>
                          {{-- <x-alert :message="accra"/> --}}
                    
@@ -130,7 +130,7 @@
                       {{-- job wrapper ends  --}}
 
                      
-                      <div class="my-4 py-6">
+                      <div class="my-4 py-6">                        
                            {{$jobs->links()}}
                       </div>
                      

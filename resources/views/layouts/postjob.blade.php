@@ -3,19 +3,19 @@
     <link rel="stylesheet" href="{{asset('assets/editor/skins/lightgray/skin.min.css')}}"/>
 @endprepend
 
-@section('page-title','Create new job post - hieworks.com')
+@section('page-title','Create New Job Post - hieworks.com')
 
 @section('content-wrapper')
    <div>
        
-        <div class="page container mx-auto px-2 sm:px-0 bg-white px-2 sm:px-4 py-4">
+        <div class="page container mx-auto bg-white px-2 sm:px-4 py-4">
             
             <div class="flex flex-wrap">
                 <div class="w-full sm:w-8/12">
 
                     <div x-data="{message: true}" x-cloak>
 
-                        <h4 class="text-gray-600 text-center font-bold">Fill out form to complete job post</h4>
+                        <h1 class="text-gray-600 text-center font-bold capitalize">Fill out form to complete job post</h1>
                         @if ($errors->any())
                             @foreach ($errors->all() as $error)
                                 <div class="bg-gray-100 shadow border-red-400 border-t-2 text-red-dark pl-2 pr-1 py-3 sm:w-4/5 my-2 mx-auto flex justify-evenly" role="alert">

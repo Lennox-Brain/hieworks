@@ -23,7 +23,7 @@
                 <div class="job_ bg-white mx-auto p-0 sm:p-2 block md:flex ">
                    <div class="w-full md:w-4/5 border p-2 lg:p-4 my-2">
                        <div>
-                           <h3 class="font-bold text-purple-700">{{$job->job_title}}</h3>
+                           <h1 class="font-bold text-purple-700">{{$job->job_title}}</h1>
                            
                          {{-- set one  --}}
                            <div class="flex items-center flex-wrap justify-between text-gray-600 text-sm border-t my-2 pt-1">  
