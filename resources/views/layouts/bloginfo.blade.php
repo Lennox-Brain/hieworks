@@ -79,7 +79,7 @@
 
                         <div class="my-6 bg-white">
                            <div class="flex justify-center py-6">
-                             <span class=" bg-indigo-500 text-white text-center w-48 rounded-full px-6 py-3"><a href="{{route('jobs')}}" class="outline-none block capitalize">view latest jobs today</a></span>
+                             <span class="bg-indigo-500 text-white text-center rounded-full px-6 py-3"><a href="{{route('jobs')}}" class="outline-none block capitalize">view latest jobs today</a></span>
                            </div>
 
                             <div class="text-blue-600 text-xl font-bold my-6 pl-3">
