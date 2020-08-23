@@ -5,7 +5,11 @@
           </button>
     </div>
         <form method="POST" action="{{route('newsletter')}}" wire:submit.prevent="subscribe">
-          <div class="my-2 font-semibold text-gray-600 text-lg">Get Alerts of Latest Job Updates</div>
+          <div class="flex items-center">
+            <img src="{{asset('assets/icons/subscribe.png')}}" class="w-16 object-contain" alt="hieworks subscribe icon">
+            <span class="text-blue-500 font-semibold text-sm">Get Job Updates Right In Your Inbox</span> 
+          </div>
+          
             <div>
                <input type="email" class=" bg-gray-300 w-full rounded-full py-2 px-3 @error('email') border border-red-500  @enderror" placeholder="Enter valid email addr."  wire:model="email" name="email" value="{{old('email')}}">
             </div>
@@ -21,7 +25,7 @@
             <div class="text-center">
               <button type="submit"  class="bg-purple-800 text-white px-4 w-full rounded-full py-2" wire:target="subscribe"  wire:loading.attr="disabled">
                   <span wire:loading wire:target="subscribe">please wait...</span>
-                  <span wire:loading.remove wire:target="subscribe">Subscribe</span>
+                  <span wire:loading.remove wire:target="subscribe">SUBSCRIBE</span>
               </button>
             </div>
             @csrf

@@ -13,20 +13,20 @@ if(!function_exists('read_time')){
         }
     }
 
-    if(!function_exists('category_name')){
+if(!function_exists('category_name')){
         function category_name($id){
           return Category::findOrFail($id)->category;
         }
-    }
+}
 
-    if(!function_exists('latest_badge')){
+if(!function_exists('latest_badge')){
         function latest_badge($created_at){
              $time = Carbon::now()->diffInHours($created_at, true);
              return ( $time < 6 );
         }
-    }
+}
 
-    if(!function_exists('post_views')){
+if(!function_exists('post_views')){
        function post_views($views){
         if ($views >= 1000){
             return round(($views * (1/1000) ), PHP_ROUND_HALF_UP ) .'k';
@@ -34,7 +34,7 @@ if(!function_exists('read_time')){
           return $views;
        }
     
-    }
+}
 
 
 

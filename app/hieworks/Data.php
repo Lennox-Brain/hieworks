@@ -109,6 +109,7 @@ class Data{
      */
     public static function data_adapter($category){
           return Job::where(['job_category'=>$category])
+                    ->where('status', true)
                     ->orderBy('created_at', 'desc')
                 ->get();
     }
