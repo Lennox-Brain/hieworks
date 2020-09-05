@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Application;
 use App\Job;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Ui\Presets\React;
 
 class LoaderController extends Controller
 {
@@ -24,6 +26,28 @@ class LoaderController extends Controller
             return view('layouts.dashboard.jobs', ['userjobs' => $userjobs]);
     }
 
+    public function searchDashboardJob(Request  $request)
+    {
+        $query = trim($request->q);
+        if( $query == '' ) return redirect()->back();
+        $searchResult =  Job::where('job_title', 'like', "%$query%")
+                            ->orWhere('job_type', 'like', "%$query%")
+                            ->orWhere('job_category', 'like', "%$query%")
+                            ->orWhere('job_location', 'like',  "%$query%")
+                            ->orWhere('job_company', 'like', "%$query%")
+                            ->orWhere('job_id', 'like', "%$query%")
+                            ->where('status', true)
+                            ->orderBy('created_at', 'DESC')
+                            ->simplePaginate();
+
+         $searchResult->appends([
+             'q' => $query
+         ]);
+         
+            return view('layouts.dashboard.jobs', ['userjobs' => $searchResult]);
+    }
+
+    
     public function loadSettings()
     {
             return view('layouts.dashboard.settings');

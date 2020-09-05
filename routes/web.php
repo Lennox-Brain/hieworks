@@ -62,6 +62,7 @@ Route::group(['prefix'=>'dashboard'], function(){
 
         Route::get('/remove/application/{id}', 'Dashboard\DeleteController@deleteApplication')->name('delete:application');
         Route::get('/remove/job/{id}', 'Dashboard\DeleteController@deleteJob')->name('delete:job');
+        Route::get('/search', 'Dashboard\LoaderController@searchDashboardJob')->name('searchjob:dashboard');
 
     });
 
@@ -124,7 +125,9 @@ Route::view('/about', 'extras.about')->name('about');
 Route::view('/faq', 'extras.faq')->name('faq');
 
 Route::get('/test', function(){
-    return password_hash('lennox94', PASSWORD_DEFAULT);
+    // return password_hash('lennox94', PASSWORD_DEFAULT);
+//   $jobs =  App\Jobslug::where('type_slug', 'part-time')->pluck('job_id');
+//   return App\Job::where('id', $jobs)->groupBy('job_qualification')->get();
 });
 
 Route::fallback(function(){

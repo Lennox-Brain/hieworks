@@ -30,6 +30,7 @@
               </div>
         </div>
        
+          
           <div class="container mx-auto">
               @include('partials.search')
               <div class="flex justify-center">
@@ -43,6 +44,7 @@
            
             {{-- content  --}}
               <div class="my-12">
+                  <div class="w-full md:w-4/5 mx-auto" id="adb_v1"></div>
                   <div class="job_ bg-white w-full md:w-4/5 mx-auto">
                     @forelse ($home_categories as $category)
                         

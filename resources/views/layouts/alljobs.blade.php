@@ -6,6 +6,7 @@
 @section('content-wrapper')
    <div>
      
+        <div class="w-full md:w-3/5 mx-auto my-3" id="adb_v2"></div>
 
         <div class="container mx-auto">
               @include('partials.search')
@@ -144,7 +145,8 @@
 
 
                 </div>
-                    
+                <div class="w-full md:w-3/5 mx-auto" id="adb_v3"></div>
+
             </div>
             {{-- jobs list container ends  --}}
 

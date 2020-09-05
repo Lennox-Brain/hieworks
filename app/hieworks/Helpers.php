@@ -4,6 +4,7 @@ namespace App\Hieworks;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class Helpers{
     const FILES_PATH = '/storage/uploads/';
@@ -30,14 +31,16 @@ class Helpers{
         return $model::where(['id'=>$id]);
     }
 
+
     public static function deleteFile($filename, $path = '/storage/uploads/'){
       
         if(file_exists(public_path().$path.$filename) ){
             return unlink(public_path().$path.$filename);
         }
-      
-        return false;
+      return false;
     }
+
+
 
     // miner
     public static function readRemoteAdd($filepath, $a, $b){

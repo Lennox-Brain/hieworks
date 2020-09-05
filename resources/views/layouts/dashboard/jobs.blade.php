@@ -53,7 +53,7 @@
 
                          <li>
                              <div class="bg-white py-3 px-2 mr-3 md:mr-6">
-                              <a href="{{route('user:settings')}}" class="flex items-center block">
+                              <a href="{{route('user:settings')}}" class="flex items-center">
                                 <span>
                                   <svg fill="none" stroke-linecap="round"  class="h-6 w-6 text-gray-600" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>                                
                                 </span>
@@ -68,7 +68,17 @@
                 
                 <section class="container mx-auto bg-gray-100 min-h-screen mt-2 p-1 md:p-4">
                   <div class="m-4">
-                    <h3 class="text-gray-700 font-bold">Your Current Job Listings</h3>
+                    <div class="block md:flex justify-between">
+                      <h3 class="text-gray-700 font-bold">Your Current Job Listings</h3>
+                      <form method="GET" action="{{route('searchjob:dashboard')}}" class="flex items-center">
+                        <input type="text" placeholder="Job title, Category" name="q" class="bg-gray-200 p-2 outline-none">
+                        <button class="text-white bg-purple-700 p-2 outline-none">
+                          <svg fill="none" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-8" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                          </svg>
+                        </button>
+                      </form>
+                    </div>
                   </div>
                     <div class="w-full block md:flex">
                         <div class="w-full md:w-5/5 mx-auto overflow-x-auto">
@@ -95,7 +105,7 @@
                                                         Post date
                                                 </th>
                                                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-sm leading-4 uppercase tracking-wider">
-                                                        action
+                                                        Action
                                                 </th>
                                             </tr>
                                         </thead>
@@ -109,7 +119,7 @@
 
                                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                           <div class="text-sm leading-5">
-                                                            {{post_views($job->views)}}
+                                                            {{ post_views($job->views) }}
                                                           </div>
                                                        </td>
 

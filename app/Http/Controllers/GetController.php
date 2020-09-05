@@ -95,15 +95,6 @@ class GetController extends Controller
                 'job_location' => $request->job_location
          ]);
       
-       
-       
-       
-       
-       
-       
-       
-       
-       
        /*if($category_title){
            $category_title  = $category_title->title;
        }else{

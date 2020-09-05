@@ -25,7 +25,9 @@
                  </div>
             </div>
         </div>
+      
         <div class="container mx-auto sm:px-0">
+          <div class="w-full md:w-4/6 my-3" id="adb_v7"></div>
           <div>
               <ul class="text-gray-600 text-xs breadcrumb pl-3">
                 <li><a href="{{route('blog')}}" class="text-blue-700 mini-title">Blog</a> &raquo; <span class="text-gray-700">{{$blogInfo->article_title}}</span></li>

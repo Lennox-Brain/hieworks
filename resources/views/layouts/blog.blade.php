@@ -16,8 +16,10 @@
             </div>
         </div>
         <div class="container mx-auto px-2 sm:px-0">
+          <div class="w-full md:w-4/6 my-3" id="adb_v6"></div>
+
           <div>
-              <ul class=" text-gray-600">
+              <ul class="text-gray-600">
                 <li>
                   <a href="{{route('blog')}}" class="text-blue-700">Blog</a> &raquo;
                   @if(isset($category) && isset($category_id))
