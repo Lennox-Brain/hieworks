@@ -27,7 +27,7 @@
         </div>
       
         <div class="container mx-auto sm:px-0">
-          <div class="w-full md:w-4/6 my-3" id="adb_v7"></div>
+          <div class="w-full md:w-2/5 my-3 flex justify-center mx-auto" id="adb_v8"></div>
           <div>
               <ul class="text-gray-600 text-xs breadcrumb pl-3">
                 <li><a href="{{route('blog')}}" class="text-blue-700 mini-title">Blog</a> &raquo; <span class="text-gray-700">{{$blogInfo->article_title}}</span></li>
@@ -84,9 +84,13 @@
                              <span class="bg-indigo-500 text-white text-center rounded-full px-6 py-3"><a href="{{route('jobs')}}" class="outline-none block capitalize">view latest jobs today</a></span>
                            </div>
 
+                           <div class="w-full md:w-2/5 my-3 flex justify-center mx-auto" id="adb_v9"></div>
+
+
                             <div class="text-blue-600 text-xl font-bold my-6 pl-3">
                               <h3>Browse Latest Job Vacancies</h3>
                             </div>
+
                            <div>
                              @foreach ($recentJobs as $job)
                                  

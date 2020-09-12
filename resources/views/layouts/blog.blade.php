@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="container mx-auto px-2 sm:px-0">
-          <div class="w-full md:w-4/6 my-3" id="adb_v6"></div>
+          <div class="w-full flex justify-center mx-auto md:w-2/5 my-3" id="adb_v6"></div>
 
           <div>
               <ul class="text-gray-600">
@@ -71,6 +71,8 @@
                     <div class="my-12">
                         {{$blogPosts->links()}}
                     </div>
+
+                    <div class="w-full flex justify-center mx-auto md:w-2/5 my-3" id="adb_v7"></div>
                 </div>
                 <aside class="p-2 w-full md:w-1/4 bg-white">
                           <div class="flex justify-center my-4 pb-3">

@@ -44,7 +44,6 @@
            
             {{-- content  --}}
               <div class="my-12">
-                  <div class="w-full md:w-4/5 mx-auto flex justify-center" id="adb_v1"></div>
                   <div class="job_ bg-white w-full md:w-4/5 mx-auto">
                     @forelse ($home_categories as $category)
                         
@@ -146,6 +145,8 @@
                   </div>
                       
               </div>
+              <div class="w-full md:w-2/5 mx-auto flex justify-center" id="adb_v1"></div>
+
               {{-- jobs list container ends  --}}
        
               {{-- newsletters --}}

@@ -19,7 +19,7 @@
 
           {{-- content  --}}
             <div class="my-8">
-                <div class="w-full flex justify-center md:w-4/6" id="adb_v4"></div>
+                <div class="w-full flex justify-center md:w-2/5" id="adb_v4"></div>
                 <div class="job_ bg-white mx-auto p-0 sm:p-2 block md:flex ">
                    <div class="w-full md:w-4/5 border p-2 lg:p-4 my-2">
                   
@@ -245,7 +245,7 @@
                             </a>
                  </div>
 
-                <div class="w-full flex flex-wrap md:w-4/5 mx-auto" id="adb_v5"></div>
+                <div class="w-full flex flex-wrap md:w-2/5 mx-auto" id="adb_v5"></div>
                 
                 <div class="p-4">
                     <h3 class="text-blue-700 font-bold flex flex-wrap items-center text-2xl">Related Jobs</h3>
