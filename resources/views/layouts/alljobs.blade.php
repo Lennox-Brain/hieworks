@@ -6,9 +6,7 @@
 @section('content-wrapper')
    <div>
      
-        <div class="w-full md:w-3/5 mx-auto my-3" id="adb_v2"></div>
-
-        <div class="container mx-auto">
+      <div class="container mx-auto">
               @include('partials.search')
 
             <div class="sm:w-4/5 mx-auto p-1 sm:p-2 mt-8 bg-white">
@@ -45,6 +43,7 @@
 
           {{-- content  --}}
             <div class="my-8">
+                <div class="w-full md:w-3/5 mx-auto my-3 flex justify-center" id="adb_v2"></div>
                 <div class="job_ bg-white w-full  md:w-4/5 mx-auto">
                  
                           <div class="p-4">
@@ -59,7 +58,7 @@
                          {{-- <x-alert :message="accra"/> --}}
                    
                      {{-- job_wrapper --}}
-                      <div class="my-3">
+                      <div class="my-3">                       
                             @forelse($jobs as $job)
                              
                                 <a href="{{route('jobinfo', ['title'=>Str::slug($job->job_title,'-'), 'id'=> base64_encode($job->id)])}}" class="block outline-none first:border-t">
@@ -142,10 +141,9 @@
                       </div>
                      
 
-
-
                 </div>
-                <div class="w-full md:w-3/5 mx-auto" id="adb_v3"></div>
+
+                <div class="w-full md:w-3/5 mx-auto my-3 flex justify-between flex-wrap" id="adb_v3"></div>
 
             </div>
             {{-- jobs list container ends  --}}

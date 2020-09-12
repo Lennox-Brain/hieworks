@@ -15,12 +15,11 @@
 
 
         <div class="container mx-auto px-2 sm:px-0">
-            @include('partials.search')
-            
+            @include('partials.search')           
 
           {{-- content  --}}
             <div class="my-8">
-                <div class="w-full md:w-4/6" id="adb_v4"></div>
+                <div class="w-full flex justify-center md:w-4/6" id="adb_v4"></div>
                 <div class="job_ bg-white mx-auto p-0 sm:p-2 block md:flex ">
                    <div class="w-full md:w-4/5 border p-2 lg:p-4 my-2">
                   
@@ -246,10 +245,10 @@
                             </a>
                  </div>
 
-                <div class="w-full md:w-4/5 mx-auto" id="adb_v5"></div>
+                <div class="w-full flex flex-wrap md:w-4/5 mx-auto" id="adb_v5"></div>
                 
                 <div class="p-4">
-                    <h3 class="text-blue-700 font-bold flex items-center text-2xl">Related Jobs</h3>
+                    <h3 class="text-blue-700 font-bold flex flex-wrap items-center text-2xl">Related Jobs</h3>
                 </div>
                 <div>
                     @forelse($relatedJobs as $relatedJob)
@@ -266,14 +265,14 @@
                     
                                 <div class="w-full">
                                     <div class="text-right text-sm text-gray-500">
-                                    @if (latest_badge($relatedJob->created_at))
-                                        <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold">New</small>
-                                    @endif
-                                    <span>{{$relatedJob->created_at->diffForHumans()}}</span>
+                                        @if (latest_badge($relatedJob->created_at))
+                                            <small class="px-3 py-1 bg-pink-200 rounded-full text-pink-700 font-semibold">New</small>
+                                        @endif
+                                        <span>{{ $relatedJob->created_at->diffForHumans() }}</span>
                                     </div>
                                     
                                     <div class="text-blue-700 font-bold job-title text-sm">
-                                        {{$relatedJob->job_title}}
+                                        {{ $relatedJob->job_title }}
                                     </div>
                     
                                     <div class="flex mt-2">
