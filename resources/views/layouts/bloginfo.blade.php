@@ -201,6 +201,17 @@
 
 @prepend('app_js')
 
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'c2a83c08534d500af07bee042cef20e6',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/c2a83c08534d500af07bee042cef20e6/invoke.js"></scr' + 'ipt>');
+</script>
+
 <script type="application/ld+json">
       {
         "@context": "https://schema.org",
