@@ -44,6 +44,19 @@
            
             {{-- content  --}}
               <div class="my-12">
+                <div class="w-full md:w-2/5 mx-auto flex justify-center" id="adb_v0">
+                  <script type="text/javascript">
+                    atOptions = {
+                      'key' : 'c2a83c08534d500af07bee042cef20e6',
+                      'format' : 'iframe',
+                      'height' : 50,
+                      'width' : 320,
+                      'params' : {}
+                    };
+                    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/c2a83c08534d500af07bee042cef20e6/invoke.js"></scr' + 'ipt>');
+                  </script>
+                  
+                </div>
                   <div class="job_ bg-white w-full md:w-4/5 mx-auto">
                     @forelse ($home_categories as $category)
                         

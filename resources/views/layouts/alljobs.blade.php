@@ -44,8 +44,16 @@
           {{-- content  --}}
             <div class="my-8">
                 <div class="w-full md:w-2/5 mx-auto my-3 flex justify-center" id="adb_v2">
-                  <script async="async" data-cfasync="false" src="//pl15793604.toprevenuenetwork.com/4b5abac20f17db3a97470c78b5dcc515/invoke.js"></script>
-                  <div id="container-4b5abac20f17db3a97470c78b5dcc515"></div>
+                  <script type="text/javascript">
+                    atOptions = {
+                      'key' : 'c2a83c08534d500af07bee042cef20e6',
+                      'format' : 'iframe',
+                      'height' : 50,
+                      'width' : 320,
+                      'params' : {}
+                    };
+                    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/c2a83c08534d500af07bee042cef20e6/invoke.js"></scr' + 'ipt>');
+                  </script>
                 </div>
                 <div class="job_ bg-white w-full  md:w-4/5 mx-auto">
                  
