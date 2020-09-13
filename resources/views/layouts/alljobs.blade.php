@@ -43,7 +43,10 @@
 
           {{-- content  --}}
             <div class="my-8">
-                <div class="w-full md:w-2/5 mx-auto my-3 flex justify-center" id="adb_v2"></div>
+                <div class="w-full md:w-2/5 mx-auto my-3 flex justify-center" id="adb_v2">
+                  <script async="async" data-cfasync="false" src="//pl15793604.toprevenuenetwork.com/4b5abac20f17db3a97470c78b5dcc515/invoke.js"></script>
+                  <div id="container-4b5abac20f17db3a97470c78b5dcc515"></div>
+                </div>
                 <div class="job_ bg-white w-full  md:w-4/5 mx-auto">
                  
                           <div class="p-4">
@@ -143,7 +146,10 @@
 
                 </div>
 
-                <div class="w-full md:w-2/5 mx-auto my-3 flex justify-between flex-wrap" id="adb_v3"></div>
+                <div class="w-full md:w-2/5 mx-auto my-3 flex justify-between flex-wrap" id="adb_v3">
+                  <script async="async" data-cfasync="false" src="//pl15793604.toprevenuenetwork.com/4b5abac20f17db3a97470c78b5dcc515/invoke.js"></script>
+                  <div id="container-4b5abac20f17db3a97470c78b5dcc515"></div>
+                </div>
 
             </div>
             {{-- jobs list container ends  --}}

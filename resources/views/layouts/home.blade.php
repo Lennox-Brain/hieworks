@@ -145,7 +145,10 @@
                   </div>
                       
               </div>
-              <div class="w-full md:w-2/5 mx-auto flex justify-center" id="adb_v1"></div>
+              <div class="w-full md:w-2/5 mx-auto flex justify-center" id="adb_v1">
+                  <script async="async" data-cfasync="false" src="//pl15793604.toprevenuenetwork.com/4b5abac20f17db3a97470c78b5dcc515/invoke.js"></script>
+                  <div id="container-4b5abac20f17db3a97470c78b5dcc515"></div>
+              </div>
 
               {{-- jobs list container ends  --}}
        
