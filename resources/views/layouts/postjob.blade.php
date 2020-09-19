@@ -33,7 +33,7 @@
                                     </span>
                                 </div>
 
-                                @endforeach
+                            @endforeach
                         @endif
 
                         @if (session('postStatus'))
@@ -97,7 +97,7 @@
                                                 </span>
                                                 <span class="inner-form-wrapper mx-5 sm:mx-2 md:mx-0">
                                                     <input type="radio" name="job_type" {{(old('job_type') == 'contract') ? 'checked' : ''}}  value="contract" id="contract">
-                                                    <label for="contract">contract</label>
+                                                    <label for="contract">Contract</label>
                                                 </span>
                                           
                                             </span>
@@ -114,7 +114,7 @@
                                                 @if ( old('job_qualification') )
                                                    <option value="{{old('job_qualification')}}"> {{old('job_qualification')}}</option>
                                                    @else
-                                                   <option value="">Job qualification</option>
+                                                   <option value="">Job Qualification</option>
                                                 @endif                                                
                                                 <option value="Degree">Degree</option>
                                                 <option value="Any qualification">Any qualification</option>
@@ -134,7 +134,7 @@
                                                 @if ( old('job_experience') )
                                                    <option value="{{old('job_experience')}}"> {{old('job_experience')}}</option>
                                                    @else
-                                                   <option value="">Job experience</option>
+                                                   <option value="">Job Experience</option>
                                                 @endif
                                                 <option value="Any Level">Any level</option>
                                                 <option value="Entry level">Entry level</option>
@@ -170,7 +170,7 @@
                                                 @if ( old('job_location') )
                                                    <option value="{{old('job_location')}}"> {{old('job_location')}}</option>
                                                    @else  
-                                                   <option value="">Select job location</option>
+                                                   <option value="">Select Job Location</option>
                                                 @endif
                                               
                                                 @foreach ($job_locations as $location)

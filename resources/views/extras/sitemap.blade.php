@@ -1,17 +1,17 @@
 @extends('layouts.wireframe')
-    @section('page-title', 'sitemap - hieworks.com')
+    @section('page-title', 'Sitemap - hieworks.com')
 
 @section('content-wrapper')
    <div>
-        <div class="page container mx-auto bg-white px-2 sm:px-4 py-4 min-h-screen text-sm">
-           <div class="w-full md:w-4/5 mx-auto p-3 leading-7 text-gray-600">
-            <h3 class="text-blue-700 text-lg font-bold">
-                Sitemap - hieworks.com
-            </h3>
-               <p>
+       <div class="h-40 bg-gray-300"></div>
+       
+        <div class="container w-5/6 text-sm md:text-base md:w-3/5 relative p-2 md:p-8 -mt-24 mb-10 rounded-lg mx-auto bg-white min-h-screen">
+            <h1 class="font-bold text-blue-600 text-2xl">Sitemap</h1>
+            <div class="text-gray-600 leading-7 break-words tracking-normal">
+                <p>
                     Our hieworks site map helps users to easily navigate through pages with complete ease.
-               </p>
-               <div>
+                </p>
+                <div>
                 
                    <ul class="text-blue-700">
                        <li>&raquo; <a  class="outline-none capitalize" href="{{route('home')}}">Home Page</a></li>
@@ -24,12 +24,10 @@
                        <li>&raquo; <a  class="outline-none capitalize" href="{{route('policy')}}">Hieworks policies</a></li>
                        <li>&raquo; <a  class="outline-none capitalize" href="{{route('terms')}}">Hieworks terms and conditions</a></li>
                    </ul>
-               </div>
-
-
-           </div>
+                </div>
+                
+            </div>
            
         </div>
    </div>
 @endsection
-

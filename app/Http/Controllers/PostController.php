@@ -74,11 +74,11 @@ class PostController extends Controller
             'job_id' =>$status->id,
             'title_slug' =>Str::slug($status->job_title,'-'),
             'category_slug' => Str::slug($status->job_category,'-'),
+            'location_slug' => Str::slug($status->job_location,'-'),
             'type_slug'=>Str::slug($status->job_type, '-'),
             'qualification_slug'=>Str::slug($status->job_qualification,'-'),
             'experience_slug'=>Str::slug($status->job_experience,'-'),
-            'experience_slug'=>Str::slug($status->job_company,'-')
-       ]);
+        ]);
         
        return redirect()->back()->with('postStatus', 'job successfully uploaded');
 

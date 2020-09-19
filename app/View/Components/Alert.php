@@ -13,11 +13,13 @@ class Alert extends Component
      */
 
     public $message;
+    public $type;
     
     
-    public function __construct($message)
+    public function __construct($type, $message)
     {
         $this->message = $message;
+        $this->type =  \strtolower($type);
     }
 
     /**

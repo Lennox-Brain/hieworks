@@ -15,7 +15,7 @@
                         </div> --}}
                         
                         <div class="m-4">
-                            <a href="/" class="p-2 bg-purple-600 text-white rounded-full">Go Home</a>
+                            <a href="{{ route('jobs') }}" class="p-2 bg-purple-600 text-white rounded-full">Browse Latest Jobs</a>
                         </div>
                        
                 </div>

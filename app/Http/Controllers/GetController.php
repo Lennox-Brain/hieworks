@@ -138,6 +138,21 @@ class GetController extends Controller
     
     }
 
+    public function jobLocation($location)
+    {
+        $job_ids = Jobslug::where('location_slug', $location)->pluck('id');
+        $jobs_by_locations =  Job::whereIn('id', $job_ids)->simplePaginate();
+        return view('layouts.alljobs', ['jobs' => $jobs_by_locations, 'title'=>Str::slug($location,' ')]);
+    }
+
+    public function jobType($type)
+    {
+       
+       $job_ids = Jobslug::where('type_slug', $type)->pluck('id');
+       $jobs_by_type =  Job::whereIn('id', $job_ids)->simplePaginate();
+       return view('layouts.alljobs', ['jobs' => $jobs_by_type, 'title'=>Str::slug($type,' ')]);
+
+    }
    
    public function applyJob($id)
      {

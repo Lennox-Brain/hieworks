@@ -19,7 +19,7 @@
 
           {{-- content  --}}
             <div class="my-8">
-                <div class="w-full flex justify-center md:w-2/5" id="adb_v4">
+                <div class="w-full flex justify-center mx-auto md:w-2/5" id="adb_v4">
                     <script type="text/javascript">
                         atOptions = {
                             'key' : 'c2a83c08534d500af07bee042cef20e6',
@@ -96,14 +96,14 @@
 
                         <div class="text-gray-700">
                             <h4 class="font-bold mb-2">Job Description</h4>
-                            <div class="text-sm md:text-base">
-                               <div class="article_description text-sm">
+                            <div>
+                               <div class="article_description text-sm md:text-base leading-relaxed antialiased ">
                                  {!! $job->job_description !!}
                                </div>
                             </div>
                         </div>
 
-                           
+                        
                        </div>
                        <div></div>
                    </div>
@@ -256,9 +256,17 @@
                             </a>
                  </div>
 
-                <div class="w-full flex flex-wrap md:w-2/5 mx-auto" id="adb_v5">
-                    <script async="async" data-cfasync="false" src="//pl15793604.toprevenuenetwork.com/4b5abac20f17db3a97470c78b5dcc515/invoke.js"></script>
-                    <div id="container-4b5abac20f17db3a97470c78b5dcc515"></div>
+                <div class="w-full flex justify-center flex-wrap md:w-2/5 mx-auto overflow-hidden" id="adb_v5">
+                    <script type="text/javascript">
+                        atOptions = {
+                            'key' : 'bf06f4b928d1ae8a4cbb63de23b25cfb',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/bf06f4b928d1ae8a4cbb63de23b25cfb/invoke.js"></scr' + 'ipt>');
+                    </script>
                 </div>
                 
                 <div class="p-4">

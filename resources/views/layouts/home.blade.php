@@ -34,7 +34,7 @@
           <div class="container mx-auto">
               @include('partials.search')
               <div class="flex justify-center">
-                <button class="bg-pink-600 rounded px-6 py-2 text-white font-bold text-sm flex items-center justify-center" @click="isSeen = true">
+                <button class="rounded px-6 py-2 text-white font-bold text-sm flex items-center justify-center bg-blue-500" @click="isSeen = true">
                   
                     <svg fill="none" stroke-linecap="round" class="h-6 w-6 text-gray-200" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                     Subscribe For Job Alerts
@@ -44,7 +44,7 @@
            
             {{-- content  --}}
               <div class="my-12">
-                <div class="w-full md:w-2/5 mx-auto flex justify-center" id="adb_v0">
+                <div class="w-full md:w-2/5 mx-auto flex justify-center my-4" id="adb_v0">
                   <script type="text/javascript">
                     atOptions = {
                       'key' : 'c2a83c08534d500af07bee042cef20e6',
@@ -57,15 +57,17 @@
                   </script>
                   
                 </div>
-                  <div class="job_ bg-white w-full md:w-4/5 mx-auto">
+                 
+                
+              <div class="flex flex-wrap">  
+                <div class="job_ bg-white w-full md:w-4/5">
                     @forelse ($home_categories as $category)
                         
                     <div class="my-8">
                     {{-- category title  --}}
                         @if(count(App\hieworks\Data::data_adapter($category)) > 0)
                             <div class="text-blue-700 font-bold text-xl flex items-center p-4">
-                              <h4 class="align-middle">{{$category}}</h4>
-                             
+                              <h3 class="align-middle">{{$category}}</h3>                             
                             </div>
                         @endif
                     
@@ -76,9 +78,9 @@
                                       <div class="job-card sm:border-l sm:border-r">
                                         <div class="mr-2">
                                           @if($job->company_logo)
-                                                <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} company logo" class="w-16 object-contain">
+                                                <img src="{{asset('storage/uploads/'.$job->company_logo)}}" loading="lazy" alt="{{ $job->company_name }} logo" class="w-16 object-contain">
                                           @else 
-                                                <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks logo" class="w-16 object-contain">
+                                                <img src="{{asset('/assets/images/logo-thumbnail.png')}}" loading="lazy" alt="hieworks.com logo" class="w-16 object-contain">
                                           @endif
                                         </div>
                                       
@@ -123,7 +125,7 @@
                                       </div>
                                       
                                   </a>
-                                    @if ($loop->iteration == 3)
+                                    @if($loop->iteration == 3)
                                         @break
                                     @endif
                                  
@@ -134,7 +136,7 @@
                         </div>
                         @if (count(App\hieworks\Data::data_adapter($category) ) > 0 )
                             <div class="text-center text-purple-700 text-sm sm:font-bold my-4 py-6">
-                              <a href="{{route('category', ['category' =>Str::slug($category, '-')])}}">Browse all ({{count(App\hieworks\Data::data_adapter($category) ) }}) {{$category}} jobs </a>
+                              <h2><a href="{{route('category', ['category' =>Str::slug($category, '-')])}}">Browse all ({{count(App\hieworks\Data::data_adapter($category) ) }}) {{$category}} jobs </a></h2>
                             </div>
                         @endif
        
@@ -156,11 +158,88 @@
                           
        
                   </div>
+
+                  <aside class="w-full md:w-1/5 px-1">
+                     <div class="bg-white mb-4">
+                        <div class="job-by-region border-t-4 border-purple-600 py-2" x-data="{open:true}">
+                          <div class="text-center text-purple-800 font-semibold flex justify-evenly items-center py-2" @click="open = !open">
+                            <span class="cursor-pointer">Find Jobs by Region</span>
+                            
+                            <span x-show="!open" class="cursor-pointer">
+                              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+                            </span>
+                            <span x-show="open" class="cursor-pointer">
+                              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+
+                          </div>
+                          <div x-show="open"
+                               x-transition:enter="transition ease-out duration-200"
+                               x-transition:enter-start="opacity-0">
+                             <ul class="pl-4 text-blue-500 text-sm leading-7">
+                              
+                              @foreach (filled_locations() as $location)
+                                  <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-100 bg-blue-300 p-1 mr-1 font-bold rounded-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <a href="{{ route('location', ['location' => Str::slug("$location->job_location, '-'")]) }}">{{ $location->job_location }} <span class="text-gray-400">{{ count_jobs_by_option('job_location', $location->job_location) }}</span></a></li>
+                              @endforeach
+                             </ul>
+                          </div>
+                        </div>
+                     </div>
+
+                     <div class="bg-white mb-4">
+                      <div class="job-by-region border-t-4 border-purple-600 py-2" x-data="{open:false}">
+                        <div class="text-center text-purple-800 font-semibold flex justify-evenly items-center py-2" @click="open = !open">
+                          <span class="cursor-pointer">Browse Jobs by Type</span>
+                          
+                          <span x-show="!open" class="cursor-pointer">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+                          </span>
+                          <span x-show="open" class="cursor-pointer">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                          </span>
+
+                        </div>
+                        <div x-show="open"
+                             x-transition:enter="transition ease-out duration-200"
+                             x-transition:enter-start="opacity-0">
+                           <ul class="pl-4 text-blue-500 text-sm leading-7">
+                                <li class="flex items-center">
+                                  <svg class="w-5 h-5 text-blue-100 bg-blue-300 p-1 mr-1 font-bold rounded-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                  <a href="{{ route('job-type', ['type'=>'full-time']) }}">Full Time <span class="text-gray-400">{{ count_jobs_by_option('job_type', 'full time') }}</span></a>
+                                </li>
+                                <li class="flex items-center">
+                                  <svg class="w-5 h-5 text-blue-100 bg-blue-300 p-1 mr-1 font-bold rounded-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                  <a href="{{ route('job-type', ['type'=>'part-time']) }}">Part Time <span class="text-gray-400">{{ count_jobs_by_option('job_type', 'part time') }}</span></a>
+                                </li>
+                                <li class="flex items-center">
+                                  <svg class="w-5 h-5 text-blue-100 bg-blue-300 p-1 mr-1 font-bold rounded-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                  <a href="{{ route('job-type', ['type'=>'contract']) }}">Contract <span class="text-gray-400">{{ count_jobs_by_option('job_type', 'contract') }}</span></a>
+                                </li>
+                                <li class="flex items-center">
+                                  <svg class="w-5 h-5 text-blue-100 bg-blue-300 p-1 mr-1 font-bold rounded-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                  <a href="{{ route('job-type', ['type'=>'internship']) }}">Internship <span class="text-gray-400">{{ count_jobs_by_option('job_type', 'contract') }}</span></a>
+                                </li>
+                           </ul>
+                        </div>
+                      </div>
+                   </div>
+                  </aside>
+                </div>
                       
               </div>
               <div class="w-full md:w-2/5 mx-auto flex justify-center" id="adb_v1">
-                  <script async="async" data-cfasync="false" src="//pl15793604.toprevenuenetwork.com/4b5abac20f17db3a97470c78b5dcc515/invoke.js"></script>
-                  <div id="container-4b5abac20f17db3a97470c78b5dcc515"></div>
+                <script type="text/javascript">
+                  atOptions = {
+                    'key' : 'bf06f4b928d1ae8a4cbb63de23b25cfb',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                  document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/bf06f4b928d1ae8a4cbb63de23b25cfb/invoke.js"></scr' + 'ipt>');
+                </script>
               </div>
 
               {{-- jobs list container ends  --}}
@@ -171,13 +250,12 @@
                     <div class="flex flex-col w-full md:h-48 bg-white rounded-lg shadow-md overflow-hidden md:flex-row my-10" id="sub">
                       <div class="md:flex items-center justify-center md:w-1/2 md:bg-purple-900">
                           <div class="py-6 px-8 md:py-0">
-                              <h2 class="text-purple-800 flex items-center  text-lg sm:text-2xl font-bold md:text-gray-100">
+                              <h4 class="text-purple-800 flex items-center  text-lg sm:text-2xl font-bold md:text-gray-100">
                                 Subscribe Now 
                                 <svg fill="none" stroke-linecap="round" class="w-8 h-8" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                   <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                                </svg>
-       
-                              </h2>
+                                </svg>       
+                              </h4>
                               <p class="mt-2 text-gray-600 md:text-gray-400 capitalize font-semibold">Don't miss out on any job post again</p>
                           </div>
                       </div>

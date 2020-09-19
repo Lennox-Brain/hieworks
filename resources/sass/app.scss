@@ -24,6 +24,10 @@
    
 }
 
+.font-nunito{
+  font-family: 'Nunito', sans-serif;
+}
+
 .welcome-message p{
   font-family: 'Varela Round', sans-serif;
 }
@@ -67,12 +71,6 @@
   @apply 
   @apply 
 }
-
-
-
-
-
-
 
 .footer{
   background: #0f0f53;
@@ -119,6 +117,10 @@ form-group{
 }
 
 .article_description{
+   
+    ul,ol{
+      margin-left: 10px; 
+    }
      ol li{
       margin-left: 1rem;
       list-style: initial;
@@ -134,7 +136,7 @@ form-group{
           text-decoration: underline;
       }
       .read-more{
-        @apply no-underline font-semibold block
+        @apply no-underline font-semibold block;
       }
    
      blockquote{
@@ -154,9 +156,9 @@ form-group{
       }
     
       p{
-        display: inline;
+        @apply my-4
       }
-
+           
      }
 }
 

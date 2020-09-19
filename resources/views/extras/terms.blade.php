@@ -1,26 +1,25 @@
 @extends('layouts.wireframe')
-    @section('page-title', 'terms and conditions - hieworks.com')
+    @section('page-title', 'Policy - hieworks.com')
 
 @section('content-wrapper')
    <div>
-        <div class="page container mx-auto px-2 sm:px-0 bg-white px-2 sm:px-4 py-4 min-h-screen">
-           <div class="w-full md:w-4/5 border mx-auto p-3 leading-7 text-gray-600 text-sm">
+       <div class="h-40 bg-gray-300"></div>
+       
+        <div class="container w-5/6 text-sm md:text-base md:w-3/5 relative p-2 md:p-8 -mt-24 mb-10 rounded-lg mx-auto bg-white min-h-screen">
+            <h1 class="font-bold text-blue-600 text-2xl">Terms and Conditions</h1>
+            <div class="antialiased font-sans text-gray-600 leading-7 break-words tracking-normal">
                 <div>
-                        <div class="block-title">
-                          <h3 class="__title">Terms and Conditions</h3>
-                        </div>
                         <div class="__block-content">
-                                <b>Welcome to hieworks.com,</b>
                                 These terms and conditions outline the rules and regulations for the use
-                                of hieworks platform,<br> located at <span class="__url"><a href="{{route('home')}}" class=" text-purple-700 font-bold">www.hieworks.com</a></span>.
+                                of hieworks platform located at <span class="__url"><a href="{{route('home')}}" class=" text-purple-700 font-bold">www.hieworks.com</a></span>.
                                 By accessing this website we assume you accept these terms and conditions. 
                                 Do not continue to use hieworks.com if you do not agree to take all of
                                 the terms and conditions stated on this page.
                          </div>
-                </div>
-
-
-                 <div class=" mt-3">
+                    </div>
+                    
+                    
+                    <div class=" mt-3">
                         <div class="block-title">
                           <h3 class="__title">Cookies</h3>
                         </div>
@@ -33,11 +32,11 @@
                                 our platform. Some of our affiliate/advertising partners may also use cookies.
                                 
                          </div>
-                </div>
-
-              
-
-                <div class="mt-3">
+                    </div>
+                    
+                    
+                    
+                    <div class="mt-3">
                         <div class="block-title">
                           <h3 class="__title">Hyperlinking to our Content</h3>
                         </div>
@@ -60,12 +59,12 @@
                                (c) fits within the context of the linking party's site.    
                                 
                          </div>
-                </div>
-
-                
-
-
-                <div class="mt-3">
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="mt-3">
                         <div class="block-title">
                           <h3 class="__title">Content Liability</h3>
                         </div>
@@ -74,16 +73,10 @@
                                 appears on our platform. You agree to protect and 
                                 defend us against all claims that may rise on our platform.                                
                         </div>
-                </div>
-
-
-
-
-
-
-           </div>
+                    </div>
+                    
+            </div>
            
         </div>
    </div>
 @endsection
-

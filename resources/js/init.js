@@ -6,10 +6,13 @@
         toolbar:  `| 
                     'italic backcolor | alignleft aligncenter ' 
                     'alignright alignjustify | bullist numlist outdent indent | ' 
-                    'italic underline blockquote bold | link image | removeformat restoredraft`, 
+                    'italic underline blockquote bold | link | removeformat restoredraft`, 
                     
         allow_unsafe_link_target: true,
-        link_default_protocol: "https"     
+        link_default_protocol: "https",  
+        force_br_newlines : true,
+        force_p_newlines : false, 
+        forced_root_block : ''  
     })
 
 
@@ -25,7 +28,10 @@
         imagetools_cors_hosts: ['127.0.0.1', 'hieworks.com'],
         // imagetools_proxy: 'proxy.php',
         allow_unsafe_link_target: true,
-        link_default_protocol: "https"     
+        link_default_protocol: "https",
+        force_br_newlines : true,
+        force_p_newlines : false, 
+        forced_root_block : ''  
     })
    
 })()

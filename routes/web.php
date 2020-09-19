@@ -83,6 +83,8 @@ Route::get('/job/{title}/{id}', 'GetController@jobInfo')->name('jobinfo');
 Route::get('/search', 'GetController@searchJob')->name('search');
 Route::get('/filter', 'GetController@filterJob')->name('filter');
 Route::get('/category/{category}', 'GetController@jobCategories')->name('category');
+Route::get('/locations/{location}', 'GetController@jobLocation')->name('location');
+Route::get('/jobs/type/{type}','GetController@jobType')->name('job-type');
 Route::post('/newsletter', 'PostController@newsletter')->name('newsletter');
 
 

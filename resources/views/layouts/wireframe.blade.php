@@ -26,7 +26,8 @@
         <meta name="csrf-token" content="{{csrf_token()}}">
         <title>@yield('page-title', View::make('partials.title'))</title>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
-        <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Varela+Round&display=swap" rel="stylesheet">         
+        <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Varela+Round&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">         
         <livewire:styles />
         @stack('app_css')
 
@@ -46,6 +47,7 @@
           <meta name="twitter:description" content="@yield('page-description', 'Find current jobs in Ghana from top companies and employers. Browse and apply for unlimited job vacancies and land your dream job today')"/>
           <meta name="twitter:image" content="{{asset('assets/images/social-medium.png')}}"/>
           <meta name="twitter:card" content="summary"/>
+          <meta name="twitter:site" content="@hieworks"/>
         {{-- twitter api ends  --}}
 
         {{-- linkedIn meta tags  --}}
@@ -81,7 +83,7 @@
 
 
     </head>
-    <body class="bg-gray-100 min-h-screen">
+    <body class="bg-gray-100 min-h-screen antialiased font-nunito">
 
         {{-- service scripts   --}}
             <!-- Google Tag Manager (noscript) -->
