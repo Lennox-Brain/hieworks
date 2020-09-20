@@ -19,18 +19,7 @@
 
           {{-- content  --}}
             <div class="my-8">
-                <div class="w-full flex justify-center mx-auto md:w-2/5" id="adb_v4">
-                    <script type="text/javascript">
-                        atOptions = {
-                            'key' : 'c2a83c08534d500af07bee042cef20e6',
-                            'format' : 'iframe',
-                            'height' : 50,
-                            'width' : 320,
-                            'params' : {}
-                        };
-                        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/c2a83c08534d500af07bee042cef20e6/invoke.js"></scr' + 'ipt>');
-                    </script>
-                </div>
+                <div class="w-full flex justify-center mx-auto md:w-2/5" id="adb_v4"></div>
                 <div class="job_ bg-white mx-auto p-0 sm:p-2 block md:flex ">
                    <div class="w-full md:w-4/5 border p-2 lg:p-4 my-2">
                   
@@ -256,18 +245,7 @@
                             </a>
                  </div>
 
-                <div class="w-full flex justify-center flex-wrap md:w-2/5 mx-auto overflow-hidden" id="adb_v5">
-                    <script type="text/javascript">
-                        atOptions = {
-                            'key' : 'bf06f4b928d1ae8a4cbb63de23b25cfb',
-                            'format' : 'iframe',
-                            'height' : 250,
-                            'width' : 300,
-                            'params' : {}
-                        };
-                        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/bf06f4b928d1ae8a4cbb63de23b25cfb/invoke.js"></scr' + 'ipt>');
-                    </script>
-                </div>
+                <div class="w-full flex justify-center flex-wrap md:w-2/5 mx-auto overflow-hidden" id="adb_v5"></div>
                 
                 <div class="p-4">
                     <h3 class="text-blue-700 font-bold flex flex-wrap items-center text-2xl">Related Jobs</h3>

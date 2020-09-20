@@ -16,10 +16,7 @@
             </div>
         </div>
         <div class="container mx-auto px-2 sm:px-0">
-          <div class="w-full flex justify-center mx-auto md:w-2/5 my-3" id="adb_v6">
-              <script async="async" data-cfasync="false" src="//pl15793604.toprevenuenetwork.com/4b5abac20f17db3a97470c78b5dcc515/invoke.js"></script>
-              <div id="container-4b5abac20f17db3a97470c78b5dcc515"></div>
-          </div>
+          <div class="w-full flex justify-center mx-auto md:w-2/5 my-3" id="adb_v6"></div>
 
           <div>
               <ul class="text-gray-600">
@@ -75,10 +72,7 @@
                         {{$blogPosts->links()}}
                     </div>
 
-                    <div class="w-full flex justify-center mx-auto md:w-2/5 my-3" id="adb_v7">
-                      <script async="async" data-cfasync="false" src="//pl15793604.toprevenuenetwork.com/4b5abac20f17db3a97470c78b5dcc515/invoke.js"></script>
-                      <div id="container-4b5abac20f17db3a97470c78b5dcc515"></div>
-                    </div>
+                    <div class="w-full flex justify-center mx-auto md:w-2/5 my-3" id="adb_v7"></div>
                 </div>
                 <aside class="p-2 w-full md:w-1/4 bg-white">
                           <div class="flex justify-center my-4 pb-3">

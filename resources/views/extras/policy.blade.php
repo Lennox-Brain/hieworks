@@ -7,7 +7,7 @@
        
         <div class="container w-5/6 text-sm md:text-base md:w-3/5 relative p-2 md:p-8 -mt-24 mb-10 rounded-lg mx-auto bg-white min-h-screen">
             <h1 class="font-bold text-blue-600 text-2xl">Our Policy</h1>
-            <div class="antialiased font-sans text-gray-600 leading-7 break-words tracking-normal">
+            <div class="text-gray-600 leading-7 break-words tracking-normal">
                 <div>
                     This privacy policy describes the policies of hieworks, regarding the collection,
                     use, storage, sharing and protection of your personal information.

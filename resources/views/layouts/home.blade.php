@@ -44,19 +44,7 @@
            
             {{-- content  --}}
               <div class="my-12">
-                <div class="w-full md:w-2/5 mx-auto flex justify-center my-4" id="adb_v0">
-                  <script type="text/javascript">
-                    atOptions = {
-                      'key' : 'c2a83c08534d500af07bee042cef20e6',
-                      'format' : 'iframe',
-                      'height' : 50,
-                      'width' : 320,
-                      'params' : {}
-                    };
-                    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/c2a83c08534d500af07bee042cef20e6/invoke.js"></scr' + 'ipt>');
-                  </script>
-                  
-                </div>
+                <div class="w-full md:w-2/5 mx-auto flex justify-center my-4" id="adb_v0"></div>
                  
                 
               <div class="flex flex-wrap">  
@@ -229,18 +217,7 @@
                 </div>
                       
               </div>
-              <div class="w-full md:w-2/5 mx-auto flex justify-center" id="adb_v1">
-                <script type="text/javascript">
-                  atOptions = {
-                    'key' : 'bf06f4b928d1ae8a4cbb63de23b25cfb',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                  };
-                  document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.displaynetworkprofit.com/bf06f4b928d1ae8a4cbb63de23b25cfb/invoke.js"></scr' + 'ipt>');
-                </script>
-              </div>
+              <div class="w-full md:w-2/5 mx-auto flex justify-center" id="adb_v1"></div>
 
               {{-- jobs list container ends  --}}
        

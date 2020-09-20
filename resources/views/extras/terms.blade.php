@@ -7,7 +7,7 @@
        
         <div class="container w-5/6 text-sm md:text-base md:w-3/5 relative p-2 md:p-8 -mt-24 mb-10 rounded-lg mx-auto bg-white min-h-screen">
             <h1 class="font-bold text-blue-600 text-2xl">Terms and Conditions</h1>
-            <div class="antialiased font-sans text-gray-600 leading-7 break-words tracking-normal">
+            <div class="text-gray-600 leading-7 break-words tracking-normal">
                 <div>
                         <div class="__block-content">
                                 These terms and conditions outline the rules and regulations for the use
