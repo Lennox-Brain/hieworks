@@ -140,7 +140,7 @@ class GetController extends Controller
     public function jobLocation($location)
     {
         $job_ids = Jobslug::where('location_slug', $location)->pluck('id');
-        $jobs_by_locations =  Job::whereIn('id', $job_ids)
+        $jobs_by_locations =  Job::where('id', $job_ids)
                                  ->where('status', true)
                                  ->orderBy('created_at', 'DESC')
                                  ->simplePaginate();

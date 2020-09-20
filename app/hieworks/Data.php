@@ -95,7 +95,7 @@ class Data{
                         "Central Region",
                         "Eastern Region",
                         "Greater Accra Region",
-                        "Nothern Region",
+                        "Northern Region",
                         "North East Region",
                         "Oti Region",
                         "Savannah Region",
