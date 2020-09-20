@@ -9,7 +9,6 @@ use App\Jobslug;
 use App\Jobcategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\ModelFilters\Job as Fil;
 
 
 class GetController extends Controller

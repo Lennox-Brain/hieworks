@@ -87,7 +87,7 @@ class UpdateController extends Controller
                 'location_slug'=>Str::slug($status->job_location, '-'),
                 'qualification_slug'=>Str::slug($status->job_qualification,'-'),
                 'experience_slug'=>Str::slug($status->job_experience,'-'),
-                'experience_slug'=>Str::slug($status->job_company,'-')
+                'company_slug'=>Str::slug($status->job_company,'-')
            
              ]);
    
