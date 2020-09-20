@@ -39,13 +39,15 @@ if(!function_exists('post_views')){
 
 if(!function_exists('filled_locations')){
         function filled_locations(){
-          return Job::distinct('job_location')->get('job_location');
+          return Job::distinct('job_location')
+                    ->get('job_location');
        }
 }
 
 if(!function_exists('count_jobs_by_option')){
         function count_jobs_by_option($column, $option){
-           return Job::where($column, $option)->count();
+           return Job::where($column, $option)
+                     ->where('status', 1)->count();
         }
 }
 

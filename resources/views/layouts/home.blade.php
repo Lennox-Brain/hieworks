@@ -115,7 +115,7 @@
                                                     <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                   </svg>
                                                 </span>
-                                                <span class="text-sm">{{$job->job_location}}</span>
+                                                <span class="text-sm ">{{$job->job_location}}</span>
                                              </div>
                                           
                                              {{-- details ends  --}}
