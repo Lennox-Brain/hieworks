@@ -16,8 +16,8 @@ class CreateJobslugsTable extends Migration
         Schema::create('jobslugs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('job_id');
-            $table->string('title_slug',200)->nullable();
-            $table->string('category_slug',200)->nullable();
+            $table->string('title_slug',190)->nullable();
+            $table->string('category_slug',190)->nullable();
             $table->string('type_slug',30)->nullable();
             $table->string('qualification_slug',30)->nullable();
             $table->string('experience_slug',30)->nullable();
