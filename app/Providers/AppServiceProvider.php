@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        // View::share(['job_categories'=>Data::jobCategories_source(),'home_categories'=>Data::jobCategories(),'job_locations' => Data::LOCATIONS]);
+        View::share(['job_categories'=>Data::jobCategories_source(),'home_categories'=>Data::jobCategories(),'job_locations' => Data::LOCATIONS]);
         Blade::component('alert', Alert::class);
 
         // Paginator::useTailwind();
