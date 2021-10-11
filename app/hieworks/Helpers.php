@@ -12,7 +12,7 @@ class Helpers{
     public static function uploadFile($file, $path){
         $imageName = substr(md5($file->getClientOriginalName()), 1, 15).'.'.$file->getClientOriginalExtension();
          $file->move(public_path($path), $imageName);
-         return $imageName; 
+         return $imageName;
          
       }
 
