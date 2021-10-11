@@ -39,7 +39,7 @@
     },
     "autoload": {
         "files": [
-            "app/hieworks/Utils.php"
+            "app/Hieworks/Utils.php"
         ],
         "psr-4": {
             "App\\": "app/"
