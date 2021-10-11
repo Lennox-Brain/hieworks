@@ -1,5 +1,5 @@
 @extends('layouts.wireframe')
-
+{{-- home_categories'=>Data::jobCategories() --}}
 @section('content-wrapper')
 
      <section x-data="globalState()">

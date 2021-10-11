@@ -7,6 +7,7 @@ use App\Job;
 use App\Search;
 use App\Jobslug;
 use App\Jobcategory;
+use App\Hieworks\Data;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,11 @@ class GetController extends Controller
          $jobs = Job::where(['status'=>true])
                 ->orderBy('created_at', 'DESC')
                 ->simplePaginate(20);
-        return view('layouts.alljobs', ['jobs'=>$jobs]);
+        return view('layouts.alljobs', [
+            'jobs'=>$jobs,
+            'job_categories'=> Data::jobCategories_source(), 
+            'job_locations' => Data::LOCATIONS
+        ]);
     }
 
     // job details info 
@@ -67,7 +72,11 @@ class GetController extends Controller
             'keyword'=>$keyword
         ]);
 
-       return view('layouts.alljobs', ['jobs'=>$searchJobs]);
+       return view('layouts.alljobs', [
+           'jobs'=>$searchJobs,
+           'job_categories'=> Data::jobCategories_source(),
+           'job_locations' => Data::LOCATIONS
+        ]);
     }
 
     public function filterJob(Request $request)
@@ -118,7 +127,11 @@ class GetController extends Controller
         ]);
 
         */
-        return view('layouts.alljobs', ['jobs'=>$filters]);
+        return view('layouts.alljobs', [
+            'jobs'=>$filters,
+            'job_categories'=> Data::jobCategories_source(),
+            'job_locations' => Data::LOCATIONS
+        ]);
    }
    
 
@@ -133,13 +146,17 @@ class GetController extends Controller
                            ->where('status', true)
                            ->orderBy('created_at', 'desc')
                            ->simplePaginate();
-      return view('layouts.alljobs', ['jobs' => $categories, 'title'=>$category]);
+      return view('layouts.alljobs', [
+          'jobs' => $categories,
+          'title'=>$category,
+          'job_categories'=> Data::jobCategories_source(),
+          'job_locations' => Data::LOCATIONS
+        ]);
     
     }
 
     public function jobLocation($location)
-    {
-        
+    {        
         $job_ids = Jobslug::where('location_slug', $location)
                             ->orderBy('created_at', 'desc')
                             ->pluck('job_id');
@@ -148,7 +165,12 @@ class GetController extends Controller
                                  ->where('status', 1)
                                  ->orderBy('created_at', 'DESC')
                                  ->simplePaginate();
-        return view('layouts.alljobs', ['jobs' => $jobs_by_locations, 'title'=>Str::slug($location,' ')]);
+        return view('layouts.alljobs', [
+            'jobs' => $jobs_by_locations,
+            'title'=>Str::slug($location,' '),
+            'job_categories'=> Data::jobCategories_source(),
+            'job_locations' => Data::LOCATIONS
+        ]);
     }
 
     public function jobType($type)
@@ -158,11 +180,16 @@ class GetController extends Controller
                            ->where('status', true)
                            ->orderBy('created_at', 'DESC')
                            ->simplePaginate();
-       return view('layouts.alljobs', ['jobs' => $jobs_by_type, 'title'=>Str::slug($type,' ')]);
+       return view('layouts.alljobs', [
+           'jobs' => $jobs_by_type,
+           'title'=>Str::slug($type,' '),
+           'job_categories'=> Data::jobCategories_source(),
+           'job_locations' => Data::LOCATIONS
+        ]);
     }
    
    public function applyJob($id)
-     {
+    {
             $id = base64_decode($id);
             $job = job::findOrFail($id)->id;
             return view('layouts.apply', ['job_id'=>$job]);

@@ -2,15 +2,27 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Application;
 use App\Job;
-use App\Http\Controllers\Controller;
+use App\Application;
+use App\Hieworks\Data;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Laravel\Ui\Presets\React;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LoaderController extends Controller
 {
+    
+    public function showJobForm()
+    {
+        return view('layouts.postjob', 
+                [
+                    'job_categories'=> Data::jobCategories_source(),
+                    'job_locations' => Data::LOCATIONS
+                ]
+            );
+    }
+    
     public function loadAccount()
     {
         $jobs = Job::where('user_id', Auth::id())->count();

@@ -49,7 +49,7 @@ Route::group(['prefix'=>'dashboard'], function(){
     Route::group(['middleware'=>'auth'],function(){
         Route::get('/account', 'Dashboard\LoaderController@loadAccount')->name('user:account');
         Route::get('/jobs', 'Dashboard\LoaderController@loadJobs')->name('user:jobs');
-        Route::view('/postjob', 'layouts.postjob')->name('user:postjob');
+        Route::get('/postjob', 'Dashboard\LoaderController@showJobForm')->name('user:postjob');
         Route::get('/notifications', 'Dashboard\LoaderController@loadNotifications')->name('user:notifications');
         Route::get('/settings', 'Dashboard\LoaderController@loadSettings')->name('user:settings');
         Route::get('/edit/job/{id}', 'Dashboard\LoaderController@loadJobEdit')->name('edit:job');
@@ -71,8 +71,8 @@ Route::group(['prefix'=>'dashboard'], function(){
 
 
 
-Route::view('/','layouts.home')->name('home');
-
+// Route::view('/','layouts.home')->name('home');
+Route::get('/', "HomeController@index")->name('home');
 // post routes 
 Route::post('/job/apply/confirm', 'PostController@confirmApplication')->name('confirm:application');
 
