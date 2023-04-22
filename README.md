@@ -1,1 +1,1 @@
-Ghana's Largest job listment and recruitement portal.
+Ghana's Largest job listing and recruitement portal.
