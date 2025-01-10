@@ -126,12 +126,6 @@ Route::view('/sitemap', 'extras.sitemap')->name('sitemap');
 Route::view('/about', 'extras.about')->name('about');
 Route::view('/faq', 'extras.faq')->name('faq');
 
-Route::get('/test', function(){
-    // return password_hash('lennox94', PASSWORD_DEFAULT);
-//   $jobs =  App\Jobslug::where('type_slug', 'part-time')->pluck('job_id');
-//   return App\Job::where('id', $jobs)->groupBy('job_qualification')->get();
-});
-
 Route::fallback(function(){
     return view('layouts.404');
 });
